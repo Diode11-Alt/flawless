@@ -37,6 +37,16 @@ include 'includes/header.php';
                         <span style="font-weight: 600; color: var(--primary-navy); font-size: 14px;">Licensed by MOHRE UAE</span>
                     </div>
                 </div>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 30px;">
+                    <a href="contact.php" class="btn btn-primary"
+                       style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%);">
+                        Work With Us <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                    <a href="process.php" class="btn btn-outline"
+                       style="border-color: var(--primary-navy); color: var(--primary-navy);">
+                        How We Work
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -170,6 +180,10 @@ include 'includes/header.php';
                         </div>
                     </div>
                 </div>
+                <a href="contact.php" class="btn btn-primary"
+                   style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%);">
+                    Start a Conversation <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                </a>
             </div>
             <div class="split-image animate-up delay-2" style="position: relative;">
                 <div style="position: absolute; inset: 0; background: var(--secondary-blue); opacity: 0.1; transform: translate(16px, 16px); border-radius: 16px;"></div>

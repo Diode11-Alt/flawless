@@ -51,4 +51,16 @@ function delete_job($id) {
     }
     return save_jobs($updated);
 }
+
+function update_job($id, $data) {
+    $jobs = get_jobs();
+    foreach ($jobs as &$job) {
+        if ($job['id'] == $id) {
+            $data['id'] = $id;
+            $job = array_merge($job, $data);
+            break;
+        }
+    }
+    return save_jobs($jobs);
+}
 ?>

@@ -16,7 +16,7 @@ include 'includes/header.php';
     <div class="container">
         <div class="section-title">
             <h2>Strategic <span>Solutions</span></h2>
-            <p>Comprehensive HR services designed to align your human capital with your long-term corporate objectives.</p>
+            <p>Three core service pillars built for the UAE market — each designed to solve a specific workforce challenge.</p>
         </div>
         <div class="service-cards">
             <div class="service-card-image animate-up delay-1">
@@ -25,6 +25,12 @@ include 'includes/header.php';
                     <span class="subtitle"><i class="fas fa-search" style="margin-right: 5px;"></i> Executive Search</span>
                     <h3>Executive Search</h3>
                     <p>Identifying and securing visionary C-suite leaders who drive organizational transformation.</p>
+                    <a href="contact.php?service=Executive+Search" class="btn btn-primary"
+                       style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px;
+                              background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+                              backdrop-filter: blur(4px); font-size: 14px; padding: 10px 20px; border-radius: 8px;">
+                        Get Started <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
             <div class="service-card-image animate-up delay-2">
@@ -33,6 +39,12 @@ include 'includes/header.php';
                     <span class="subtitle"><i class="fas fa-chess" style="margin-right: 5px;"></i> Strategic HR</span>
                     <h3>Strategic HR</h3>
                     <p>Bespoke consulting to optimize organizational structures, performance, and culture.</p>
+                    <a href="contact.php?service=Strategic+HR" class="btn btn-primary"
+                       style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px;
+                              background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+                              backdrop-filter: blur(4px); font-size: 14px; padding: 10px 20px; border-radius: 8px;">
+                        Get Started <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
             <div class="service-card-image animate-up delay-3">
@@ -41,6 +53,12 @@ include 'includes/header.php';
                     <span class="subtitle"><i class="fas fa-file-invoice-dollar" style="margin-right: 5px;"></i> Payroll Outsourcing</span>
                     <h3>Payroll Outsourcing</h3>
                     <p>Ensuring precise, compliant, and seamless payroll processing across the GCC.</p>
+                    <a href="contact.php?service=Payroll+Services" class="btn btn-primary"
+                       style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px;
+                              background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+                              backdrop-filter: blur(4px); font-size: 14px; padding: 10px 20px; border-radius: 8px;">
+                        Get Started <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>

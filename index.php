@@ -1,4 +1,8 @@
-<?php include 'includes/header.php'; ?>
+<?php 
+include_once 'includes/db.php';
+$recent_jobs = array_slice(get_all_jobs(), 0, 3);
+include 'includes/header.php'; 
+?>
 
 <!-- Hero Section (Split Layout) -->
 <section class="hero-split">
@@ -78,7 +82,6 @@
             <div class="logo-item">DP World</div>
             <div class="logo-item">DEWA</div>
         </div>
-        <p style="text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 16px; opacity: 0.6;">* Illustrative. Replace with actual client logos.</p>
     </div>
 </section>
 
@@ -95,6 +98,119 @@
             <a href="solutions.php" class="btn btn-outline" style="border-color: var(--primary-navy); color: var(--primary-navy);">Explore Solutions</a>
             <a href="process.php" class="btn btn-outline" style="border-color: var(--primary-navy); color: var(--primary-navy);">How We Work</a>
         </div>
+    </div>
+</section>
+
+<!-- STATS ROW -->
+<section style="background: var(--primary-navy); padding: 60px 0;">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center;">
+            <div>
+                <div class="stat-number" data-target="500" data-suffix="+">0</div>
+                <div style="color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px;">Executive Placements</div>
+            </div>
+            <div>
+                <div class="stat-number" data-target="50" data-suffix="+">0</div>
+                <div style="color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px;">Enterprise Clients</div>
+            </div>
+            <div>
+                <div class="stat-number" data-target="98" data-suffix="%">0</div>
+                <div style="color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px;">Retention Rate</div>
+            </div>
+            <div>
+                <div class="stat-number" data-target="14" data-suffix=" days">0</div>
+                <div style="color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px;">Avg. Placement Time</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICE PREVIEW -->
+<section class="section section-bg-white" style="padding: 100px 0;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our <span>Core Services</span></h2>
+            <p>What we do best for organizations across the UAE and GCC.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px;">
+            <div class="value-card animate-up delay-1">
+                <div class="icon"><i class="fas fa-search"></i></div>
+                <h3>Executive Search</h3>
+                <p style="color:var(--text-muted);font-size:14px;">Identifying and securing visionary C-suite leaders who drive transformation.</p>
+                <a href="solutions.php" style="color:var(--secondary-blue);font-weight:600;font-size:14px;margin-top:16px;display:inline-block;">Learn More →</a>
+            </div>
+            <div class="value-card animate-up delay-2">
+                <div class="icon"><i class="fas fa-chess"></i></div>
+                <h3>Strategic HR</h3>
+                <p style="color:var(--text-muted);font-size:14px;">Bespoke consulting to optimize organizational structures, performance, and culture.</p>
+                <a href="solutions.php" style="color:var(--secondary-blue);font-weight:600;font-size:14px;margin-top:16px;display:inline-block;">Learn More →</a>
+            </div>
+            <div class="value-card animate-up delay-3">
+                <div class="icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                <h3>Payroll Outsourcing</h3>
+                <p style="color:var(--text-muted);font-size:14px;">Precise, compliant, and seamless payroll processing across the GCC.</p>
+                <a href="solutions.php" style="color:var(--secondary-blue);font-weight:600;font-size:14px;margin-top:16px;display:inline-block;">Learn More →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURED JOBS -->
+<section class="section" style="background: var(--bg-light); padding: 100px 0;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Featured <span>Positions</span></h2>
+            <p>Explore some of our recently added roles.</p>
+        </div>
+        <div class="job-list" style="margin-top: 40px;">
+            <?php foreach($recent_jobs as $job): ?>
+            <div class="job-card animate-up">
+                <div class="job-card-header">
+                    <div class="job-title-row">
+                        <h3><?= htmlspecialchars($job['title']) ?></h3>
+                        <span class="job-type"><?= htmlspecialchars($job['type']) ?></span>
+                    </div>
+                    <div class="job-meta">
+                        <span><i class="fas fa-building"></i> <?= htmlspecialchars($job['company']) ?></span>
+                        <span><i class="fas fa-map-marker-alt"></i> <?= htmlspecialchars($job['location']) ?></span>
+                        <span><i class="fas fa-money-bill-wave"></i> <?= htmlspecialchars($job['salary']) ?></span>
+                    </div>
+                </div>
+                <div class="job-card-body">
+                    <p><?= htmlspecialchars(is_array($job['description']) ? $job['description'][0] : substr($job['description'], 0, 150) . '...') ?></p>
+                </div>
+                <div class="job-card-footer">
+                    <a href="job-detail.php?id=<?= $job['id'] ?>" class="btn btn-outline" style="border-color: var(--secondary-blue); color: var(--secondary-blue); padding: 8px 20px; font-size: 14px;">View Details</a>
+                    <span class="job-date">Posted <?= htmlspecialchars($job['date_posted']) ?></span>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="jobs.php" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%);">View All Positions</a>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIAL PREVIEW -->
+<section class="section" style="background: white; padding: 80px 0;">
+    <div class="container" style="max-width: 800px; text-align: center;">
+        <div class="quote-icon" style="font-size: 36px; color: var(--secondary-blue); opacity: 0.4; margin-bottom: 20px;">
+            <i class="fas fa-quote-left"></i>
+        </div>
+        <p style="font-size: 20px; font-style: italic; color: var(--primary-navy); line-height: 1.8; margin-bottom: 30px;">
+            "PrimePath placed our VP of Operations in 11 days. The quality of candidates was exceptional — they genuinely understood our culture and the seniority of the role."
+        </p>
+        <div style="display:flex; align-items:center; justify-content:center; gap:14px;">
+            <div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: var(--secondary-blue); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px;">MK</div>
+            <div style="text-align:left;">
+                <strong style="color:var(--primary-navy); display:block;">Mohammed Al-Khalidi</strong>
+                <span style="color:var(--text-muted); font-size:14px;">CEO, Gulf Logistics Partners — Dubai</span>
+            </div>
+        </div>
+        <a href="testimonials.php" style="display:inline-block; margin-top:30px; color:var(--secondary-blue); font-weight:600;">
+            Read all testimonials →
+        </a>
     </div>
 </section>
 

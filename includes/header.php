@@ -1,4 +1,10 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
 require_once 'helpers.php';
 ?>
 <!DOCTYPE html>
@@ -68,11 +74,16 @@ require_once 'helpers.php';
                 <ul class="nav-links">
                     <li><a href="index.php">Home</a></li>
                     <li><a href="solutions.php">Solutions</a></li>
-                    <li><a href="process.php">How We Work</a></li>
                     <li><a href="jobs.php">Careers</a></li>
-                    <li><a href="about.php">About Us</a></li>
-                    <li><a href="testimonials.php">Testimonials</a></li>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li class="has-dropdown">
+                        <a href="#">Company <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.php">About Us</a></li>
+                            <li><a href="process.php">How We Work</a></li>
+                            <li><a href="testimonials.php">Testimonials</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.php">Get in Touch</a></li>
                 </ul>
             </nav>
             <div class="auth-buttons">

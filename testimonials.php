@@ -52,4 +52,12 @@ include 'includes/header.php';
     </div>
 </section>
 
+<section class="section" style="background: var(--bg-light); padding: 80px 0; text-align: center;">
+    <div class="container">
+        <h2 style="margin-bottom: 20px;">Ready to Experience the Difference?</h2>
+        <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 16px;">Join the growing list of top organizations that trust PrimePath HR for their talent needs.</p>
+        <a href="contact.php" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%);">Contact Us Today <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+    </div>
+</section>
+
 <?php include 'includes/footer.php'; ?>

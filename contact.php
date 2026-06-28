@@ -1,18 +1,27 @@
 <?php
+session_start();
 require_once 'includes/helpers.php';
 $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // CSRF Check
+    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+        die('Invalid CSRF token');
+    }
+
     $file = 'data/contacts.json';
     $current = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
+    
+    // Sanitization
     $current[] = [
-        'name' => $_POST['name'] ?? '',
-        'email' => $_POST['email'] ?? '',
-        'subject' => $_POST['subject'] ?? '',
-        'message' => $_POST['message'] ?? '',
-        'phone' => $_POST['phone'] ?? '',
+        'name' => htmlspecialchars(strip_tags(trim($_POST['name'] ?? ''))),
+        'email' => filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL),
+        'subject' => htmlspecialchars(strip_tags(trim($_POST['subject'] ?? ''))),
+        'message' => htmlspecialchars(strip_tags(trim($_POST['message'] ?? ''))),
+        'phone' => htmlspecialchars(strip_tags(trim($_POST['phone'] ?? ''))),
         'date' => date('Y-m-d H:i:s')
     ];
+    
     file_put_contents($file, json_encode($current, JSON_PRETTY_PRINT));
     $message = "Thanks! We'll be in touch soon.";
 }
@@ -64,6 +73,8 @@ require_once 'includes/header.php';
             <?php endif; ?>
             
             <form action="contact.php" method="POST">
+                <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
+                
                 <div class="form-group">
                     <input type="text" name="name" id="contact_name" required placeholder=" ">
                     <label for="contact_name">Full Name</label>
@@ -77,6 +88,21 @@ require_once 'includes/header.php';
                 <div class="form-group">
                     <input type="tel" name="phone" id="contact_phone" placeholder=" ">
                     <label for="contact_phone">Phone Number</label>
+                </div>
+                
+                <?php
+                $requested_service = $_GET['service'] ?? '';
+                ?>
+                <div class="form-group">
+                    <select name="subject" id="contact_subject" style="width: 100%; padding: 16px 20px; border: 2px solid #E2E8F0; border-radius: 12px; font-family: var(--font-body); font-size: 15px; background-color: transparent; outline: none; appearance: none; color: var(--text-dark);">
+                        <option value="" disabled <?= empty($requested_service) ? 'selected' : '' ?>>Select a Service</option>
+                        <option value="Executive Search" <?= $requested_service === 'Executive Search' ? 'selected' : '' ?>>Executive Search</option>
+                        <option value="Contract Staffing" <?= $requested_service === 'Contract Staffing' ? 'selected' : '' ?>>Contract Staffing</option>
+                        <option value="HR Consulting" <?= $requested_service === 'HR Consulting' ? 'selected' : '' ?>>HR Consulting</option>
+                        <option value="Payroll Outsourcing" <?= $requested_service === 'Payroll Outsourcing' ? 'selected' : '' ?>>Payroll Outsourcing</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <label for="contact_subject" style="top: 25px; display: none;">Service Required</label>
                 </div>
 
                 <div class="form-group">

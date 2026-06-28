@@ -15,8 +15,8 @@ include 'includes/header.php';
 <section id="process" class="section" style="background: var(--primary-navy); padding: 100px 0; position: relative; overflow: hidden;">
     <div class="container" style="position: relative; z-index: 2;">
         <div class="section-title">
-            <h2 style="color: white;">How We <span style="color: var(--secondary-blue);">Work</span></h2>
-            <p style="color: rgba(255,255,255,0.7);">Our proven 4-step process delivers the right talent, every time.</p>
+            <h2 style="color: white;">Our <span style="color: var(--secondary-blue);">Proven 4-Step Process</span></h2>
+            <p style="color: rgba(255,255,255,0.7);">From first call to successful placement — here is exactly how we work.</p>
         </div>
         <div class="process-steps">
             <div class="process-step animate-up delay-1">
@@ -47,6 +47,14 @@ include 'includes/header.php';
                 <p>We manage offer negotiation, onboarding, and provide a 90-day placement guarantee.</p>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--bg-light); padding: 80px 0; text-align: center;">
+    <div class="container">
+        <h2 style="margin-bottom: 20px;">Start Your Hiring Process</h2>
+        <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 16px;">Let us help you find the right leaders for your organization.</p>
+        <a href="contact.php" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%);">Schedule a Discovery Call <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
     </div>
 </section>
 

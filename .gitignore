@@ -24,3 +24,5 @@ health_check.log
 # Test artifacts
 test_suite.py
 health_checker.sh
+admin/config.php
+data/*.json

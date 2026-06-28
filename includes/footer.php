@@ -177,6 +177,32 @@
                     icon.classList.add('fa-bars');
                 }
             });
+            
+            // Auto-close on link click (except dropdown toggle)
+            const navAnchors = navLinks.querySelectorAll('a:not(.has-dropdown > a)');
+            navAnchors.forEach(a => {
+                a.addEventListener('click', () => {
+                    if (window.innerWidth <= 992) {
+                        navLinks.classList.remove('active');
+                        const icon = mobileToggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                });
+            });
+            
+            // Dropdown toggle on mobile
+            const dropdownToggles = document.querySelectorAll('.has-dropdown > a');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        toggle.parentElement.classList.toggle('open');
+                    }
+                });
+            });
         }
         
         // Active nav state

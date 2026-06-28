@@ -162,6 +162,56 @@ a:hover {
   width: 100%;
 }
 
+/* Dropdown Styles */
+.has-dropdown {
+  position: relative;
+}
+
+.nav-links .has-dropdown > a {
+  display: flex;
+  align-items: center;
+}
+
+.has-dropdown .dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: var(--shadow-sm);
+  border-radius: 8px;
+  padding: 10px 0;
+  min-width: 180px;
+  z-index: 1000;
+  list-style: none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+@media (min-width: 993px) {
+  .has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu a {
+  padding: 10px 20px !important;
+  display: block;
+  color: var(--text-dark) !important;
+  font-weight: 500 !important;
+}
+.dropdown-menu a:hover {
+  background: rgba(0, 180, 216, 0.05);
+  color: var(--secondary-blue) !important;
+}
+.dropdown-menu a::after {
+  display: none !important;
+}
+
 .mobile-menu-toggle {
   display: none;
   background: none;
@@ -400,20 +450,34 @@ a:hover {
 
 .job-card {
   background: var(--bg-white);
-  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid transparent;
+  border-radius: 16px;
   box-shadow: var(--shadow-sm);
-  padding: 30px;
+  padding: 28px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: var(--transition);
-  border-left: 4px solid transparent;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
-
+.job-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,180,216,0.02), transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
 .job-card:hover {
   transform: translateX(5px) scale(1.01);
   box-shadow: var(--shadow-hover);
   border-left-color: var(--secondary-blue);
+}
+.job-card:hover::after {
+  opacity: 1;
 }
 
 .job-info h3 {
@@ -1128,6 +1192,28 @@ a:hover {
   .nav-links a::after {
     display: none;
   }
+  
+  .has-dropdown .dropdown-menu {
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    padding: 10px 0;
+    width: 100%;
+  }
+  
+  .has-dropdown.open .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu a {
+    font-size: 16px !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
   .jobs-layout {
     grid-template-columns: 1fr;
   }
@@ -1259,13 +1345,6 @@ a:hover {
 .value-card .icon { display: block; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 .value-card:hover .icon { transform: scale(1.2) rotate(-5deg); }
 
-.job-card { border: 1px solid var(--border-color); border-left: 4px solid transparent; position: relative; overflow: hidden; }
-.job-card::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(0,180,216,0.02), transparent); opacity: 0; transition: opacity 0.35s ease;
-}
-.job-card:hover { border-left-color: var(--secondary-blue); box-shadow: var(--shadow-hover); transform: translateX(6px); }
-.job-card:hover::after { opacity: 1; }
 
 .hero-form-card .form-group input:focus + label,
 .hero-form-card .form-group input:not(:placeholder-shown) + label {
@@ -1482,19 +1561,7 @@ a:hover {
     }
 }
 
-.job-card {
-    background: white;
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 28px;
-    margin-bottom: 20px;
-    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-}
-.job-card:hover {
-    box-shadow: var(--shadow-card);
-    border-color: var(--secondary-blue);
-    transform: translateX(4px);
-}
+
 .job-card-header {
     display: flex;
     align-items: center;

@@ -11,13 +11,34 @@ $error = '';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
-    if ($username === ADMIN_USER && $password === ADMIN_PASS) {
-        session_regenerate_id(true); // Prevent session fixation
-        $_SESSION['admin_logged_in'] = true;
-        header('Location: dashboard.php');
-        exit;
-    } else {
-        $error = "Invalid credentials";
+    
+    // Brute force protection
+    if (!isset($_SESSION['login_attempts'])) {
+        $_SESSION['login_attempts'] = 0;
+        $_SESSION['last_attempt'] = time();
+    }
+    
+    if ($_SESSION['login_attempts'] >= 5) {
+        if (time() - $_SESSION['last_attempt'] < 30) {
+            $error = "Too many failed attempts. Please wait 30 seconds.";
+            sleep(3); // Slow down
+        } else {
+            $_SESSION['login_attempts'] = 0;
+        }
+    }
+
+    if (empty($error)) {
+        if ($username === ADMIN_USER && password_verify($password, ADMIN_HASH)) {
+            session_regenerate_id(true); // Prevent session fixation
+            $_SESSION['admin_logged_in'] = true;
+            $_SESSION['login_attempts'] = 0; // Reset on success
+            header('Location: dashboard.php');
+            exit;
+        } else {
+            $error = "Invalid credentials";
+            $_SESSION['login_attempts']++;
+            $_SESSION['last_attempt'] = time();
+        }
     }
 }
 ?>
