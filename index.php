@@ -2,13 +2,27 @@
 
 <!-- Hero Section (Split Layout) -->
 <section class="hero-split">
+    <!-- Floating Background Orbs -->
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
     <div class="container">
         <div class="hero-content animate-up delay-1">
             <h1>Dubai's Premier<br><span id="typed-text"></span></h1>
             <p>Elevating organizations across the UAE and GCC. As the top recruitment agency in the Middle East, we connect visionary leaders with forward-thinking enterprises through strategic executive search.</p>
-            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="contact.php" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%);">Find Top Talent <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
-                <a href="jobs.php" class="btn btn-outline" style="border-color: white; color: white;">Explore Careers</a>
+            <div class="dual-cta-block">
+                <p style="font-size: 13px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; margin-bottom: 16px;">I am looking for...</p>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <a href="contact.php" class="btn btn-primary dual-cta" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%); min-width: 200px;">
+                        <i class="fas fa-briefcase" style="margin-right: 10px;"></i>
+                        Hire Top Talent
+                        <span style="display: block; font-size: 11px; font-weight: 400; opacity: 0.85; margin-top: 2px;">For Employers</span>
+                    </a>
+                    <a href="jobs.php" class="btn btn-outline dual-cta" style="border-color: white; color: white; min-width: 200px;">
+                        <i class="fas fa-search" style="margin-right: 10px;"></i>
+                        Find a Job
+                        <span style="display: block; font-size: 11px; font-weight: 400; opacity: 0.85; margin-top: 2px;">For Candidates</span>
+                    </a>
+                </div>
             </div>
         </div>
         <!-- Stats Card (Glassmorphism) -->
@@ -48,6 +62,23 @@
                 </form>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Client Logo Strip -->
+<section style="background: white; padding: 30px 0; border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+        <p style="text-align: center; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 24px;">Trusted by leading organizations across the UAE & GCC</p>
+        <div class="logo-strip">
+            <!-- Replace these with real client logos when available -->
+            <div class="logo-item">Emirates Group</div>
+            <div class="logo-item">ADNOC</div>
+            <div class="logo-item">Emaar Properties</div>
+            <div class="logo-item">Majid Al Futtaim</div>
+            <div class="logo-item">DP World</div>
+            <div class="logo-item">DEWA</div>
+        </div>
+        <p style="text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 16px; opacity: 0.6;">* Illustrative. Replace with actual client logos.</p>
     </div>
 </section>
 
@@ -142,6 +173,45 @@
     </div>
 </section>
 
+<!-- How We Work -->
+<section id="process" class="section" style="background: var(--primary-navy); padding: 100px 0; position: relative; overflow: hidden;">
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="section-title">
+            <h2 style="color: white;">How We <span style="color: var(--secondary-blue);">Work</span></h2>
+            <p style="color: rgba(255,255,255,0.7);">Our proven 4-step process delivers the right talent, every time.</p>
+        </div>
+        <div class="process-steps">
+            <div class="process-step animate-up delay-1">
+                <div class="step-number">01</div>
+                <div class="step-icon"><i class="fas fa-comments"></i></div>
+                <h3>Discovery Call</h3>
+                <p>We learn your organization's culture, goals, and exact requirements through a structured briefing.</p>
+            </div>
+            <div class="process-connector"></div>
+            <div class="process-step animate-up delay-2">
+                <div class="step-number">02</div>
+                <div class="step-icon"><i class="fas fa-search"></i></div>
+                <h3>Talent Mapping</h3>
+                <p>Our proprietary database and active search methodology targets passive candidates not visible on job boards.</p>
+            </div>
+            <div class="process-connector"></div>
+            <div class="process-step animate-up delay-3">
+                <div class="step-number">03</div>
+                <div class="step-icon"><i class="fas fa-user-check"></i></div>
+                <h3>Shortlist Delivery</h3>
+                <p>We deliver a curated shortlist of 3–5 vetted candidates within 14 business days.</p>
+            </div>
+            <div class="process-connector"></div>
+            <div class="process-step animate-up delay-4">
+                <div class="step-number">04</div>
+                <div class="step-icon"><i class="fas fa-handshake"></i></div>
+                <h3>Placement & Support</h3>
+                <p>We manage offer negotiation, onboarding, and provide a 90-day placement guarantee.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- CEO Endorsement -->
 <section class="section" style="background: var(--bg-light); padding: 100px 0;">
     <div class="container">
@@ -159,6 +229,51 @@
                     <p style="font-style: italic; font-size: 18px; border-left: 3px solid var(--secondary-blue); padding-left: 20px;">"At PrimePath, we built our consultancy on a simple principle: hiring should be a milestone, not a complication. Whether you need C-suite leaders, Emiratisation programs, or full-scale staff outsourcing, our team delivers with transparency, speed, and outstanding service."</p>
                 </div>
                 <a href="index.php#about" style="color: var(--secondary-blue); font-weight: 600; margin-top: 20px; display: inline-block; text-decoration: none;">Read the full leadership perspective <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="section section-bg-white" style="padding: 100px 0;">
+    <div class="container">
+        <div class="section-title">
+            <h2>What Our <span>Clients Say</span></h2>
+            <p>Trusted by HR leaders and executives across the GCC.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card animate-up delay-1">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-text">"PrimePath placed our VP of Operations in 11 days. The quality of candidates was exceptional — they genuinely understood our culture and the seniority of the role."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MK</div>
+                    <div>
+                        <strong>Mohammed Al-Khalidi</strong>
+                        <span>CEO, Gulf Logistics Partners — Dubai</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card animate-up delay-2">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-text">"Their knowledge of Emiratisation regulations saved us months of compliance work. Highly recommend for any business navigating Tawteen requirements in the UAE."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SA</div>
+                    <div>
+                        <strong>Sarah Al-Amiri</strong>
+                        <span>HR Director, Meridian Financial Group — Abu Dhabi</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card animate-up delay-3">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-text">"We've used three recruitment firms in Dubai. PrimePath is the only one that felt like a true strategic partner rather than just a CV-forwarding service."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JP</div>
+                    <div>
+                        <strong>James Pritchard</strong>
+                        <span>COO, TechVision UAE — Dubai</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -279,5 +394,71 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+
+<!-- FAQ Section -->
+<section class="section section-bg-white" style="padding: 100px 0;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Frequently Asked <span>Questions</span></h2>
+            <p>Everything you need to know about working with PrimePath HR.</p>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    How quickly can you fill a senior position?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>For most executive and senior roles, we deliver a qualified shortlist of 3–5 candidates within 14 business days. Specialist or highly niche roles may take 21–28 days. Our active talent pipeline means we rarely start from scratch.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    What is your placement guarantee?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>We offer a 90-day replacement guarantee on all permanent placements. If a candidate leaves or doesn't meet expectations within 90 days, we replace them at no additional charge.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Do you help with Emiratisation (Tawteen) compliance?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. PrimePath is MOHRE-licensed and specializes in Emiratisation strategy and sourcing. We help organizations meet their national talent quotas while finding high-quality UAE National candidates aligned to their business needs.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    What industries do you specialize in?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Our core industries are Financial Services & Banking, Technology, Construction & Real Estate, Healthcare, Hospitality, and FMCG. We operate across the UAE and the broader GCC region.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    How is PrimePath different from other recruitment agencies?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Three key differentiators: (1) We are MOHRE-licensed with deep UAE regulatory expertise. (2) Our Precision Placement Matrix uses active headhunting — we reach passive candidates not on job boards. (3) Our 98% post-placement retention rate is a direct result of cultural fit being central to every search.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Can you handle payroll and HR outsourcing, not just recruitment?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely. Payroll outsourcing, full HR operations management, and employee lifecycle management are core service lines alongside executive search. Contact us to discuss a tailored HR outsourcing package.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php include 'includes/footer.php'; ?>

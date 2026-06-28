@@ -5,15 +5,14 @@ if (isset($_SESSION['admin_logged_in'])) {
     exit;
 }
 
+require_once 'config.php';
 $error = '';
-
-define('ADMIN_USER', 'admin');
-define('ADMIN_HASH', '$2y$12$8.euxuNX3ZLIHBQhwv5BgODDFUhHIFZBQawJuOUl8RG9FP.9eo4eK');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
-    if ($username === ADMIN_USER && password_verify($password, ADMIN_HASH)) {
+    if ($username === ADMIN_USER && $password === ADMIN_PASS) {
+        session_regenerate_id(true); // Prevent session fixation
         $_SESSION['admin_logged_in'] = true;
         header('Location: dashboard.php');
         exit;

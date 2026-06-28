@@ -1,3 +1,21 @@
+<!-- Pre-footer CTA Banner -->
+<section style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%); padding: 70px 0;">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap;">
+        <div>
+            <h2 style="color: white; font-size: 32px; margin-bottom: 10px;">Ready to find exceptional talent?</h2>
+            <p style="color: rgba(255,255,255,0.85); font-size: 16px; margin: 0;">Join 50+ enterprise clients who trust PrimePath HR across the GCC.</p>
+        </div>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; flex-shrink: 0;">
+            <a href="contact.php" class="btn" style="background: white; color: var(--secondary-blue); font-weight: 700; padding: 16px 36px; border-radius: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+                Start a Search <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
+            <a href="tel:+971545480972" class="btn" style="background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.4); padding: 16px 36px; border-radius: 30px;">
+                <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Call Now
+            </a>
+        </div>
+    </div>
+</section>
+
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
@@ -19,6 +37,8 @@
                     <ul class="footer-links">
                         <li><a href="index.php#about">About Us</a></li>
                         <li><a href="index.php#why-us">Why Choose Us</a></li>
+                        <li><a href="index.php#process">How We Work</a></li>
+                        <li><a href="index.php#testimonials">Testimonials</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
@@ -142,17 +162,78 @@
                 navLinks.classList.toggle('active');
             });
         }
+
+        // Mobile menu toggle (the visible hamburger on mobile)
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        if (mobileToggle && navLinks) {
+            mobileToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const icon = mobileToggle.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
         
-        // Active Nav State based on URL
-        const currentLocation = location.pathname;
-        const navItems = document.querySelectorAll('.nav-links a');
-        navItems.forEach(link => {
-            const linkPath = new URL(link.href).pathname;
-            if (linkPath === currentLocation && linkPath !== '/') {
-                link.classList.add('active');
-            } else if (currentLocation === '/' && linkPath === '/index.php') {
+        // Active nav state
+        const currentPath = location.pathname.replace(/\/$/, '') || '/index.php';
+        const currentHash = location.hash;
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            const url = new URL(link.href);
+            const linkPath = url.pathname.replace(/\/$/, '');
+            const linkHash = url.hash;
+            
+            // Match exact page
+            if (linkPath === currentPath && !linkHash) {
                 link.classList.add('active');
             }
+            // Match homepage links
+            if ((currentPath.endsWith('index.php') || currentPath === '/') && linkPath.endsWith('index.php') && !linkHash) {
+                link.classList.add('active');
+            }
+        });
+
+        // FAQ Toggle
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const isOpen = answer.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-question').forEach(b => b.classList.remove('open'));
+            // Open this one if it wasn't open
+            if (!isOpen) {
+                answer.classList.add('open');
+                btn.classList.add('open');
+            }
+        }
+
+        // 3D Tilt Effect for Premium Cards
+        const tiltCards = document.querySelectorAll('.card-1, .service-card-image');
+        tiltCards.forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                // Max tilt angle 10 degrees
+                const rotateX = ((y - centerY) / centerY) * -10; 
+                const rotateY = ((x - centerX) / centerX) * 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                card.style.transition = 'none';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+                card.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+            });
         });
     </script>
 </body>

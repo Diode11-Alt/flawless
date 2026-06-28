@@ -1,10 +1,9 @@
 <?php 
 include 'includes/db.php';
-include 'includes/header.php'; 
-
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 1;
 $job = get_job_by_id($id);
 $page_title = ($job ? $job['title'] . " | PrimePath HR" : "Job Not Found");
+include 'includes/header.php'; 
 
 if(!$job) {
     echo "<div class='container section'><h2>Job not found</h2></div>";
@@ -32,22 +31,7 @@ if(!$job) {
         
         <div style="flex: 3; min-width: 300px; background: white; padding: 50px; border-radius: var(--border-radius); box-shadow: var(--shadow-card);" class="animate-up delay-1">
             <div class="single-blog-content">
-                <h2>Job Description</h2>
-                <p>We are looking for an experienced <?= htmlspecialchars($job['title']) ?> to join our team at <?= htmlspecialchars($job['company']) ?>. You will be responsible for overseeing various projects, collaborating with cross-functional teams, and driving innovation.</p>
-                
-                <h3>Key Responsibilities</h3>
-                <ul style="margin-left: 20px; margin-top: 15px; line-height: 1.8;">
-                    <li>Lead the development and implementation of key strategies.</li>
-                    <li>Collaborate closely with internal stakeholders.</li>
-                    <li>Ensure compliance with company standards and industry regulations.</li>
-                </ul>
-                
-                <h3>Requirements</h3>
-                <ul style="margin-left: 20px; margin-top: 15px; line-height: 1.8;">
-                    <li>Minimum 5 years of experience in a similar role.</li>
-                    <li>Excellent communication and leadership skills.</li>
-                    <li>Bachelor's degree in a relevant field.</li>
-                </ul>
+                <?= htmlspecialchars_decode($job['description'] ?? 'Description not available.') ?>
             </div>
         </div>
 

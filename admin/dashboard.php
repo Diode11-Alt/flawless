@@ -43,10 +43,42 @@ $jobs = get_jobs();
                 <input type="hidden" name="action" value="add">
                 <div class="form-group"><input type="text" name="title" required placeholder=" "><label>Job Title</label></div>
                 <div class="form-group"><input type="text" name="company" required placeholder=" "><label>Company</label></div>
-                <div class="form-group"><input type="text" name="location" required placeholder=" "><label>Location</label></div>
-                <div class="form-group"><input type="text" name="type" required placeholder=" "><label>Type (e.g., Full-Time)</label></div>
-                <div class="form-group" style="grid-column: 1 / -1;"><input type="text" name="salary" required placeholder=" "><label>Salary Range</label></div>
-                <button type="submit" class="btn btn-primary" style="grid-column: 1 / -1;">Save Job</button>
+                <div class="form-group"><input type="text" name="location" required placeholder=" "><label>Location (e.g. Dubai)</label></div>
+                <div class="form-group">
+                    <select name="type" required style="padding: 16px; border: 2px solid #E2E8F0; border-radius: 8px; font-size: 15px;">
+                        <option value="">Select Type</option>
+                        <option value="Full-Time">Full-Time</option>
+                        <option value="Part-Time">Part-Time</option>
+                        <option value="Contract">Contract</option>
+                    </select>
+                    <label style="position: static; padding: 0; font-size: 12px; color: var(--text-muted);">Job Type</label>
+                </div>
+                <div class="form-group"><input type="text" name="salary" required placeholder=" "><label>Salary Range (e.g. AED 15,000 - 22,000)</label></div>
+                <div class="form-group">
+                    <select name="industry" style="padding: 16px; border: 2px solid #E2E8F0; border-radius: 8px; font-size: 15px;">
+                        <option value="">Select Industry</option>
+                        <option value="tech">Technology</option>
+                        <option value="finance">Finance</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="construction">Construction & Real Estate</option>
+                        <option value="hospitality">Hospitality</option>
+                        <option value="fmcg">FMCG</option>
+                    </select>
+                    <label style="position: static; padding: 0; font-size: 12px; color: var(--text-muted);">Industry</label>
+                </div>
+                <div class="form-group" style="grid-column: 1 / -1;">
+                    <textarea name="description" placeholder=" " rows="3" style="width: 100%; padding: 16px; border: 2px solid #E2E8F0; border-radius: 8px; font-family: var(--font-body); font-size: 15px; resize: vertical;"></textarea>
+                    <label style="position: static; padding: 0; font-size: 12px; color: var(--text-muted);">Job Description (1–2 paragraphs)</label>
+                </div>
+                <div class="form-group" style="grid-column: 1 / -1;">
+                    <textarea name="responsibilities" placeholder=" " rows="5" style="width: 100%; padding: 16px; border: 2px solid #E2E8F0; border-radius: 8px; font-family: var(--font-body); font-size: 15px; resize: vertical;"></textarea>
+                    <label style="position: static; padding: 0; font-size: 12px; color: var(--text-muted);">Key Responsibilities — one per line</label>
+                </div>
+                <div class="form-group" style="grid-column: 1 / -1;">
+                    <textarea name="requirements" placeholder=" " rows="5" style="width: 100%; padding: 16px; border: 2px solid #E2E8F0; border-radius: 8px; font-family: var(--font-body); font-size: 15px; resize: vertical;"></textarea>
+                    <label style="position: static; padding: 0; font-size: 12px; color: var(--text-muted);">Requirements — one per line</label>
+                </div>
+                <button type="submit" class="btn btn-primary" style="grid-column: 1 / -1;">Save Job Listing</button>
             </form>
         </div>
 

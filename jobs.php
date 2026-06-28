@@ -1,4 +1,5 @@
 <?php 
+$page_title = "Careers | PrimePath HR";
 include 'includes/db.php';
 include 'includes/header.php'; 
 $jobs = get_jobs();
@@ -11,6 +12,14 @@ if ($q) {
     );
 }
 
+// Filter by location
+$loc = trim($_GET['location'] ?? '');
+if ($loc) {
+    $jobs = array_filter($jobs, fn($j) =>
+        stripos($j['location'], $loc) !== false
+    );
+}
+
 // Filter by type checkboxes
 $types = $_GET['type'] ?? [];
 if (!empty($types)) {
@@ -19,7 +28,23 @@ if (!empty($types)) {
     );
 }
 
-$page_title = "Careers | PrimePath HR";
+// Filter by industry
+$industries = $_GET['industry'] ?? [];
+if (!empty($industries)) {
+    $jobs = array_filter($jobs, fn($j) =>
+        isset($j['industry']) && in_array(strtolower($j['industry']), array_map('strtolower', $industries))
+    );
+}
+
+// Sort logic
+$sort = $_GET['sort'] ?? 'new';
+if ($sort === 'salary') {
+    usort($jobs, fn($a, $b) => 
+        (int)preg_replace('/[^0-9]/', '', $b['salary'] ?? '0') <=> (int)preg_replace('/[^0-9]/', '', $a['salary'] ?? '0')
+    );
+} else {
+    usort($jobs, fn($a, $b) => $b['id'] <=> $a['id']);
+}
 ?>
 
 <!-- Premium Hero -->
@@ -36,8 +61,8 @@ $page_title = "Careers | PrimePath HR";
             <input type="text" name="q" placeholder="Job Title, Keyword or Company..." style="flex: 2; min-width: 250px;">
             <select name="location" style="flex: 1; min-width: 150px;">
                 <option value="">All Locations</option>
-                <option value="dubai">Dubai</option>
-                <option value="abudhabi">Abu Dhabi</option>
+                <option value="dubai" <?= $loc === 'dubai' ? 'selected' : '' ?>>Dubai</option>
+                <option value="abudhabi" <?= $loc === 'abudhabi' ? 'selected' : '' ?>>Abu Dhabi</option>
             </select>
             <button type="submit" class="btn btn-primary" style="flex: 0 0 150px;">Search</button>
         </form>
@@ -50,32 +75,37 @@ $page_title = "Careers | PrimePath HR";
             
             <!-- Sidebar Filters (Bot 1's High Density) -->
             <aside class="filters-sidebar animate-up delay-2">
-                <h4>Filters</h4>
-                
-                <div class="filter-group">
-                    <label><strong>Job Type</strong></label>
-                    <label><input type="checkbox" name="type[]" value="full-time"> Full Time</label>
-                    <label><input type="checkbox" name="type[]" value="part-time"> Part Time</label>
-                    <label><input type="checkbox" name="type[]" value="contract"> Contract</label>
-                </div>
-                
-                <div class="filter-group">
-                    <label><strong>Industry</strong></label>
-                    <label><input type="checkbox" name="industry[]" value="tech"> Technology</label>
-                    <label><input type="checkbox" name="industry[]" value="finance"> Finance</label>
-                    <label><input type="checkbox" name="industry[]" value="healthcare"> Healthcare</label>
-                </div>
-                
-                <button class="btn btn-outline" style="width: 100%; margin-top: 10px;">Apply Filters</button>
+                <form action="jobs.php" method="GET">
+                    <input type="hidden" name="q" value="<?= htmlspecialchars($q) ?>">
+                    <input type="hidden" name="location" value="<?= htmlspecialchars($loc) ?>">
+                    <input type="hidden" name="sort" value="<?= htmlspecialchars($sort) ?>">
+                    <h4>Filters</h4>
+                    
+                    <div class="filter-group">
+                        <label><strong>Job Type</strong></label>
+                        <label><input type="checkbox" name="type[]" value="full-time" <?= in_array('full-time', $types) ? 'checked' : '' ?>> Full Time</label>
+                        <label><input type="checkbox" name="type[]" value="part-time" <?= in_array('part-time', $types) ? 'checked' : '' ?>> Part Time</label>
+                        <label><input type="checkbox" name="type[]" value="contract" <?= in_array('contract', $types) ? 'checked' : '' ?>> Contract</label>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label><strong>Industry</strong></label>
+                        <label><input type="checkbox" name="industry[]" value="tech" <?= in_array('tech', $industries) ? 'checked' : '' ?>> Technology</label>
+                        <label><input type="checkbox" name="industry[]" value="finance" <?= in_array('finance', $industries) ? 'checked' : '' ?>> Finance</label>
+                        <label><input type="checkbox" name="industry[]" value="healthcare" <?= in_array('healthcare', $industries) ? 'checked' : '' ?>> Healthcare</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-outline" style="width: 100%; margin-top: 10px;">Apply Filters</button>
+                </form>
             </aside>
             
             <!-- Jobs Feed (Bot 2's Premium Aesthetics) -->
             <main class="jobs-feed">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                     <p style="color: var(--text-muted);">Showing <?= count($jobs) ?> premium roles</p>
-                    <select style="padding: 8px 15px; border-radius: 5px; border: 1px solid #E2E8F0;">
-                        <option>Sort by: Newest</option>
-                        <option>Sort by: Salary (High-Low)</option>
+                    <select onchange="const url = new URL(window.location); url.searchParams.set('sort', this.value); window.location = url;" style="padding: 8px 15px; border-radius: 5px; border: 1px solid #E2E8F0;">
+                        <option value="new" <?= $sort == 'new' ? 'selected' : '' ?>>Sort by: Newest</option>
+                        <option value="salary" <?= $sort == 'salary' ? 'selected' : '' ?>>Sort by: Salary (High-Low)</option>
                     </select>
                 </div>
 
@@ -84,17 +114,36 @@ $page_title = "Careers | PrimePath HR";
                     $delay = 1;
                     foreach($jobs as $job): ?>
                     <div class="job-card animate-up delay-<?= min($delay++, 3) ?>">
-                        <div class="job-info">
-                            <h3><a href="job-detail.php?id=<?= $job['id'] ?>" style="color: var(--primary-navy); text-decoration: none;"><?= htmlspecialchars($job['title']) ?></a></h3>
-                            <div class="job-meta" style="margin-top: 15px;">
-                                <span style="background: var(--bg-light); padding: 5px 12px; border-radius: 20px; font-size: 13px;">🏢 <?= htmlspecialchars($job['company']) ?></span>
-                                <span style="background: var(--bg-light); padding: 5px 12px; border-radius: 20px; font-size: 13px;">📍 <?= htmlspecialchars($job['location']) ?></span>
-                                <span class="job-tag" style="background: rgba(0, 180, 216, 0.1); color: var(--secondary-blue);"><?= htmlspecialchars($job['type']) ?></span>
+                        <div class="job-card-header">
+                            <div class="company-logo-placeholder">
+                                <?= strtoupper(substr($job['company'], 0, 2)) ?>
+                            </div>
+                            <div class="job-card-top-info">
+                                <span class="job-type-badge <?= strtolower(str_replace(' ', '-', $job['type'])) ?>">
+                                    <?= htmlspecialchars($job['type']) ?>
+                                </span>
+                                <span class="job-id-label">REF: PRM-<?= $job['id'] ?></span>
                             </div>
                         </div>
-                        <div class="job-action" style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
-                            <span style="color: var(--primary-navy); font-weight: 700; font-size: 18px;"><?= htmlspecialchars($job['salary']) ?></span>
-                            <a href="job-detail.php?id=<?= $job['id'] ?>" class="btn btn-primary" style="padding: 10px 25px;">Apply Now</a>
+                        <div class="job-info" style="margin-top: 16px;">
+                            <h3>
+                                <a href="job-detail.php?id=<?= $job['id'] ?>" style="color: var(--primary-navy); text-decoration: none;">
+                                    <?= htmlspecialchars($job['title']) ?>
+                                </a>
+                            </h3>
+                            <div class="job-meta" style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px;">
+                                <span class="meta-tag"><i class="fas fa-building"></i> <?= htmlspecialchars($job['company']) ?></span>
+                                <span class="meta-tag"><i class="fas fa-map-marker-alt"></i> <?= htmlspecialchars($job['location']) ?></span>
+                            </div>
+                        </div>
+                        <div class="job-card-footer">
+                            <div class="salary-display">
+                                <span class="salary-label">Package</span>
+                                <strong><?= htmlspecialchars($job['salary']) ?></strong>
+                            </div>
+                            <a href="job-detail.php?id=<?= $job['id'] ?>" class="btn btn-primary" style="padding: 10px 24px; font-size: 14px;">
+                                View & Apply <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                            </a>
                         </div>
                     </div>
                     <?php endforeach; ?>

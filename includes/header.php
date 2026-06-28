@@ -65,15 +65,12 @@ require_once 'helpers.php';
                 <a href="index.php">PrimePath<span>HR</span></a>
             </div>
             <nav>
-                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                    <span></span><span></span><span></span>
-                </button>
                 <ul class="nav-links">
                     <li><a href="index.php">Home</a></li>
                     <li><a href="index.php#solutions">Solutions</a></li>
+                    <li><a href="index.php#process">How We Work</a></li>
                     <li><a href="jobs.php">Careers</a></li>
                     <li><a href="index.php#about">About Us</a></li>
-                    <li><a href="index.php#why-us">Why Choose Us</a></li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
             </nav>

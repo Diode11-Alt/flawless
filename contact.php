@@ -3,19 +3,22 @@ require_once 'includes/helpers.php';
 $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $data = [
+    $file = 'data/contacts.json';
+    $current = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
+    $current[] = [
         'name' => $_POST['name'] ?? '',
         'email' => $_POST['email'] ?? '',
+        'subject' => $_POST['subject'] ?? '',
+        'message' => $_POST['message'] ?? '',
         'phone' => $_POST['phone'] ?? '',
-        'message' => $_POST['message'] ?? ''
+        'date' => date('Y-m-d H:i:s')
     ];
-    
-    // Simulate success
-    $message = "Thank you, {$data['name']}! Your message has been received.";
+    file_put_contents($file, json_encode($current, JSON_PRETTY_PRINT));
+    $message = "Thanks! We'll be in touch soon.";
 }
 
 $page_title = "Contact Us | PrimePath HR";
-include 'includes/header.php';
+require_once 'includes/header.php';
 ?>
 <div class="auth-wrapper">
     <div class="auth-sidebar" style="background: linear-gradient(135deg, var(--primary-navy-dark), var(--primary-navy));">
