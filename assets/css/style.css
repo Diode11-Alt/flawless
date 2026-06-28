@@ -1349,3 +1349,235 @@ a:hover {
   0% { transform: translate(0, 0) scale(1); }
   100% { transform: translate(30px, -50px) scale(1.1); }
 }
+
+/* --- Added Missing UI CSS --- */
+.process-steps {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin-top: 60px;
+}
+.process-step {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+}
+.step-number {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--secondary-blue);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+.step-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(0, 180, 216, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border: 1px solid rgba(0, 180, 216, 0.3);
+}
+.step-icon i {
+    color: var(--secondary-blue);
+    font-size: 22px;
+}
+.process-step h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+.process-step p {
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    line-height: 1.7;
+}
+.process-connector {
+    flex: 0 0 1px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(0,180,216,0.5), rgba(0,180,216,0.1));
+    margin-top: 80px;
+    width: 40px;
+}
+@media (max-width: 768px) {
+    .process-steps {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .process-connector {
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(180deg, rgba(0,180,216,0.5), rgba(0,180,216,0.1));
+        margin: 0 auto;
+    }
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+.testimonial-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 40px 35px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+.testimonial-card:hover {
+    box-shadow: var(--shadow-card);
+    transform: translateY(-4px);
+}
+.quote-icon {
+    color: var(--secondary-blue);
+    font-size: 24px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+.testimonial-text {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.author-avatar {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--primary-navy), var(--secondary-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+.testimonial-author strong {
+    display: block;
+    color: var(--primary-navy);
+    font-size: 14px;
+}
+.testimonial-author span {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+@media (max-width: 900px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.job-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+.job-card:hover {
+    box-shadow: var(--shadow-card);
+    border-color: var(--secondary-blue);
+    transform: translateX(4px);
+}
+.job-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.company-logo-placeholder {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--primary-navy), var(--secondary-blue));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: var(--font-heading);
+}
+.job-card-top-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.job-type-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.job-type-badge.full-time {
+    background: rgba(0, 180, 216, 0.12);
+    color: var(--secondary-blue);
+}
+.job-type-badge.contract {
+    background: rgba(255, 165, 0, 0.12);
+    color: #c17f00;
+}
+.job-type-badge.part-time {
+    background: rgba(100, 149, 237, 0.12);
+    color: #4060d0;
+}
+.job-id-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: monospace;
+}
+.meta-tag {
+    background: var(--bg-light);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.meta-tag i {
+    color: var(--secondary-blue);
+    font-size: 11px;
+}
+.job-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.salary-display .salary-label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+}
+.salary-display strong {
+    font-size: 17px;
+    color: var(--primary-navy);
+    font-family: var(--font-heading);
+}
+

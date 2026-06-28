@@ -16,7 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'company' => sanitize($_POST['company'] ?? ''),
             'location' => sanitize($_POST['location'] ?? ''),
             'type' => sanitize($_POST['type'] ?? ''),
-            'salary' => sanitize($_POST['salary'] ?? '')
+            'salary' => sanitize($_POST['salary'] ?? ''),
+            'industry' => sanitize($_POST['industry'] ?? ''),
+            'description' => sanitize($_POST['description'] ?? ''),
+            'requirements' => sanitize($_POST['requirements'] ?? '')
         ];
         add_job($data);
     } elseif ($action == 'delete') {
