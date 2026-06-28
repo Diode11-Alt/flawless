@@ -134,6 +134,7 @@ if ($sort === 'salary') {
                             <div class="job-meta" style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px;">
                                 <span class="meta-tag"><i class="fas fa-building"></i> <?= htmlspecialchars($job['company']) ?></span>
                                 <span class="meta-tag"><i class="fas fa-map-marker-alt"></i> <?= htmlspecialchars($job['location']) ?></span>
+                                <span class="meta-tag"><i class="far fa-clock"></i> <?= htmlspecialchars(get_time_ago($job['posted_date'] ?? '')) ?></span>
                             </div>
                         </div>
                         <div class="job-card-footer">

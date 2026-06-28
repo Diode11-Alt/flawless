@@ -47,4 +47,25 @@ function send_to_zoho_crm($data) {
 function get_base_url() {
     return '/primepath';
 }
+
+function get_time_ago($posted_date) {
+    if (empty($posted_date)) {
+        return 'Recently';
+    }
+    try {
+        $datetime1 = new DateTime($posted_date);
+        $datetime2 = new DateTime(); // today
+        $interval = date_diff($datetime1, $datetime2);
+        $days = $interval->days;
+        if ($days === 0) {
+            return 'Today';
+        } elseif ($days === 1) {
+            return 'Yesterday';
+        } else {
+            return $days . ' days ago';
+        }
+    } catch (Exception $e) {
+        return 'Recently';
+    }
+}
 ?>

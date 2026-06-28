@@ -147,6 +147,18 @@ a:hover {
   position: relative;
 }
 
+.nav-badge {
+  background: var(--secondary-blue);
+  color: white;
+  border-radius: 10px;
+  padding: 1px 7px;
+  font-size: 11px;
+  margin-left: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.4;
+}
+
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -911,6 +923,15 @@ a:hover {
   margin-bottom: 20px;
   font-size: 15px;
 }
+.service-card-content .cta-btn {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease !important;
+}
+.service-card-image:hover .cta-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* Split Section (About Us) */
 .split-section {
@@ -1060,11 +1081,13 @@ a:hover {
   z-index: 10;
 }
 .jobs-search-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 20px 30px;
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   display: flex;
   gap: 15px;
   align-items: center;
@@ -1091,10 +1114,13 @@ a:hover {
 }
 
 .filters-sidebar {
-  background: var(--bg-white);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: var(--border-radius);
   padding: 30px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
   position: sticky;
   top: 100px; /* Sticks when scrolling */
 }

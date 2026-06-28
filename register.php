@@ -35,7 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'date' => date('Y-m-d H:i:s')
     ];
     file_put_contents($file, json_encode($current, JSON_PRETTY_PRINT));
-    $message = "Registration successful! Your profile has been created.";
+    header("Location: thankyou.php");
+    exit;
 }
 
 $page_title = "Submit an Inquiry | PrimePath HR";

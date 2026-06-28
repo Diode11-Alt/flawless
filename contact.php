@@ -23,7 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ];
     
     file_put_contents($file, json_encode($current, JSON_PRETTY_PRINT));
-    $message = "Thanks! We'll be in touch soon.";
+    header("Location: thankyou.php");
+    exit;
 }
 
 $page_title = "Contact Us | PrimePath HR";

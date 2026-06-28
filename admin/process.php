@@ -35,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ];
 
         if ($action == 'add') {
+            $data['posted_date'] = date('Y-m-d');
             add_job($data);
         } else {
             $id = $_POST['id'] ?? 0;

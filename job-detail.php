@@ -10,6 +10,10 @@ if(!$job) {
     include 'includes/footer.php';
     exit;
 }
+
+// Share parameters
+$current_url = urlencode((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+$share_title = urlencode("Check out this job opening: " . $job['title'] . " at " . $job['company']);
 ?>
 
 <div style="background-color: var(--primary-navy-dark); padding: 80px 0; color: white; position: relative; overflow: hidden;" class="animate-up">
@@ -91,11 +95,64 @@ if(!$job) {
                 <h3 style="margin-bottom: 15px;">Interested?</h3>
                 <p style="margin-bottom: 25px; color: var(--text-muted);">Apply now to be considered for this exciting opportunity.</p>
                 <a href="register.php?job_id=<?= $job['id'] ?>&job_title=<?= urlencode($job['title']) ?>" class="btn btn-primary" style="display: block; width: 100%;">Apply Now</a>
-                <p style="text-align: center; margin-top: 20px; font-size: 13px; color: var(--text-muted);">Reference ID: PRM-<?= $job['id'] ?></p>
+                <p style="text-align: center; margin-top: 20px; font-size: 13px; color: var(--text-muted); margin-bottom: 0;">Reference ID: PRM-<?= $job['id'] ?></p>
+                
+                <div style="margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 25px;">
+                    <h4 style="margin-bottom: 15px; font-size: 16px; color: var(--primary-navy);">Share this position</h4>
+                    <div style="display: flex; gap: 12px;">
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= $current_url ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="flex: 1; padding: 10px 10px; font-size: 12px; text-align: center; border-color: #0077b5; color: #0077b5; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://wa.me/?text=<?= $share_title ?>%20<?= $current_url ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="flex: 1; padding: 10px 10px; font-size: 12px; text-align: center; border-color: #25D366; color: #25D366; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
     </div>
 </section>
+
+<?php
+// E-3: Related Jobs
+$related_jobs = array_filter(get_jobs(), fn($j) => 
+    isset($j['industry']) && isset($job['industry']) &&
+    $j['industry'] === $job['industry'] && 
+    (int)$j['id'] !== (int)$job['id']
+);
+if (empty($related_jobs)) {
+    $related_jobs = array_filter(get_jobs(), fn($j) => (int)$j['id'] !== (int)$job['id']);
+}
+$related_jobs = array_slice($related_jobs, 0, 3);
+?>
+<?php if (!empty($related_jobs)): ?>
+<section style="background: var(--bg-light); padding: 80px 0; border-top: 1px solid var(--border-color);">
+    <div class="container">
+        <h2 style="margin-bottom: 30px; font-size: 28px; font-family: var(--font-heading); color: var(--primary-navy);">Related <span>Positions</span></h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+            <?php foreach ($related_jobs as $r_job): ?>
+            <div class="job-card" style="background: white; border-radius: var(--border-radius); padding: 30px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #e2e8f0; transition: transform 0.3s, box-shadow 0.3s;">
+                <div>
+                    <span class="job-type-badge <?= strtolower(str_replace(' ', '-', $r_job['type'])) ?>" style="font-size: 12px; margin-bottom: 12px; display: inline-block;">
+                        <?= htmlspecialchars($r_job['type']) ?>
+                    </span>
+                    <h3 style="font-size: 18px; margin-bottom: 10px;">
+                        <a href="job-detail.php?id=<?= $r_job['id'] ?>" style="color: var(--primary-navy); text-decoration: none;">
+                            <?= htmlspecialchars($r_job['title']) ?>
+                        </a>
+                    </h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px;">🏢 <?= htmlspecialchars($r_job['company']) ?> &bull; 📍 <?= htmlspecialchars($r_job['location']) ?></p>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e2e8f0; padding-top: 15px; margin-top: 15px;">
+                    <span style="font-weight: 700; color: var(--secondary-blue); font-size: 14px;"><?= htmlspecialchars($r_job['salary']) ?></span>
+                    <a href="job-detail.php?id=<?= $r_job['id'] ?>" style="font-size: 14px; font-weight: 600; color: var(--primary-navy); text-decoration: none;">Apply <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
 
 <?php include 'includes/footer.php'; ?>

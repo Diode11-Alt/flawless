@@ -1,6 +1,6 @@
 <?php 
 include_once 'includes/db.php';
-$recent_jobs = array_slice(get_all_jobs(), 0, 3);
+$recent_jobs = array_slice(get_jobs(), 0, 3);
 include 'includes/header.php'; 
 ?>
 
@@ -181,7 +181,7 @@ include 'includes/header.php';
                 </div>
                 <div class="job-card-footer">
                     <a href="job-detail.php?id=<?= $job['id'] ?>" class="btn btn-outline" style="border-color: var(--secondary-blue); color: var(--secondary-blue); padding: 8px 20px; font-size: 14px;">View Details</a>
-                    <span class="job-date">Posted <?= htmlspecialchars($job['date_posted']) ?></span>
+                    <span class="job-date"><i class="far fa-clock"></i> <?= htmlspecialchars(get_time_ago($job['posted_date'] ?? '')) ?></span>
                 </div>
             </div>
             <?php endforeach; ?>

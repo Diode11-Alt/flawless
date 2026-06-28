@@ -5,6 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
+require_once 'db.php';
 require_once 'helpers.php';
 ?>
 <!DOCTYPE html>
@@ -18,6 +19,7 @@ require_once 'helpers.php';
     <!-- Google Material Symbols -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="preload" as="image" href="/assets/images/hero-bg.jpg">
     <!-- SEO Meta -->
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
     <meta property="og:image" content="https://primepathuae.com/assets/images/og-image.jpg">
@@ -74,7 +76,7 @@ require_once 'helpers.php';
                 <ul class="nav-links">
                     <li><a href="index.php">Home</a></li>
                     <li><a href="solutions.php">Solutions</a></li>
-                    <li><a href="jobs.php">Careers</a></li>
+                    <li><a href="jobs.php">Careers <span class="nav-badge"><?= count(get_jobs()) ?></span></a></li>
                     <li class="has-dropdown">
                         <a href="#">Company <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
                         <ul class="dropdown-menu">
