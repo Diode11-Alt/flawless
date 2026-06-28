@@ -13,6 +13,10 @@ require_once 'helpers.php';
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- SEO Meta -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <meta property="og:image" content="https://primepathuae.com/assets/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PrimePath HR | Dubai's Premier HR Consultancy">
     <meta name="description" content="PrimePath HR: Dubai's Premier Executive Search & HR Outsourcing Agency. Providing top-tier talent and Tawteen compliance across the UAE and Middle East.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Home | PrimePath HR">
@@ -33,8 +37,11 @@ require_once 'helpers.php';
       }
     }
     </script>
+    <!-- Typed.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 </head>
 <body>
+    <div id="preloader"><div class="loader-ring"></div></div>
     
     <!-- Top Utility Bar -->
     <div class="top-bar">
@@ -58,6 +65,9 @@ require_once 'helpers.php';
                 <a href="index.php">PrimePath<span>HR</span></a>
             </div>
             <nav>
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
                 <ul class="nav-links">
                     <li><a href="index.php">Home</a></li>
                     <li><a href="index.php#solutions">Solutions</a></li>

@@ -4,7 +4,7 @@
 <section class="hero-split">
     <div class="container">
         <div class="hero-content animate-up delay-1">
-            <h1>Dubai's Premier<br><span>HR Outsourcing</span></h1>
+            <h1>Dubai's Premier<br><span id="typed-text"></span></h1>
             <p>Elevating organizations across the UAE and GCC. As the top recruitment agency in the Middle East, we connect visionary leaders with forward-thinking enterprises through strategic executive search.</p>
             <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                 <a href="contact.php" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%);">Find Top Talent <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
@@ -15,17 +15,17 @@
         <div class="hero-form-card animate-up delay-2">
             <div class="stats-card">
                 <div class="stat-item">
-                    <div class="stat-number">500+</div>
+                    <div class="stat-number" data-target="500" data-suffix="+">0</div>
                     <div class="stat-label">Executive Placements</div>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
-                    <div class="stat-number">50+</div>
+                    <div class="stat-number" data-target="50" data-suffix="+">0</div>
                     <div class="stat-label">Enterprise Clients</div>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
-                    <div class="stat-number">6</div>
+                    <div class="stat-number" data-target="6" data-suffix="">0</div>
                     <div class="stat-label">Core Industries</div>
                 </div>
             </div>
@@ -91,7 +91,11 @@
         </svg>
     </div>
     <div class="container" style="position: relative; z-index: 2;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+        <div class="section-title">
+            <h2>Our <span>Mission & Vision</span></h2>
+        </div>
+        
+        <div class="mission-grid">
             <div class="mission-card animate-up delay-1">
                 <div class="mission-icon"><i class="fas fa-flag"></i></div>
                 <h3>Our Mission</h3>
@@ -259,5 +263,21 @@
 <a href="https://wa.me/971545480972" target="_blank" class="floating-whatsapp" aria-label="Contact us on WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Typed !== 'undefined') {
+        new Typed('#typed-text', {
+            strings: ['HR Outsourcing', 'Executive Search', 'Tawteen Compliance', 'Talent Acquisition'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|'
+        });
+    }
+});
+</script>
 
 <?php include 'includes/footer.php'; ?>

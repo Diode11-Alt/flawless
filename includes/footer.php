@@ -53,19 +53,77 @@
             </div>
         </div>
     </footer>
-    <!-- Scroll animations -->
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
     <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('done');
+                setTimeout(() => { preloader.style.display = 'none'; }, 600);
+            }
+        });
+
+        // Header Shrink & Back to Top
+        const header = document.querySelector('.site-header');
+        const backToTop = document.getElementById('back-to-top');
+        if (header && backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                    backToTop.classList.add('visible');
+                } else {
+                    header.classList.remove('scrolled');
+                    backToTop.classList.remove('visible');
+                }
+            });
+        }
+
+        if (backToTop) {
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
         // Intersection Observer for scroll animations
         const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animated');
+                    
+                    // Number Counter Trigger
+                    const countTarget = entry.target.querySelector('.stat-number');
+                    if (countTarget && !countTarget.classList.contains('counted')) {
+                        countTarget.classList.add('counted');
+                        const target = +countTarget.getAttribute('data-target');
+                        const suffix = countTarget.getAttribute('data-suffix') || '';
+                        let count = 0;
+                        const duration = 2000; // 2s duration
+                        const increment = target / (duration / 16); // 60fps
+                        
+                        const updateCount = () => {
+                            count += increment;
+                            if (count < target) {
+                                countTarget.innerText = Math.ceil(count) + suffix;
+                                requestAnimationFrame(updateCount);
+                            } else {
+                                countTarget.innerText = target + suffix;
+                            }
+                        };
+                        updateCount();
+                    }
+
                     observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
-        document.querySelectorAll('.animate-up').forEach(el => observer.observe(el));
+        document.querySelectorAll('.animate-up, .animate-left, .animate-right, .animate-fade, .animate-scale').forEach(el => observer.observe(el));
 
         // CTA tracking
         document.querySelectorAll('.btn-primary').forEach(button => {
@@ -75,13 +133,27 @@
         });
 
         // Mobile Menu Toggle
-        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const navToggle = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
-        if (mobileToggle && navLinks) {
-            mobileToggle.addEventListener('click', () => {
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+                navToggle.setAttribute('aria-expanded', !expanded);
                 navLinks.classList.toggle('active');
             });
         }
+        
+        // Active Nav State based on URL
+        const currentLocation = location.pathname;
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(link => {
+            const linkPath = new URL(link.href).pathname;
+            if (linkPath === currentLocation && linkPath !== '/') {
+                link.classList.add('active');
+            } else if (currentLocation === '/' && linkPath === '/index.php') {
+                link.classList.add('active');
+            }
+        });
     </script>
 </body>
 </html>
