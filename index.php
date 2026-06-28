@@ -31,10 +31,10 @@
             </div>
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.15);">
                 <h3 style="font-size: 18px; margin-bottom: 15px;">Quick Inquiry</h3>
-                <form action="register.php" method="GET">
+                <form action="register.php" method="POST">
                     <div class="form-group">
-                        <input type="text" id="fname" name="fname" placeholder=" " required>
-                        <label for="fname">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder=" " required>
+                        <label for="name">Full Name</label>
                     </div>
                     <div class="form-group">
                         <input type="email" id="email" name="email" placeholder=" " required>
@@ -144,7 +144,9 @@
         <div style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
             <div class="animate-up delay-1" style="flex: 0 0 280px; position: relative;">
                 <div style="position: absolute; inset: -16px; background: var(--secondary-blue); opacity: 0.05; border-radius: 50%; filter: blur(20px);"></div>
-                <img src="assets/images/ceo.webp" alt="Shishir Yogi, CEO of PrimePath HR Services" style="width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 4px solid white; box-shadow: var(--shadow-card); position: relative; z-index: 2;">
+                <img src="assets/images/ceo.webp" alt="Shishir Yogi, CEO of PrimePath HR Services" 
+                     onerror="this.src='https://ui-avatars.com/api/?name=Shishir+Yogi&size=280&background=1B264F&color=fff&rounded=true'"
+                     style="width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 4px solid white; box-shadow: var(--shadow-card); position: relative; z-index: 2;">
             </div>
             <div class="animate-up delay-2" style="flex: 1; min-width: 300px;">
                 <span style="color: var(--secondary-blue); font-weight: 600; text-transform: uppercase; font-size: 14px; display: block; margin-bottom: 8px;">A Message from Our CEO</span>
@@ -254,7 +256,7 @@
 </section>
 
 <!-- Floating WhatsApp Button -->
-<a href="https://wa.me/971545480972" target="_blank" class="floating-whatsapp">
+<a href="https://wa.me/971545480972" target="_blank" class="floating-whatsapp" aria-label="Contact us on WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
 

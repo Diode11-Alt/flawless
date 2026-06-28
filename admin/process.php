@@ -8,12 +8,15 @@ require_once '../includes/db.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $action = $_POST['action'] ?? '';
     if ($action == 'add') {
+        function sanitize($val) {
+            return htmlspecialchars(strip_tags(trim($val)));
+        }
         $data = [
-            'title' => $_POST['title'] ?? '',
-            'company' => $_POST['company'] ?? '',
-            'location' => $_POST['location'] ?? '',
-            'type' => $_POST['type'] ?? '',
-            'salary' => $_POST['salary'] ?? ''
+            'title' => sanitize($_POST['title'] ?? ''),
+            'company' => sanitize($_POST['company'] ?? ''),
+            'location' => sanitize($_POST['location'] ?? ''),
+            'type' => sanitize($_POST['type'] ?? ''),
+            'salary' => sanitize($_POST['salary'] ?? '')
         ];
         add_job($data);
     } elseif ($action == 'delete') {

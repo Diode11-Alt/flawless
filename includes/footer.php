@@ -27,7 +27,7 @@
                     <ul class="footer-links" style="color: rgba(255,255,255,0.7);">
                         <li style="display: flex; align-items: flex-start; gap: 8px;">
                             <i class="fas fa-map-marker-alt" style="margin-top: 4px; color: var(--secondary-blue);"></i>
-                            <a href="https://www.google.com/maps/place/Census+Travel+%26+Tourism/@25.2795609,55.3266547" target="_blank" rel="noopener noreferrer">Business Village, Block B - Office 923<br>Deira, Dubai - UAE</a>
+                            <a href="https://www.google.com/maps/search/Business+Village+Block+B+Office+923+Deira+Dubai" target="_blank" rel="noopener noreferrer">Business Village, Block B - Office 923<br>Deira, Dubai - UAE</a>
                         </li>
                         <li style="display: flex; align-items: center; gap: 8px;">
                             <i class="fas fa-phone-alt" style="color: var(--secondary-blue);"></i>
@@ -43,10 +43,10 @@
             <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                 <p>&copy; <?php echo date('Y'); ?> PrimePath HR Services. All Rights Reserved. Licensed by MOHRE UAE.</p>
                 <div style="display: flex; gap: 15px;">
-                    <a href="https://www.facebook.com/PrimePathHR" target="_blank" rel="noopener noreferrer" style="color: rgba(255,255,255,0.7); transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">
+                    <a href="https://www.facebook.com/PrimePathHR" target="_blank" rel="noopener noreferrer" aria-label="PrimePath HR on Facebook" style="color: rgba(255,255,255,0.7); transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="https://www.linkedin.com/company/primepathhr/" target="_blank" rel="noopener noreferrer" style="color: rgba(255,255,255,0.7); transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">
+                    <a href="https://www.linkedin.com/company/primepathhr/" target="_blank" rel="noopener noreferrer" aria-label="PrimePath HR on LinkedIn" style="color: rgba(255,255,255,0.7); transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
@@ -73,6 +73,15 @@
                 console.log('Primary CTA clicked: ', this.innerText);
             });
         });
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (mobileToggle && navLinks) {
+            mobileToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
     </script>
 </body>
 </html>

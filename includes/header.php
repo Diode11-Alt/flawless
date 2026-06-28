@@ -6,12 +6,12 @@ require_once 'helpers.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | PrimePath HR</title>
+    <title><?= isset($page_title) ? htmlspecialchars($page_title) : 'Home | PrimePath HR' ?></title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Material Symbols -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <!-- SEO Meta -->
     <meta name="description" content="PrimePath HR: Dubai's Premier Executive Search & HR Outsourcing Agency. Providing top-tier talent and Tawteen compliance across the UAE and Middle East.">
     <meta property="og:type" content="website">
@@ -70,5 +70,8 @@ require_once 'helpers.php';
             <div class="auth-buttons">
                 <a href="contact.php" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%); padding: 12px 28px; border-radius: 30px;">Get Started</a>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>

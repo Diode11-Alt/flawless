@@ -52,23 +52,18 @@ include 'includes/header.php';
             
             <form action="register.php" method="POST">
                 <div class="form-group">
-                    <input type="text" name="name" required placeholder=" ">
-                    <label>Full Name</label>
+                    <input type="text" name="name" id="reg_name" required placeholder=" ">
+                    <label for="reg_name">Full Name</label>
                 </div>
                 
                 <div class="form-group">
-                    <input type="email" name="email" required placeholder=" ">
-                    <label>Email Address</label>
+                    <input type="email" name="email" id="reg_email" required placeholder=" ">
+                    <label for="reg_email">Email Address</label>
                 </div>
                 
                 <div class="form-group">
-                    <input type="tel" name="phone" required placeholder=" ">
-                    <label>Phone Number</label>
-                </div>
-                
-                <div class="form-group">
-                    <input type="password" name="password" required placeholder=" ">
-                    <label>Password</label>
+                    <input type="tel" name="phone" id="reg_phone" required placeholder=" ">
+                    <label for="reg_phone">Phone Number</label>
                 </div>
                 
                 <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Create My Account</button>

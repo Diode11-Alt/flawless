@@ -2,6 +2,24 @@
 include 'includes/db.php';
 include 'includes/header.php'; 
 $jobs = get_jobs();
+
+// Filter by search query
+$q = trim($_GET['q'] ?? '');
+if ($q) {
+    $jobs = array_filter($jobs, fn($j) =>
+        stripos($j['title'], $q) !== false || stripos($j['company'], $q) !== false
+    );
+}
+
+// Filter by type checkboxes
+$types = $_GET['type'] ?? [];
+if (!empty($types)) {
+    $jobs = array_filter($jobs, fn($j) =>
+        in_array(strtolower($j['type']), array_map('strtolower', $types))
+    );
+}
+
+$page_title = "Careers | PrimePath HR";
 ?>
 
 <!-- Premium Hero -->
@@ -67,15 +85,15 @@ $jobs = get_jobs();
                     foreach($jobs as $job): ?>
                     <div class="job-card animate-up delay-<?= min($delay++, 3) ?>">
                         <div class="job-info">
-                            <h3><a href="job-detail.php?id=<?= $job['id'] ?>" style="color: var(--primary-navy); text-decoration: none;"><?= $job['title'] ?></a></h3>
+                            <h3><a href="job-detail.php?id=<?= $job['id'] ?>" style="color: var(--primary-navy); text-decoration: none;"><?= htmlspecialchars($job['title']) ?></a></h3>
                             <div class="job-meta" style="margin-top: 15px;">
-                                <span style="background: var(--bg-light); padding: 5px 12px; border-radius: 20px; font-size: 13px;">🏢 <?= $job['company'] ?></span>
-                                <span style="background: var(--bg-light); padding: 5px 12px; border-radius: 20px; font-size: 13px;">📍 <?= $job['location'] ?></span>
-                                <span class="job-tag" style="background: rgba(0, 180, 216, 0.1); color: var(--secondary-blue);"><?= $job['type'] ?></span>
+                                <span style="background: var(--bg-light); padding: 5px 12px; border-radius: 20px; font-size: 13px;">🏢 <?= htmlspecialchars($job['company']) ?></span>
+                                <span style="background: var(--bg-light); padding: 5px 12px; border-radius: 20px; font-size: 13px;">📍 <?= htmlspecialchars($job['location']) ?></span>
+                                <span class="job-tag" style="background: rgba(0, 180, 216, 0.1); color: var(--secondary-blue);"><?= htmlspecialchars($job['type']) ?></span>
                             </div>
                         </div>
                         <div class="job-action" style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
-                            <span style="color: var(--primary-navy); font-weight: 700; font-size: 18px;"><?= $job['salary'] ?></span>
+                            <span style="color: var(--primary-navy); font-weight: 700; font-size: 18px;"><?= htmlspecialchars($job['salary']) ?></span>
                             <a href="job-detail.php?id=<?= $job['id'] ?>" class="btn btn-primary" style="padding: 10px 25px;">Apply Now</a>
                         </div>
                     </div>
