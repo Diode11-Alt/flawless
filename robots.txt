@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /data/
+Disallow: /includes/
+
+Sitemap: https://primepathuae.com/sitemap.xml

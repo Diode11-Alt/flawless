@@ -26,19 +26,19 @@
                 <div class="footer-widget">
                     <h4>Services</h4>
                     <ul class="footer-links">
-                        <li><a href="index.php#solutions">Executive Search</a></li>
-                        <li><a href="index.php#solutions">Strategic HR</a></li>
-                        <li><a href="index.php#solutions">Payroll Outsourcing</a></li>
+                        <li><a href="solutions.php">Executive Search</a></li>
+                        <li><a href="solutions.php">Strategic HR</a></li>
+                        <li><a href="solutions.php">Payroll Outsourcing</a></li>
                         <li><a href="jobs.php">Careers</a></li>
                     </ul>
                 </div>
                 <div class="footer-widget">
                     <h4>Company</h4>
                     <ul class="footer-links">
-                        <li><a href="index.php#about">About Us</a></li>
-                        <li><a href="index.php#why-us">Why Choose Us</a></li>
-                        <li><a href="index.php#process">How We Work</a></li>
-                        <li><a href="index.php#testimonials">Testimonials</a></li>
+                        <li><a href="about.php">About Us</a></li>
+                        <li><a href="about.php#why-us">Why Choose Us</a></li>
+                        <li><a href="process.php">How We Work</a></li>
+                        <li><a href="testimonials.php">Testimonials</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>

@@ -67,10 +67,11 @@ require_once 'helpers.php';
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="index.php#solutions">Solutions</a></li>
-                    <li><a href="index.php#process">How We Work</a></li>
+                    <li><a href="solutions.php">Solutions</a></li>
+                    <li><a href="process.php">How We Work</a></li>
                     <li><a href="jobs.php">Careers</a></li>
-                    <li><a href="index.php#about">About Us</a></li>
+                    <li><a href="about.php">About Us</a></li>
+                    <li><a href="testimonials.php">Testimonials</a></li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
             </nav>
