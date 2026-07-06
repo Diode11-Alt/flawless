@@ -85,7 +85,13 @@ include 'includes/header.php';
                         <input type="text" name="company" placeholder="Company Name" required style="width: 100%; padding: 12px; border-radius: 8px; border: none;">
                     </div>
                     <div style="margin-bottom: 15px;">
+                        <input type="text" name="name" placeholder="Contact Person Name" required style="width: 100%; padding: 12px; border-radius: 8px; border: none;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
                         <input type="email" name="email" placeholder="Business Email" required style="width: 100%; padding: 12px; border-radius: 8px; border: none;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <input type="tel" name="phone" placeholder="Phone / WhatsApp Number" required style="width: 100%; padding: 12px; border-radius: 8px; border: none;">
                     </div>
                     <div style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.9); text-align: left;">
                         <input type="checkbox" id="accept_terms_emp" name="accept_terms" required style="margin-top: 3px; cursor: pointer;">

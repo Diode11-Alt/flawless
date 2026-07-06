@@ -14,11 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     // Sanitization
     $lead_data = [
-        'name' => htmlspecialchars(strip_tags(trim($_POST['name'] ?? ''))),
+        'name' => htmlspecialchars(strip_tags(trim($_POST['name'] ?? (!empty($_POST['company']) ? 'Employer Contact' : 'Anonymous')))),
+        'company' => htmlspecialchars(strip_tags(trim($_POST['company'] ?? ''))),
         'email' => filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL),
-        'subject' => htmlspecialchars(strip_tags(trim($_POST['subject'] ?? ''))),
-        'message' => htmlspecialchars(strip_tags(trim($_POST['message'] ?? ''))),
         'phone' => htmlspecialchars(strip_tags(trim($_POST['phone'] ?? ''))),
+        'subject' => htmlspecialchars(strip_tags(trim($_POST['subject'] ?? (!empty($_POST['company']) ? 'Employer Callback Request' : 'General Inquiry')))),
+        'message' => htmlspecialchars(strip_tags(trim($_POST['message'] ?? (!empty($_POST['company']) ? 'Callback requested by employer company: ' . $_POST['company'] : '')))),
         'date' => date('Y-m-d H:i:s')
     ];
     $current[] = $lead_data;
@@ -91,8 +92,8 @@ require_once 'includes/header.php';
                 </div>
                 
                 <div class="form-group">
-                    <input type="tel" name="phone" id="contact_phone" placeholder=" " autocomplete="tel">
-                    <label for="contact_phone">Phone Number</label>
+                    <input type="tel" name="phone" id="contact_phone" required placeholder=" " autocomplete="tel">
+                    <label for="contact_phone">Phone / WhatsApp Number</label>
                 </div>
                 
                 <?php

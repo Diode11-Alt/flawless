@@ -42,7 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'name' => $registration_data['name'],
         'email' => $registration_data['email'],
         'phone' => $registration_data['phone'],
-        'message' => "Career Application for Job: " . ($registration_data['job_title'] ?: 'General Application'),
+        'job_title' => $registration_data['job_title'] ?: 'General Application',
+        'job_id' => $registration_data['job_id'] ?: 'N/A',
+        'message' => "Career Application submitted via PrimePath Careers portal.",
+        'cv' => $registration_data['cv'],
         'cv_path' => $registration_data['cv']
     ];
     send_to_zoho_crm($zoho_data);

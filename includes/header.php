@@ -87,12 +87,11 @@ require_once 'helpers.php';
                             <li><a href="testimonials.php">Methodology</a></li>
                             <li><a href="blog.php">Insights & News</a></li>
                         </ul>
-                    </li>
-                    <li><a href="contact.php">Get in Touch</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
                 </ul>
             </nav>
             <div class="auth-buttons">
-                <a href="contact.php" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%); padding: 12px 28px; border-radius: 30px;">Get Started</a>
+                <a href="employers.php" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%); padding: 12px 28px; border-radius: 30px; font-weight: 600;">Hire Talent &rarr;</a>
             </div>
             <button class="mobile-menu-toggle" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>

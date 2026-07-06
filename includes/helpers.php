@@ -34,16 +34,42 @@ function send_to_zoho_crm($data) {
     // 2. Push to CRM
     $zoho_api_url = "https://www.zohoapis.com/crm/v2/Leads"; 
     
+    // Prepare detailed structured description
+    $desc_lines = ["--- PrimePath HR Website Lead Details ---"];
+    if (!empty($data['subject'])) $desc_lines[] = "Service / Subject: " . $data['subject'];
+    if (!empty($data['job_title'])) $desc_lines[] = "Applied For Job: " . $data['job_title'] . " (ID: " . ($data['job_id'] ?? 'N/A') . ")";
+    if (!empty($data['company'])) $desc_lines[] = "Company Name: " . $data['company'];
+    if (!empty($data['phone'])) $desc_lines[] = "Phone / WhatsApp: " . $data['phone'];
+    if (!empty($data['email'])) $desc_lines[] = "Email Address: " . $data['email'];
+    if (!empty($data['cv']) || !empty($data['cv_path'])) $desc_lines[] = "CV / Resume Uploaded: Yes (" . basename($data['cv'] ?? $data['cv_path'] ?? '') . ")";
+    if (!empty($data['message'])) {
+        $desc_lines[] = "\nMessage / Notes:\n" . $data['message'];
+    }
+    $desc_lines[] = "\nSubmission Date: " . date('Y-m-d H:i:s T');
+    $full_description = implode("\n", $desc_lines);
+
+    // Split name intelligently into First_Name and Last_Name
+    $full_name = trim($data['name'] ?? 'Unknown Lead');
+    $parts = explode(' ', $full_name, 2);
+    $first_name = count($parts) > 1 ? $parts[0] : '';
+    $last_name = count($parts) > 1 ? $parts[1] : $full_name;
+
+    $lead_record = [
+        "Last_Name" => $last_name,
+        "Email" => $data['email'] ?? '',
+        "Phone" => $data['phone'] ?? '',
+        "Description" => $full_description,
+        "Lead_Source" => !empty($data['job_title']) ? "Job Application (Careers Page)" : (!empty($data['company']) ? "B2B Employer Inquiry" : "Website Inquiry"),
+        "Lead_Status" => "Not Contacted"
+    ];
+    if (!empty($first_name)) $lead_record["First_Name"] = $first_name;
+    if (!empty($data['company'])) $lead_record["Company"] = $data['company'];
+    else if (!empty($data['job_title'])) $lead_record["Company"] = "Candidate: " . $data['job_title'];
+    else $lead_record["Company"] = "Individual Inquiry";
+    if (!empty($data['job_title'])) $lead_record["Designation"] = $data['job_title'];
+
     $payload = [
-        "data" => [
-            [
-                "Last_Name" => $data['name'] ?? 'Unknown',
-                "Email" => $data['email'] ?? '',
-                "Phone" => $data['phone'] ?? '',
-                "Description" => "Inquiry from PrimePath Website:\n" . ($data['message'] ?? ''),
-                "Lead_Source" => "Website Inquiry"
-            ]
-        ]
+        "data" => [ $lead_record ]
     ];
 
     $ch2 = curl_init($zoho_api_url);
