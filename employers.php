@@ -87,6 +87,10 @@ include 'includes/header.php';
                     <div style="margin-bottom: 15px;">
                         <input type="email" name="email" placeholder="Business Email" required style="width: 100%; padding: 12px; border-radius: 8px; border: none;">
                     </div>
+                    <div style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.9); text-align: left;">
+                        <input type="checkbox" id="accept_terms_emp" name="accept_terms" required style="margin-top: 3px; cursor: pointer;">
+                        <label for="accept_terms_emp" style="cursor: pointer;">I agree to the <a href="terms.php" target="_blank" style="color: white; text-decoration: underline;">Terms & Conditions</a> and <a href="privacy.php" target="_blank" style="color: white; text-decoration: underline;">Privacy Policy</a>.</label>
+                    </div>
                     <button type="submit" class="btn btn-primary" style="width: 100%; background: var(--secondary-blue);">Request Callback</button>
                 </form>
             </div>

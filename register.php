@@ -106,8 +106,8 @@ require_once 'includes/header.php';
                 
                 <div style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 10px;">
                     <input type="checkbox" id="accept_terms_reg" name="accept_terms" required style="margin-top: 5px;">
-                    <label for="accept_terms_reg" style="font-size: 13px; color: var(--text-muted); cursor: pointer; position: static; transform: none; color: var(--text-muted); pointer-events: auto;">
-                        I agree to the <a href="terms.php" target="_blank" style="color: var(--secondary-blue); text-decoration: underline;">Terms & Conditions</a> and <a href="privacy.php" target="_blank" style="color: var(--secondary-blue); text-decoration: underline;">Privacy Policy</a>.
+                    <label for="accept_terms_reg" style="font-size: 13px; color: var(--text-muted); cursor: pointer; position: static; transform: none; color: var(--text-muted); pointer-events: auto; line-height: 1.4;">
+                        I agree to the <a href="terms.php" target="_blank" style="color: var(--secondary-blue); text-decoration: underline;">Terms & Conditions</a> and <a href="privacy.php" target="_blank" style="color: var(--secondary-blue); text-decoration: underline;">Privacy Policy</a>, and acknowledge that PrimePath HR does not charge candidates any recruitment fees (MOHRE compliant).
                     </label>
                 </div>
                 
