@@ -25,18 +25,18 @@ include 'includes/header.php';
         <div class="hero-form-card animate-up delay-2">
             <div class="stats-card">
                 <div class="stat-item">
-                    <div class="stat-number" data-target="500" data-suffix="+">0</div>
-                    <div class="stat-label">Executive Placements</div>
+                    <div class="stat-number" data-target="100" data-suffix="%">0</div>
+                    <div class="stat-label">MOHRE Compliance</div>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="50" data-suffix="+">0</div>
-                    <div class="stat-label">Enterprise Clients</div>
+                    <div class="stat-number" data-target="5" data-suffix="">0</div>
+                    <div class="stat-label">Core HR Pillars</div>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="98" data-suffix="%">0</div>
-                    <div class="stat-label">Retention Rate</div>
+                    <div class="stat-number" data-target="90" data-suffix="-Day">0</div>
+                    <div class="stat-label">Replacement Guarantee</div>
                 </div>
             </div>
         </div>

@@ -134,26 +134,28 @@
                     entry.target.classList.add('animated');
                     
                     // Number Counter Trigger
-                    const countTarget = entry.target.querySelector('.stat-number');
-                    if (countTarget && !countTarget.classList.contains('counted')) {
-                        countTarget.classList.add('counted');
-                        const target = +countTarget.getAttribute('data-target');
-                        const suffix = countTarget.getAttribute('data-suffix') || '';
-                        let count = 0;
-                        const duration = 2000; // 2s duration
-                        const increment = target / (duration / 16); // 60fps
-                        
-                        const updateCount = () => {
-                            count += increment;
-                            if (count < target) {
-                                countTarget.innerText = Math.ceil(count) + suffix;
-                                requestAnimationFrame(updateCount);
-                            } else {
-                                countTarget.innerText = target + suffix;
-                            }
-                        };
-                        updateCount();
-                    }
+                    const countTargets = entry.target.querySelectorAll('.stat-number');
+                    countTargets.forEach(countTarget => {
+                        if (!countTarget.classList.contains('counted')) {
+                            countTarget.classList.add('counted');
+                            const target = +countTarget.getAttribute('data-target');
+                            const suffix = countTarget.getAttribute('data-suffix') || '';
+                            let count = 0;
+                            const duration = 2000; // 2s duration
+                            const increment = target / (duration / 16); // 60fps
+                            
+                            const updateCount = () => {
+                                count += increment;
+                                if (count < target) {
+                                    countTarget.innerText = Math.ceil(count) + suffix;
+                                    requestAnimationFrame(updateCount);
+                                } else {
+                                    countTarget.innerText = target + suffix;
+                                }
+                            };
+                            updateCount();
+                        }
+                    });
 
                     observer.unobserve(entry.target);
                 }
