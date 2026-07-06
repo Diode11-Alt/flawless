@@ -4,16 +4,14 @@ if (!check_admin_auth()) {
     header('Location: login.php');
     exit;
 }
-if (empty($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-}
 require_once __DIR__ . '/../includes/db.php';
+init_csrf_token();
 $jobs = get_jobs();
-$contacts_file = __DIR__ . '/../data/contacts.json';
+$contacts_file = get_data_file_path('contacts.json');
 $leads = file_exists($contacts_file) ? json_decode(file_get_contents($contacts_file), true) : [];
 $leads = array_reverse($leads); // newest first
 
-$registrations_file = __DIR__ . '/../data/registrations.json';
+$registrations_file = get_data_file_path('registrations.json');
 $applications = file_exists($registrations_file) ? json_decode(file_get_contents($registrations_file), true) : [];
 $applications = array_reverse($applications); // newest first
 ?>
@@ -197,7 +195,7 @@ $applications = array_reverse($applications); // newest first
                             <td><span style="background: rgba(46, 204, 113, 0.1); color: #2ecc71; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;"><?= htmlspecialchars($app['job_title'] ?: 'General Application') ?></span></td>
                             <td>
                                 <?php if (!empty($app['cv'])): ?>
-                                    <a href="../<?= htmlspecialchars($app['cv']) ?>" target="_blank" class="btn btn-outline" style="padding: 5px 12px; font-size: 12px;"><i class="fas fa-file-download" style="margin-right: 5px;"></i> Download CV</a>
+                                    <a href="download.php?file=<?= urlencode(basename($app['cv'])) ?>" target="_blank" class="btn btn-outline" style="padding: 5px 12px; font-size: 12px;"><i class="fas fa-file-download" style="margin-right: 5px;"></i> Download CV</a>
                                 <?php else: ?>
                                     <span style="color: var(--text-muted); font-size: 13px;">No file uploaded</span>
                                 <?php endif; ?>

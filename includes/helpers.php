@@ -140,4 +140,71 @@ function get_time_ago($posted_date) {
         return 'Recently';
     }
 }
+
+/**
+ * Generates and initializes CSRF token in both session and cookie (Double Submit Cookie pattern for serverless).
+ */
+function init_csrf_token() {
+    if (empty($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+    if (!headers_sent()) {
+        @setcookie('primepath_csrf_token', $_SESSION['csrf_token'], time() + 86400, '/');
+    }
+    return $_SESSION['csrf_token'];
+}
+
+/**
+ * Verifies CSRF token safely without throwing TypeErrors in serverless environments.
+ */
+function verify_csrf_token() {
+    $known_token = $_SESSION['csrf_token'] ?? $_COOKIE['primepath_csrf_token'] ?? '';
+    $user_token = $_POST['csrf_token'] ?? '';
+    if (empty($known_token) || empty($user_token) || !hash_equals((string)$known_token, (string)$user_token)) {
+        die('Invalid CSRF token');
+    }
+    return true;
+}
+
+/**
+ * Resolves writable path for JSON storage files.
+ * Supports both cPanel/Local Apache and Serverless (AWS Lambda / Vercel read-only filesystems).
+ */
+function get_data_file_path($filename) {
+    $project_file = __DIR__ . '/../data/' . $filename;
+    // Check if the project data directory is writable (local dev or standard hosting)
+    if (is_writable(__DIR__ . '/../data') || (file_exists($project_file) && is_writable($project_file))) {
+        return $project_file;
+    }
+    // Serverless environment fallback (Vercel / AWS Lambda read-only root)
+    $tmp_dir = sys_get_temp_dir() . '/primepath_data';
+    if (!is_dir($tmp_dir)) {
+        @mkdir($tmp_dir, 0777, true);
+    }
+    $tmp_file = $tmp_dir . '/' . $filename;
+    // If the temp file doesn't exist yet, copy initial bundled seed data if available
+    if (!file_exists($tmp_file) && file_exists($project_file)) {
+        @copy($project_file, $tmp_file);
+    }
+    return $tmp_file;
+}
+
+/**
+ * Resolves writable directory for file uploads (CVs/Resumes).
+ * Supports both local/cPanel and Vercel serverless /tmp fallback.
+ */
+function get_upload_dir_path() {
+    $project_upload_dir = __DIR__ . '/../uploads/';
+    if (!is_dir($project_upload_dir) && is_writable(__DIR__ . '/../')) {
+        @mkdir($project_upload_dir, 0755, true);
+    }
+    if (is_dir($project_upload_dir) && is_writable($project_upload_dir)) {
+        return $project_upload_dir;
+    }
+    $tmp_upload_dir = sys_get_temp_dir() . '/primepath_uploads/';
+    if (!is_dir($tmp_upload_dir)) {
+        @mkdir($tmp_upload_dir, 0777, true);
+    }
+    return $tmp_upload_dir;
+}
 ?>

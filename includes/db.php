@@ -1,13 +1,14 @@
 <?php
 // Database Helper for Jobs (Flat JSON File for cPanel deployment)
 
-define('DATA_FILE', __DIR__ . '/../data/jobs.json');
+require_once __DIR__ . '/helpers.php';
 
 function get_jobs() {
-    if (!file_exists(DATA_FILE)) {
+    $file = get_data_file_path('jobs.json');
+    if (!file_exists($file)) {
         return [];
     }
-    $json = file_get_contents(DATA_FILE);
+    $json = file_get_contents($file);
     $jobs = json_decode($json, true);
     return is_array($jobs) ? $jobs : [];
 }
@@ -23,7 +24,8 @@ function get_job_by_id($id) {
 }
 
 function save_jobs($jobs) {
-    return file_put_contents(DATA_FILE, json_encode($jobs, JSON_PRETTY_PRINT));
+    $file = get_data_file_path('jobs.json');
+    return file_put_contents($file, json_encode($jobs, JSON_PRETTY_PRINT));
 }
 
 function add_job($data) {

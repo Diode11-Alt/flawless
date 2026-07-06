@@ -6,9 +6,7 @@ $job_id = $_GET['job_id'] ?? ($_POST['job_id'] ?? '');
 $job_title = $_GET['job_title'] ?? ($_POST['job_title'] ?? '');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
-        die('Invalid CSRF token');
-    }
+    verify_csrf_token();
 
     $cv_path = '';
     if (isset($_FILES['cv']) && $_FILES['cv']['error'] == UPLOAD_ERR_OK) {
@@ -25,18 +23,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             die('Error: Invalid file type. Only PDF, DOC, and DOCX files are allowed.');
         }
         
-        $upload_dir = __DIR__ . '/uploads/';
+        $upload_dir = get_upload_dir_path();
         if (!is_dir($upload_dir)) {
-            mkdir($upload_dir, 0755, true);
+            @mkdir($upload_dir, 0755, true);
         }
         $filename = time() . '_' . bin2hex(random_bytes(4)) . '.' . $ext;
         $target_file = $upload_dir . $filename;
         if (move_uploaded_file($_FILES['cv']['tmp_name'], $target_file)) {
-            $cv_path = 'uploads/' . $filename;
+            $cv_path = $filename;
         }
     }
 
-    $file = __DIR__ . '/data/registrations.json';
+    $file = get_data_file_path('registrations.json');
     $current = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
     $registration_data = [
         'name' => htmlspecialchars(strip_tags(trim($_POST['name'] ?? ''))),

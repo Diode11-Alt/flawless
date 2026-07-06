@@ -7,9 +7,7 @@ require_once __DIR__ . '/../includes/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // CSRF Check
-    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
-        die('Invalid CSRF token');
-    }
+    verify_csrf_token();
 
     $action = $_POST['action'] ?? '';
     if ($action == 'add' || $action == 'edit') {

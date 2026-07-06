@@ -5,11 +5,9 @@ $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // CSRF Check
-    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
-        die('Invalid CSRF token');
-    }
+    verify_csrf_token();
 
-    $file = __DIR__ . '/data/contacts.json';
+    $file = get_data_file_path('contacts.json');
     $current = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
     
     // Sanitization
