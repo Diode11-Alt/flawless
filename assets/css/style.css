@@ -108,25 +108,19 @@ a:hover {
 }
 
 .logo a {
-  font-family: var(--font-heading);
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--primary-navy);
-  letter-spacing: -0.5px;
   display: flex;
   align-items: center;
-  gap: 8px;
   text-decoration: none;
 }
 
+.logo-img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
 .logo a::before {
-  content: '';
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background: conic-gradient(from 180deg at 50% 50%, var(--secondary-blue) 0deg, var(--primary-navy) 360deg);
-  border-radius: 6px;
-  transform: rotate(45deg);
+  display: none;
 }
 
 .logo span {
@@ -1997,8 +1991,8 @@ body {
         justify-content: space-between !important;
         align-items: center !important;
     }
-    .logo a {
-        font-size: 24px !important;
+    .logo-img {
+        height: 36px !important;
     }
     .auth-buttons {
         display: none !important; /* Force hide on mobile/tablet so header is clean */
@@ -2283,8 +2277,8 @@ body {
         align-items: center;
         justify-content: center;
     }
-    .logo a {
-        font-size: 22px !important;
+    .logo-img {
+        height: 32px !important;
     }
 }
 

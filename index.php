@@ -173,7 +173,7 @@ include 'includes/header.php';
             "At PrimePath, we built our consultancy on a simple principle: hiring should be a milestone, not a complication. Whether you need C-suite leaders, Emiratisation programs, or full-scale staff outsourcing, our team delivers with transparency, speed, and outstanding service."
         </p>
         <div style="display:flex; align-items:center; justify-content:center; gap:14px;">
-            <img src="assets/images/ceo.jpeg" alt="Shishir Yogi - CEO" onerror="this.src='https://ui-avatars.com/api/?name=Shishir+Yogi&size=100&background=1B264F&color=fff&bold=true'" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; object-position: top; border: 2px solid var(--secondary-blue);">
+            <img src="assets/images/ceo.webp" alt="Shishir Yogi - CEO" onerror="this.src='https://ui-avatars.com/api/?name=Shishir+Yogi&size=100&background=1B264F&color=fff&bold=true'" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; object-position: top; border: 2px solid var(--secondary-blue);">
             <div style="text-align:left;">
                 <strong style="color:var(--primary-navy); display:block;">Shishir Yogi</strong>
                 <span style="color:var(--text-muted); font-size:14px;">CEO, PrimePath HR Services</span>

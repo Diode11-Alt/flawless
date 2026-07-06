@@ -20,7 +20,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-widget">
-                    <h4>PrimePath HR</h4>
+                    <a href="index.php"><img src="/assets/images/logo.png" alt="PrimePath HR Services" style="height: 50px; width: auto; filter: brightness(0) invert(1); margin-bottom: 10px;"></a>
                     <p style="color: rgba(255,255,255,0.7); line-height: 1.7;">Strategic Progression for forward-thinking enterprises.</p>
                 </div>
                 <div class="footer-widget">
@@ -283,21 +283,6 @@
             });
         });
     </script>
-    
-    <!-- Mobile Bottom Quick-Action Bar -->
-    <div class="mobile-bottom-bar">
-        <a href="tel:+971545480972" class="mobile-bottom-btn">
-            <i class="fas fa-phone-alt"></i>
-            <span>Call</span>
-        </a>
-        <a href="https://wa.me/971545480972?text=Hello%20PrimePath%20HR" target="_blank" rel="noopener noreferrer" class="mobile-bottom-btn whatsapp-btn">
-            <i class="fab fa-whatsapp"></i>
-            <span>WhatsApp</span>
-        </a>
-        <a href="contact.php" class="mobile-bottom-btn cta-btn">
-            <i class="fas fa-paper-plane"></i>
-            <span>Enquire</span>
-        </a>
-    </div>
+
 </body>
 </html>

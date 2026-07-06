@@ -72,7 +72,7 @@ require_once 'helpers.php';
     <header class="site-header">
         <div class="container header-inner">
             <div class="logo">
-                <a href="index.php">PrimePath<span>HR</span></a>
+                <a href="index.php"><img src="/assets/images/logo.png" alt="PrimePath HR Services" class="logo-img"></a>
             </div>
             <nav>
                 <ul class="nav-links">

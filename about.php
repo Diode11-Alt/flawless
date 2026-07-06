@@ -85,7 +85,7 @@ include 'includes/header.php';
         <div style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
             <div class="animate-up delay-1" style="flex: 0 0 280px; position: relative;">
                 <div style="position: absolute; inset: -16px; background: var(--secondary-blue); opacity: 0.05; border-radius: 50%; filter: blur(20px);"></div>
-                <img src="assets/images/ceo.jpeg" alt="Shishir Yogi, CEO of PrimePath HR Services" loading="lazy"
+                <img src="assets/images/ceo.webp" alt="Shishir Yogi, CEO of PrimePath HR Services" loading="lazy"
                      onerror="this.src='https://ui-avatars.com/api/?name=Shishir+Yogi&size=280&background=1B264F&color=fff&rounded=true'"
                      style="width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 4px solid white; box-shadow: var(--shadow-card); position: relative; z-index: 2; object-position: top;">
             </div>
@@ -112,7 +112,7 @@ include 'includes/header.php';
             <!-- Shishir Yogi -->
             <div class="team-card animate-up delay-1">
                 <div class="team-card-img-wrapper">
-                    <img src="assets/images/ceo.jpeg" alt="Shishir Yogi - CEO" onerror="this.src='https://ui-avatars.com/api/?name=Shishir+Yogi&size=400&background=1B264F&color=fff&bold=true'" style="object-position: top;">
+                    <img src="assets/images/ceo.webp" alt="Shishir Yogi - CEO" onerror="this.src='https://ui-avatars.com/api/?name=Shishir+Yogi&size=400&background=1B264F&color=fff&bold=true'" style="object-position: top;">
                     <div class="team-card-socials">
                         <a href="https://www.linkedin.com/company/primepathhr/" target="_blank" rel="noopener noreferrer" class="team-social-btn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="mailto:primepathhrservices@gmail.com" class="team-social-btn"><i class="fas fa-envelope"></i></a>
