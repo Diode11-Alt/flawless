@@ -35,4 +35,8 @@ __pycache__/
 !package.json
 !package-lock.json
 !vercel.json
-!data/*.json
+!data/jobs.json
+/uploads/
+data/contacts.json
+data/registrations.json
+data/subscribers.json

@@ -42,7 +42,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://primepathuae.com/testimonials.php</loc>
+        <loc>https://primepathuae.com/methodology.php</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

@@ -25,17 +25,17 @@ include 'includes/header.php';
         <div class="hero-form-card animate-up delay-2">
             <div class="stats-card">
                 <div class="stat-item">
-                    <div class="stat-number" data-target="100" data-suffix="%">0</div>
+                    <div class="stat-number" data-target="100" data-suffix="%">100%</div>
                     <div class="stat-label">MOHRE Compliance</div>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="5" data-suffix="">0</div>
+                    <div class="stat-number" data-target="5" data-suffix="">5</div>
                     <div class="stat-label">Core HR Pillars</div>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="90" data-suffix="-Day">0</div>
+                    <div class="stat-number" data-target="90" data-suffix="-Day">90-Day</div>
                     <div class="stat-label">Replacement Guarantee</div>
                 </div>
             </div>
@@ -179,7 +179,7 @@ include 'includes/header.php';
                 <span style="color:var(--text-muted); font-size:14px;">CEO, PrimePath HR Services</span>
             </div>
         </div>
-        <a href="testimonials.php" style="display:inline-block; margin-top:30px; color:var(--secondary-blue); font-weight:600;">
+        <a href="methodology.php" style="display:inline-block; margin-top:30px; color:var(--secondary-blue); font-weight:600;">
             Explore Our 3-Phase Methodology →
         </a>
     </div>
@@ -267,5 +267,47 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 </section>
+
+<!-- Structured Data (FAQPage Schema) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you provide visa sponsorship for jobs in Europe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PrimePath HR works with international employers who often provide visa sponsorship for successful candidates. However, visa issuance is subject to the immigration laws and processing timelines of the destination country. We facilitate the recruitment process but do not issue visas directly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What industries do you specialize in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We source talent across a broad spectrum of industries in the UAE and GCC, with strong focuses on Technology, Healthcare, Construction & Real Estate, Hospitality, and specialized Blue-Collar trades."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you handle data privacy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We take data privacy very seriously. Candidate CVs and personal data are strictly processed in compliance with the UAE Federal Decree-Law No. 45 of 2021 on Personal Data Protection. We only share your profile with verified employers with your explicit consent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you manage our company's Emiratisation requirements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. As a MOHRE-licensed agency, we assist companies in meeting their Tawteen (Emiratisation) quotas by sourcing qualified UAE National talent that aligns with their operational needs."
+      }
+    }
+  ]
+}
+</script>
 
 <?php include 'includes/footer.php'; ?>

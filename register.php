@@ -12,11 +12,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $cv_path = '';
     if (isset($_FILES['cv']) && $_FILES['cv']['error'] == UPLOAD_ERR_OK) {
+        $allowed_exts = ['pdf', 'doc', 'docx'];
+        $max_size = 5 * 1024 * 1024; // 5 MB
+        $file_size = $_FILES['cv']['size'];
+        $file_name = $_FILES['cv']['name'];
+        $ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        
+        if ($file_size > $max_size) {
+            die('Error: File size exceeds the maximum allowed limit of 5MB.');
+        }
+        if (!in_array($ext, $allowed_exts)) {
+            die('Error: Invalid file type. Only PDF, DOC, and DOCX files are allowed.');
+        }
+        
         $upload_dir = 'uploads/';
         if (!is_dir($upload_dir)) {
             mkdir($upload_dir, 0755, true);
         }
-        $filename = time() . '_' . basename($_FILES['cv']['name']);
+        $filename = time() . '_' . bin2hex(random_bytes(4)) . '.' . $ext;
         $target_file = $upload_dir . $filename;
         if (move_uploaded_file($_FILES['cv']['tmp_name'], $target_file)) {
             $cv_path = $target_file;

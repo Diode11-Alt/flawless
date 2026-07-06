@@ -36,7 +36,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://primepathuae.com/testimonials.php</loc>
+        <loc>https://primepathuae.com/methodology.php</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -92,6 +92,21 @@
     </url>
     <url>
         <loc>https://primepathuae.com/article.php?slug=understanding-wps-wages-protection-system-uae</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://primepathuae.com/article.php?slug=uae-labor-law-gratuity-calculation-2026</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://primepathuae.com/article.php?slug=dubai-tech-salary-benchmarks-2026-ai-healthcare</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://primepathuae.com/article.php?slug=dha-license-verification-job-search-healthcare</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

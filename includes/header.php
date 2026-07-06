@@ -15,10 +15,12 @@ require_once 'helpers.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no">
     <?php
-    $current_url = "https://primepathuae.com" . ($_SERVER['REQUEST_URI'] ?? '/');
+    $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')) ? "https" : "http";
+    $host = $_SERVER['HTTP_HOST'] ?? 'primepath-tan.vercel.app';
+    $current_url = $protocol . "://" . $host . ($_SERVER['REQUEST_URI'] ?? '/');
     $meta_desc = isset($page_description) ? htmlspecialchars($page_description) : 'Leading Dubai recruitment agency helping UAE expats secure AI, Healthcare, Project Management, and skilled jobs in the UAE and Europe with visa sponsorship. 100% MOHRE Compliant.';
     $meta_title = isset($page_title) ? htmlspecialchars($page_title) : 'Find Tech, Healthcare & Skilled Trades Jobs | PrimePath HR';
-    $meta_img = isset($page_image) ? "https://primepathuae.com" . $page_image : "https://primepathuae.com/assets/images/logo.png";
+    $meta_img = isset($page_image) ? $protocol . "://" . $host . $page_image : $protocol . "://" . $host . "/assets/images/logo.png";
     ?>
     <title><?= $meta_title ?></title>
     <!-- Font Awesome -->
@@ -32,7 +34,6 @@ require_once 'helpers.php';
     <!-- SEO Meta & Social Tags -->
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
     <meta name="description" content="<?= $meta_desc ?>">
-    <meta name="keywords" content="Jobs in Dubai for expats, Europe work visa from UAE, DHA healthcare jobs Dubai, Tech jobs UAE, AI jobs Dubai, skilled trades jobs UAE, blue-collar jobs Dubai to Europe, recruitment agency Dubai, ATS optimized CV UAE, MOHRE compliant recruitment">
     <link rel="canonical" href="<?= htmlspecialchars($current_url) ?>">
     <meta property="og:type" content="website">
     <meta property="og:title" content="<?= $meta_title ?>">
@@ -106,31 +107,53 @@ require_once 'helpers.php';
 
     <!-- Main Navigation -->
     <header class="site-header">
+        <div class="mobile-menu-overlay" aria-hidden="true"></div>
         <div class="container header-inner">
             <div class="logo">
-                <a href="index.php"><img src="/assets/images/logo.png" alt="PrimePath HR Services" class="logo-img"></a>
+                <a href="index.php" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                    <img src="/assets/images/logo.png" alt="PrimePath HR Services" class="logo-img">
+                    <span style="font-size: 21px; font-weight: 800; color: var(--primary-navy); letter-spacing: -0.5px; line-height: 1;">Prime<span style="color: var(--secondary-blue);">Path</span></span>
+                </a>
             </div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="employers.php">For Employers</a></li>
-                    <li><a href="jobs.php">Careers <span class="nav-badge"><?= count(get_jobs()) ?></span></a></li>
+                    <li class="mobile-only drawer-header">
+                        <a href="index.php" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                            <img src="/assets/images/logo.png" alt="PrimePath HR Services" style="height: 32px; width: auto;">
+                            <span style="font-size: 18px; font-weight: 800; color: var(--primary-navy); letter-spacing: -0.5px; line-height: 1;">Prime<span style="color: var(--secondary-blue);">Path</span></span>
+                        </a>
+                        <button class="drawer-close-btn" aria-label="Close Menu"><i class="fas fa-times"></i></button>
+                    </li>
+                    <li><a href="index.php"><i class="fas fa-home mobile-only-icon"></i> Home</a></li>
+                    <li><a href="employers.php"><i class="fas fa-building mobile-only-icon"></i> For Employers</a></li>
+                    <li><a href="jobs.php"><i class="fas fa-briefcase mobile-only-icon"></i> Careers <span class="nav-badge"><?= count(get_jobs()) ?></span></a></li>
                     <li class="has-dropdown">
-                        <a href="#">Company <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+                        <a href="#"><i class="fas fa-users mobile-only-icon"></i> Company <i class="fas fa-chevron-down dropdown-arrow" style="font-size: 10px; margin-left: auto;"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="about.php">About Us</a></li>
                             <li><a href="process.php">How We Work</a></li>
-                            <li><a href="testimonials.php">Methodology</a></li>
+                            <li><a href="methodology.php">Methodology</a></li>
                             <li><a href="blog.php">Insights & News</a></li>
                         </ul>
-                    <li><a href="contact.php">Contact Us</a></li>
+                    </li>
+                    <li><a href="contact.php"><i class="fas fa-envelope mobile-only-icon"></i> Contact Us</a></li>
+                    <li class="mobile-only drawer-footer">
+                        <div class="drawer-quick-contacts">
+                            <p class="drawer-section-title">Quick Actions</p>
+                            <a href="tel:+971545480972" class="drawer-contact-link"><i class="fas fa-phone-alt"></i> +971 54 548 0972</a>
+                            <a href="https://wa.me/971545480972" target="_blank" class="drawer-contact-link whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                            <a href="mailto:info@primepathuae.com" class="drawer-contact-link"><i class="fas fa-envelope"></i> Email Support</a>
+                            <a href="employers.php" class="btn btn-primary drawer-cta">Hire Talent &rarr;</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <div class="auth-buttons">
                 <a href="employers.php" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%); padding: 12px 28px; border-radius: 30px; font-weight: 600;">Hire Talent &rarr;</a>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 <i class="fas fa-bars"></i>
+                <span class="toggle-text">Menu</span>
             </button>
         </div>
     </header>

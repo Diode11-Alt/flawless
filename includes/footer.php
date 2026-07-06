@@ -38,7 +38,7 @@
                         <li><a href="about.php">About Us</a></li>
                         <li><a href="about.php#why-us">Why Choose Us</a></li>
                         <li><a href="process.php">How We Work</a></li>
-                        <li><a href="testimonials.php">Methodology</a></li>
+                        <li><a href="methodology.php">Methodology</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
@@ -170,57 +170,63 @@
             });
         });
 
-        // Mobile Menu Toggle
-        const navToggle = document.querySelector('.nav-toggle');
+        // Mobile Slide-over Drawer & Overlay Controller
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
         const navLinks = document.querySelector('.nav-links');
-        if (navToggle && navLinks) {
-            navToggle.addEventListener('click', () => {
-                const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
-                navToggle.setAttribute('aria-expanded', !expanded);
-                navLinks.classList.toggle('active');
-            });
+        const overlay = document.querySelector('.mobile-menu-overlay');
+        const closeBtn = document.querySelector('.drawer-close-btn');
+
+        function closeMobileDrawer() {
+            if (navLinks) navLinks.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+            if (mobileToggle) {
+                mobileToggle.setAttribute('aria-expanded', 'false');
+                const icon = mobileToggle.querySelector('i');
+                if (icon) { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }
+            }
+            document.body.style.overflow = '';
         }
 
-        // Mobile menu toggle (the visible hamburger on mobile)
-        const mobileToggle = document.querySelector('.mobile-menu-toggle');
         if (mobileToggle && navLinks) {
             mobileToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                const isOpen = navLinks.classList.contains('active');
-                mobileToggle.setAttribute('aria-expanded', String(isOpen));
-                const icon = mobileToggle.querySelector('i');
+                const isOpen = !navLinks.classList.contains('active');
                 if (isOpen) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
+                    navLinks.classList.add('active');
+                    if (overlay) overlay.classList.add('active');
+                    mobileToggle.setAttribute('aria-expanded', 'true');
+                    const icon = mobileToggle.querySelector('i');
+                    if (icon) { icon.classList.remove('fa-bars'); icon.classList.add('fa-times'); }
+                    document.body.style.overflow = 'hidden';
                 } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
+                    closeMobileDrawer();
                 }
             });
+
+            if (closeBtn) closeBtn.addEventListener('click', closeMobileDrawer);
+            if (overlay) overlay.addEventListener('click', closeMobileDrawer);
             
-            // Auto-close on link click (except dropdown toggle)
+            // Auto-close on normal link click (except dropdown toggle)
             const navAnchors = navLinks.querySelectorAll('a:not(.has-dropdown > a)');
             navAnchors.forEach(a => {
                 a.addEventListener('click', () => {
                     if (window.innerWidth <= 992) {
-                        navLinks.classList.remove('active');
-                        mobileToggle.setAttribute('aria-expanded', 'false');
-                        const icon = mobileToggle.querySelector('i');
-                        if (icon) {
-                            icon.classList.remove('fa-times');
-                            icon.classList.add('fa-bars');
-                        }
+                        closeMobileDrawer();
                     }
                 });
             });
             
-            // Dropdown toggle on mobile
+            // Dropdown accordion toggle on mobile
             const dropdownToggles = document.querySelectorAll('.has-dropdown > a');
             dropdownToggles.forEach(toggle => {
                 toggle.addEventListener('click', (e) => {
                     if (window.innerWidth <= 992) {
                         e.preventDefault();
                         toggle.parentElement.classList.toggle('open');
+                        const arrow = toggle.querySelector('.dropdown-arrow');
+                        if (arrow) {
+                            arrow.style.transform = toggle.parentElement.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+                            arrow.style.transition = 'transform 0.2s ease';
+                        }
                     }
                 });
             });
@@ -281,6 +287,78 @@
                 card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
                 card.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
             });
+        });
+
+        // ==========================================================================
+        // COOKIE CONSENT & UTM LEAD ATTRIBUTION (GDPR & UAE PDPL COMPLIANT)
+        // ==========================================================================
+        // 1. Capture UTM Campaign Parameters into 30-day Cookie for CRM Attribution
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmSource = urlParams.get('utm_source') || urlParams.get('source');
+            const utmMedium = urlParams.get('utm_medium');
+            const utmCampaign = urlParams.get('utm_campaign');
+            if (utmSource) {
+                const attributionData = JSON.stringify({
+                    source: utmSource,
+                    medium: utmMedium || 'direct',
+                    campaign: utmCampaign || 'none',
+                    timestamp: new Date().toISOString()
+                });
+                document.cookie = `primepath_lead_source=${encodeURIComponent(attributionData)}; max-age=2592000; path=/; SameSite=Lax`;
+                localStorage.setItem('primepath_attribution', attributionData);
+            }
+        })();
+
+        // 2. Cookie Consent Banner Logic
+        window.addEventListener('DOMContentLoaded', () => {
+            if (!localStorage.getItem('primepath_cookie_consent')) {
+                const cookieBanner = document.createElement('div');
+                cookieBanner.innerHTML = `
+                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+                        <span style="font-size: 13px; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-cookie-bite" style="color: #0A84FF; font-size: 16px;"></i> We use cookies to improve your experience.
+                        </span>
+                        <button id="cookie-accept-all" style="background: #0A84FF; color: white; border: none; padding: 6px 16px; border-radius: 6px; font-weight: 700; font-size: 12.5px; cursor: pointer; white-space: nowrap;">Accept</button>
+                    </div>
+                `;
+                cookieBanner.style.cssText = `
+                    position: fixed;
+                    bottom: 20px;
+                    left: 20px;
+                    max-width: 400px;
+                    width: calc(100% - 40px);
+                    background: rgba(15, 23, 42, 0.96);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
+                    color: white;
+                    padding: 12px 16px;
+                    border-radius: 10px;
+                    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+                    border: 1px solid rgba(255,255,255,0.12);
+                    z-index: 100000;
+                    opacity: 0;
+                    transform: translateY(20px);
+                    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                `;
+                document.body.appendChild(cookieBanner);
+
+                setTimeout(() => {
+                    cookieBanner.style.opacity = '1';
+                    cookieBanner.style.transform = 'translateY(0)';
+                }, 1000);
+
+                const acceptBtn = document.getElementById('cookie-accept-all');
+                if (acceptBtn) {
+                    acceptBtn.addEventListener('click', () => {
+                        localStorage.setItem('primepath_cookie_consent', 'all');
+                        document.cookie = "primepath_consent=all; max-age=31536000; path=/; SameSite=Lax";
+                        cookieBanner.style.opacity = '0';
+                        cookieBanner.style.transform = 'translateY(20px)';
+                        setTimeout(() => cookieBanner.remove(), 400);
+                    });
+                }
+            }
         });
     </script>
 
