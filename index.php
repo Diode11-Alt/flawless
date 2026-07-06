@@ -163,24 +163,24 @@ include 'includes/header.php';
     </div>
 </section>
 
-<!-- TESTIMONIAL PREVIEW -->
+<!-- LEADERSHIP PRINCIPLE / METHODOLOGY PREVIEW -->
 <section class="section" style="background: white; padding: 80px 0;">
     <div class="container" style="max-width: 800px; text-align: center;">
         <div class="quote-icon" style="font-size: 36px; color: var(--secondary-blue); opacity: 0.4; margin-bottom: 20px;">
             <i class="fas fa-quote-left"></i>
         </div>
         <p style="font-size: 20px; font-style: italic; color: var(--primary-navy); line-height: 1.8; margin-bottom: 30px;">
-            "PrimePath placed our VP of Operations in 11 days. The quality of candidates was exceptional — they genuinely understood our culture and the seniority of the role."
+            "At PrimePath, we built our consultancy on a simple principle: hiring should be a milestone, not a complication. Whether you need C-suite leaders, Emiratisation programs, or full-scale staff outsourcing, our team delivers with transparency, speed, and outstanding service."
         </p>
         <div style="display:flex; align-items:center; justify-content:center; gap:14px;">
-            <div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: var(--secondary-blue); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px;">MK</div>
+            <img src="assets/images/ceo.jpeg" alt="Shishir Yogi - CEO" onerror="this.src='https://ui-avatars.com/api/?name=Shishir+Yogi&size=100&background=1B264F&color=fff&bold=true'" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; object-position: top; border: 2px solid var(--secondary-blue);">
             <div style="text-align:left;">
-                <strong style="color:var(--primary-navy); display:block;">Mohammed Al-Khalidi</strong>
-                <span style="color:var(--text-muted); font-size:14px;">CEO, Gulf Logistics Partners — Dubai</span>
+                <strong style="color:var(--primary-navy); display:block;">Shishir Yogi</strong>
+                <span style="color:var(--text-muted); font-size:14px;">CEO, PrimePath HR Services</span>
             </div>
         </div>
         <a href="testimonials.php" style="display:inline-block; margin-top:30px; color:var(--secondary-blue); font-weight:600;">
-            Read our methodology →
+            Explore Our 3-Phase Methodology →
         </a>
     </div>
 </section>

@@ -1,5 +1,5 @@
 <?php 
-$page_title = "Testimonials | PrimePath HR";
+$page_title = "Our Methodology | PrimePath HR";
 include 'includes/header.php'; 
 ?>
 
