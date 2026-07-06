@@ -1,6 +1,6 @@
 <?php
-session_start();
-if (!isset($_SESSION['admin_logged_in'])) {
+require_once __DIR__ . '/auth.php';
+if (!check_admin_auth()) {
     die('Unauthorized');
 }
 require_once '../includes/db.php';

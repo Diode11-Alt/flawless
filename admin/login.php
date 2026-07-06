@@ -1,14 +1,8 @@
 <?php
-session_start();
-if (isset($_SESSION['admin_logged_in'])) {
+require_once __DIR__ . '/auth.php';
+if (check_admin_auth()) {
     header('Location: dashboard.php');
     exit;
-}
-
-if (file_exists(__DIR__ . '/config.php')) {
-    require_once __DIR__ . '/config.php';
-} else {
-    require_once __DIR__ . '/config.example.php';
 }
 $error = '';
 
@@ -34,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($error)) {
         if ($username === ADMIN_USER && password_verify($password, ADMIN_HASH)) {
             session_regenerate_id(true); // Prevent session fixation
-            $_SESSION['admin_logged_in'] = true;
+            login_admin();
             $_SESSION['login_attempts'] = 0; // Reset on success
             header('Location: dashboard.php');
             exit;
