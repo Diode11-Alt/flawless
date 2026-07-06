@@ -11,22 +11,14 @@ include 'includes/header.php';
     <div class="hero-blob hero-blob-2"></div>
     <div class="container">
         <div class="hero-content animate-up delay-1">
-            <h1>Dubai's Premier<br><span id="typed-text"></span></h1>
-            <p>Elevating organizations across the UAE and GCC. As the top recruitment agency in the Middle East, we connect visionary leaders with forward-thinking enterprises through strategic executive search.</p>
-            <div class="dual-cta-block">
-                <p style="font-size: 13px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; margin-bottom: 16px;">I am looking for...</p>
-                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-                    <a href="contact.php" class="btn btn-primary dual-cta" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%); min-width: 200px;">
-                        <i class="fas fa-briefcase" style="margin-right: 10px;"></i>
-                        Hire Top Talent
-                        <span style="display: block; font-size: 11px; font-weight: 400; opacity: 0.85; margin-top: 2px;">For Employers</span>
-                    </a>
-                    <a href="jobs.php" class="btn btn-outline dual-cta" style="border-color: white; color: white; min-width: 200px;">
-                        <i class="fas fa-search" style="margin-right: 10px;"></i>
-                        Find a Job
-                        <span style="display: block; font-size: 11px; font-weight: 400; opacity: 0.85; margin-top: 2px;">For Candidates</span>
-                    </a>
-                </div>
+            <h1>Premier HR Consultancy &<br>Talent Acquisition in Dubai</h1>
+            <p>Elevating organizations across the UAE and GCC. We connect visionary leaders with forward-thinking enterprises through strategic executive search and HR outsourcing.</p>
+            <div style="margin-top: 30px;">
+                <a href="contact.php" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%); font-size: 18px; padding: 18px 40px; min-width: 250px;">
+                    <i class="fas fa-calendar-check" style="margin-right: 10px;"></i>
+                    Book Consultation
+                </a>
+                <p style="margin-top: 15px; font-size: 14px; opacity: 0.8;">Looking for a job? <a href="jobs.php" style="color: var(--secondary-blue); text-decoration: underline;">View open roles</a></p>
             </div>
         </div>
         <!-- Stats Card (Glassmorphism) -->
@@ -43,47 +35,16 @@ include 'includes/header.php';
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="6" data-suffix="">0</div>
-                    <div class="stat-label">Core Industries</div>
+                    <div class="stat-number" data-target="98" data-suffix="%">0</div>
+                    <div class="stat-label">Retention Rate</div>
                 </div>
-            </div>
-            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.15);">
-                <h3 style="font-size: 18px; margin-bottom: 15px;">Quick Inquiry</h3>
-                <form action="register.php" method="POST">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder=" " required>
-                        <label for="name">Full Name</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder=" " required>
-                        <label for="email">Email</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="phone" name="phone" placeholder=" " required>
-                        <label for="phone">Phone Number</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%); border-radius: 8px;">ENQUIRE NOW</button>
-                </form>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Client Logo Strip -->
-<section style="background: white; padding: 30px 0; border-bottom: 1px solid var(--border-color);">
-    <div class="container">
-        <p style="text-align: center; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 24px;">Trusted by leading organizations across the UAE & GCC</p>
-        <div class="logo-strip">
-            <!-- Replace these with real client logos when available -->
-            <div class="logo-item">Emirates Group</div>
-            <div class="logo-item">ADNOC</div>
-            <div class="logo-item">Emaar Properties</div>
-            <div class="logo-item">Majid Al Futtaim</div>
-            <div class="logo-item">DP World</div>
-            <div class="logo-item">DEWA</div>
-        </div>
-    </div>
-</section>
+
+
 
 <!-- Brief Overview Section -->
 <section class="section" style="background-color: var(--bg-light); padding: 100px 0;">
@@ -101,25 +62,29 @@ include 'includes/header.php';
     </div>
 </section>
 
-<!-- STATS ROW -->
+<!-- CORE PRINCIPLES ROW -->
 <section style="background: var(--primary-navy); padding: 60px 0;">
     <div class="container">
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center;">
+        <div class="stats-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; color: white;">
             <div>
-                <div class="stat-number" data-target="500" data-suffix="+">0</div>
-                <div style="color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px;">Executive Placements</div>
+                <i class="fas fa-certificate" style="font-size: 32px; color: var(--secondary-blue); margin-bottom: 15px;"></i>
+                <div style="font-size: 18px; font-weight: 600;">MOHRE Licensed</div>
+                <div style="color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px;">Fully compliant operations in the UAE</div>
             </div>
             <div>
-                <div class="stat-number" data-target="50" data-suffix="+">0</div>
-                <div style="color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px;">Enterprise Clients</div>
+                <i class="fas fa-globe-europe" style="font-size: 32px; color: var(--secondary-blue); margin-bottom: 15px;"></i>
+                <div style="font-size: 18px; font-weight: 600;">Direct EU Placements</div>
+                <div style="color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px;">Direct connections with European employers</div>
             </div>
             <div>
-                <div class="stat-number" data-target="98" data-suffix="%">0</div>
-                <div style="color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px;">Retention Rate</div>
+                <i class="fas fa-handshake" style="font-size: 32px; color: var(--secondary-blue); margin-bottom: 15px;"></i>
+                <div style="font-size: 18px; font-weight: 600;">Verified Employers</div>
+                <div style="color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px;">We only work with trusted organizations</div>
             </div>
             <div>
-                <div class="stat-number" data-target="14" data-suffix=" days">0</div>
-                <div style="color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px;">Avg. Placement Time</div>
+                <i class="fas fa-users" style="font-size: 32px; color: var(--secondary-blue); margin-bottom: 15px;"></i>
+                <div style="font-size: 18px; font-weight: 600;">1-on-1 Guidance</div>
+                <div style="color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px;">Personalized support for every candidate</div>
             </div>
         </div>
     </div>
@@ -129,27 +94,33 @@ include 'includes/header.php';
 <section class="section section-bg-white" style="padding: 100px 0;">
     <div class="container">
         <div class="section-title">
-            <h2>Our <span>Core Services</span></h2>
-            <p>What we do best for organizations across the UAE and GCC.</p>
+            <h2>Our <span>Job Seeker Services</span></h2>
+            <p>We guide expats and residents to their next career milestone.</p>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px;">
             <div class="value-card animate-up delay-1">
-                <div class="icon"><i class="fas fa-search"></i></div>
-                <h3>Executive Search</h3>
-                <p style="color:var(--text-muted);font-size:14px;">Identifying and securing visionary C-suite leaders who drive transformation.</p>
-                <a href="solutions.php" style="color:var(--secondary-blue);font-weight:600;font-size:14px;margin-top:16px;display:inline-block;">Learn More →</a>
+                <div class="icon"><i class="fas fa-globe-europe"></i></div>
+                <h3>Europe Direct Placement</h3>
+                <p style="color:var(--text-muted);font-size:14px;">Secure high-paying jobs in Europe. We handle interview scheduling, employer matching, and offer negotiation.</p>
+                <a href="contact.php" style="color:var(--secondary-blue);font-weight:600;font-size:14px;margin-top:16px;display:inline-block;">Apply Now →</a>
             </div>
             <div class="value-card animate-up delay-2">
-                <div class="icon"><i class="fas fa-chess"></i></div>
-                <h3>Strategic HR</h3>
-                <p style="color:var(--text-muted);font-size:14px;">Bespoke consulting to optimize organizational structures, performance, and culture.</p>
-                <a href="solutions.php" style="color:var(--secondary-blue);font-weight:600;font-size:14px;margin-top:16px;display:inline-block;">Learn More →</a>
+                <div class="icon"><i class="fas fa-city"></i></div>
+                <h3>UAE Local Recruitment</h3>
+                <p style="color:var(--text-muted);font-size:14px;">Looking to switch roles within Dubai or Abu Dhabi? We connect you with top enterprise employers in the GCC.</p>
+                <a href="jobs.php" style="color:var(--secondary-blue);font-weight:600;font-size:14px;margin-top:16px;display:inline-block;">View Jobs →</a>
             </div>
             <div class="value-card animate-up delay-3">
-                <div class="icon"><i class="fas fa-file-invoice-dollar"></i></div>
-                <h3>Payroll Outsourcing</h3>
-                <p style="color:var(--text-muted);font-size:14px;">Precise, compliant, and seamless payroll processing across the GCC.</p>
-                <a href="solutions.php" style="color:var(--secondary-blue);font-weight:600;font-size:14px;margin-top:16px;display:inline-block;">Learn More →</a>
+                <div class="icon"><i class="fas fa-file-alt"></i></div>
+                <h3>Resume & Profile Optimization</h3>
+                <p style="color:var(--text-muted);font-size:14px;">Stand out to international recruiters with an optimized ATS-friendly CV and LinkedIn profile makeover.</p>
+                <a href="contact.php" style="color:var(--secondary-blue);font-weight:600;font-size:14px;margin-top:16px;display:inline-block;">Learn More →</a>
+            </div>
+            <div class="value-card animate-up delay-1">
+                <div class="icon"><i class="fas fa-passport"></i></div>
+                <h3>Relocation & Visa Guidance</h3>
+                <p style="color:var(--text-muted);font-size:14px;">Comprehensive guidance on work permit requirements, credential verification, and smooth relocation to Europe.</p>
+                <a href="contact.php" style="color:var(--secondary-blue);font-weight:600;font-size:14px;margin-top:16px;display:inline-block;">Learn More →</a>
             </div>
         </div>
     </div>
@@ -209,15 +180,11 @@ include 'includes/header.php';
             </div>
         </div>
         <a href="testimonials.php" style="display:inline-block; margin-top:30px; color:var(--secondary-blue); font-weight:600;">
-            Read all testimonials →
+            Read our methodology →
         </a>
     </div>
 </section>
 
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/971545480972" target="_blank" class="floating-whatsapp" aria-label="Contact us on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-</a>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -245,29 +212,29 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="faq-grid">
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">
-                    How quickly can you fill a senior position?
+                    How long does the recruitment process typically take?
                     <i class="fas fa-plus faq-icon"></i>
                 </button>
                 <div class="faq-answer">
-                    <p>For most executive and senior roles, we deliver a qualified shortlist of 3–5 candidates within 14 business days. Specialist or highly niche roles may take 21–28 days. Our active talent pipeline means we rarely start from scratch.</p>
+                    <p>Placement timelines vary by industry, seniority, and visa processing requirements. Generally, we aim to present a qualified shortlist to employers within 2-4 weeks. For specialized roles or international relocations, the process may take longer to ensure full compliance and perfect fit.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">
-                    What is your placement guarantee?
+                    Do you guarantee job placements for candidates?
                     <i class="fas fa-plus faq-icon"></i>
                 </button>
                 <div class="faq-answer">
-                    <p>We offer a 90-day replacement guarantee on all permanent placements. If a candidate leaves or doesn't meet expectations within 90 days, we replace them at no additional charge.</p>
+                    <p>While we actively match optimized profiles with prospective employers, we cannot guarantee employment. Final hiring decisions rest entirely with the employer. We commit to fairly representing your skills and providing honest feedback throughout the process.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">
-                    Do you help with Emiratisation (Tawteen) compliance?
+                    Do you provide visa sponsorship for jobs in Europe?
                     <i class="fas fa-plus faq-icon"></i>
                 </button>
                 <div class="faq-answer">
-                    <p>Yes. PrimePath is MOHRE-licensed and specializes in Emiratisation strategy and sourcing. We help organizations meet their national talent quotas while finding high-quality UAE National candidates aligned to their business needs.</p>
+                    <p>PrimePath HR works with international employers who often provide visa sponsorship for successful candidates. However, visa issuance is subject to the immigration laws and processing timelines of the destination country. We facilitate the recruitment process but do not issue visas directly.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -276,25 +243,25 @@ document.addEventListener('DOMContentLoaded', function() {
                     <i class="fas fa-plus faq-icon"></i>
                 </button>
                 <div class="faq-answer">
-                    <p>Our core industries are Financial Services & Banking, Technology, Construction & Real Estate, Healthcare, Hospitality, and FMCG. We operate across the UAE and the broader GCC region.</p>
+                    <p>We source talent across a broad spectrum of industries in the UAE and GCC, with strong focuses on Technology, Healthcare, Construction & Real Estate, Hospitality, and specialized Blue-Collar trades.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">
-                    How is PrimePath different from other recruitment agencies?
+                    How do you handle data privacy?
                     <i class="fas fa-plus faq-icon"></i>
                 </button>
                 <div class="faq-answer">
-                    <p>Three key differentiators: (1) We are MOHRE-licensed with deep UAE regulatory expertise. (2) Our Precision Placement Matrix uses active headhunting — we reach passive candidates not on job boards. (3) Our 98% post-placement retention rate is a direct result of cultural fit being central to every search.</p>
+                    <p>We take data privacy very seriously. Candidate CVs and personal data are strictly processed in compliance with the UAE Federal Decree-Law No. 45 of 2021 on Personal Data Protection. We only share your profile with verified employers with your explicit consent.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">
-                    Can you handle payroll and HR outsourcing, not just recruitment?
+                    Can you manage our company's Emiratisation requirements?
                     <i class="fas fa-plus faq-icon"></i>
                 </button>
                 <div class="faq-answer">
-                    <p>Absolutely. Payroll outsourcing, full HR operations management, and employee lifecycle management are core service lines alongside executive search. Contact us to discuss a tailored HR outsourcing package.</p>
+                    <p>Yes. As a MOHRE-licensed agency, we assist companies in meeting their Tawteen (Emiratisation) quotas by sourcing qualified UAE National talent that aligns with their operational needs.</p>
                 </div>
             </div>
         </div>

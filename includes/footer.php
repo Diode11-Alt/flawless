@@ -3,7 +3,7 @@
     <div class="container" style="display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap;">
         <div>
             <h2 style="color: white; font-size: 32px; margin-bottom: 10px;">Ready to find exceptional talent?</h2>
-            <p style="color: rgba(255,255,255,0.85); font-size: 16px; margin: 0;">Join 50+ enterprise clients who trust PrimePath HR across the GCC.</p>
+            <p style="color: rgba(255,255,255,0.85); font-size: 16px; margin: 0;">Partner with PrimePath HR to build your dream team across the GCC.</p>
         </div>
         <div style="display: flex; gap: 16px; flex-wrap: wrap; flex-shrink: 0;">
             <a href="contact.php" class="btn" style="background: white; color: var(--secondary-blue); font-weight: 700; padding: 16px 36px; border-radius: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
@@ -38,7 +38,7 @@
                         <li><a href="about.php">About Us</a></li>
                         <li><a href="about.php#why-us">Why Choose Us</a></li>
                         <li><a href="process.php">How We Work</a></li>
-                        <li><a href="testimonials.php">Testimonials</a></li>
+                        <li><a href="testimonials.php">Methodology</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
@@ -55,13 +55,19 @@
                         </li>
                         <li style="display: flex; align-items: center; gap: 8px;">
                             <i class="fas fa-envelope" style="color: var(--secondary-blue);"></i>
-                            <a href="mailto:info@primepathuae.com">info@primepathuae.com</a>
+                            <a href="mailto:primepathhrservices@gmail.com">primepathhrservices@gmail.com</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-                <p>&copy; <?php echo date('Y'); ?> PrimePath HR Services. All Rights Reserved. Licensed by MOHRE UAE.</p>
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <p style="margin: 0;">&copy; <?php echo date('Y'); ?> PrimePath HR Services. All Rights Reserved. Licensed by MOHRE UAE.</p>
+                    <div style="font-size: 13px;">
+                        <a href="privacy.php" style="color: rgba(255,255,255,0.7); text-decoration: underline; margin-right: 15px;">Privacy Policy</a>
+                        <a href="terms.php" style="color: rgba(255,255,255,0.7); text-decoration: underline;">Terms & Conditions</a>
+                    </div>
+                </div>
                 <div style="display: flex; gap: 15px;">
                     <a href="https://www.facebook.com/PrimePathHR" target="_blank" rel="noopener noreferrer" aria-label="PrimePath HR on Facebook" style="color: rgba(255,255,255,0.7); transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">
                         <i class="fab fa-facebook-f"></i>
@@ -73,6 +79,24 @@
             </div>
         </div>
     </footer>
+    <!-- Mobile Sticky Bottom Action Bar (visible only <768px via CSS) -->
+    <div class="mobile-bottom-bar">
+        <a href="https://wa.me/971545480972" target="_blank" class="mobile-bottom-btn whatsapp-btn" aria-label="WhatsApp Us">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+        <div style="width: 1px; height: 30px; background: rgba(0,0,0,0.1);"></div>
+        <a href="tel:+971545480972" class="mobile-bottom-btn" aria-label="Call Now">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call Now</span>
+        </a>
+        <div style="width: 1px; height: 30px; background: rgba(0,0,0,0.1);"></div>
+        <a href="contact.php" class="mobile-bottom-btn cta-btn" aria-label="Book Consultation">
+            <i class="fas fa-calendar-check"></i>
+            <span>Book Consult</span>
+        </a>
+    </div>
+
     <!-- Back to Top Button -->
     <button id="back-to-top" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
@@ -80,14 +104,6 @@
 
     <!-- Scripts -->
     <script>
-        // Preloader
-        window.addEventListener('load', () => {
-            const preloader = document.getElementById('preloader');
-            if (preloader) {
-                preloader.classList.add('done');
-                setTimeout(() => { preloader.style.display = 'none'; }, 600);
-            }
-        });
 
         // Header Shrink & Back to Top
         const header = document.querySelector('.site-header');
@@ -168,8 +184,10 @@
         if (mobileToggle && navLinks) {
             mobileToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
+                const isOpen = navLinks.classList.contains('active');
+                mobileToggle.setAttribute('aria-expanded', String(isOpen));
                 const icon = mobileToggle.querySelector('i');
-                if (navLinks.classList.contains('active')) {
+                if (isOpen) {
                     icon.classList.remove('fa-bars');
                     icon.classList.add('fa-times');
                 } else {
@@ -184,6 +202,7 @@
                 a.addEventListener('click', () => {
                     if (window.innerWidth <= 992) {
                         navLinks.classList.remove('active');
+                        mobileToggle.setAttribute('aria-expanded', 'false');
                         const icon = mobileToggle.querySelector('i');
                         if (icon) {
                             icon.classList.remove('fa-times');
@@ -262,5 +281,21 @@
             });
         });
     </script>
+    
+    <!-- Mobile Bottom Quick-Action Bar -->
+    <div class="mobile-bottom-bar">
+        <a href="tel:+971545480972" class="mobile-bottom-btn">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call</span>
+        </a>
+        <a href="https://wa.me/971545480972?text=Hello%20PrimePath%20HR" target="_blank" rel="noopener noreferrer" class="mobile-bottom-btn whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+        <a href="contact.php" class="mobile-bottom-btn cta-btn">
+            <i class="fas fa-paper-plane"></i>
+            <span>Enquire</span>
+        </a>
+    </div>
 </body>
 </html>

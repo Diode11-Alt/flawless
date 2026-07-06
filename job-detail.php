@@ -14,7 +14,50 @@ if(!$job) {
 // Share parameters
 $current_url = urlencode((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
 $share_title = urlencode("Check out this job opening: " . $job['title'] . " at " . $job['company']);
+
+// Prepare Schema data
+$job_desc_schema = !empty($job['description']) ? implode(" ", is_array($job['description']) ? $job['description'] : [$job['description']]) : "Details in description.";
 ?>
+
+<!-- Structured Data (JobPosting Schema) -->
+<script type="application/ld+json">
+{
+  "@context" : "https://schema.org/",
+  "@type" : "JobPosting",
+  "title" : "<?= htmlspecialchars($job['title']) ?>",
+  "description" : "<?= htmlspecialchars($job_desc_schema) ?>",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "<?= htmlspecialchars($job['company']) ?>",
+    "value": "PRM-<?= $job['id'] ?>"
+  },
+  "datePosted" : "2026-07-06",
+  "validThrough" : "2026-12-31T00:00",
+  "employmentType" : "<?= htmlspecialchars($job['type'] ?? 'FULL_TIME') ?>",
+  "hiringOrganization" : {
+    "@type" : "Organization",
+    "name" : "<?= htmlspecialchars($job['company']) ?>",
+    "sameAs" : "https://primepathuae.com"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "<?= htmlspecialchars($job['location']) ?>",
+      "addressCountry": "AE"
+    }
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "AED",
+    "value": {
+      "@type": "QuantitativeValue",
+      "value": "<?= htmlspecialchars($job['salary']) ?>",
+      "unitText": "MONTH"
+    }
+  }
+}
+</script>
 
 <div style="background-color: var(--primary-navy-dark); padding: 80px 0; color: white; position: relative; overflow: hidden;" class="animate-up">
     <!-- Decorative background elements -->

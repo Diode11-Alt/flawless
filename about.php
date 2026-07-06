@@ -17,17 +17,17 @@ include 'includes/header.php';
         <div class="split-section">
             <div class="split-image animate-up delay-1" style="position: relative;">
                 <div style="position: absolute; inset: 0; background: var(--secondary-blue); opacity: 0.1; transform: translate(16px, 16px); border-radius: 16px;"></div>
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="PrimePath HR Team" style="border-radius: 16px; position: relative; z-index: 2;">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="PrimePath HR Team" loading="lazy" style="border-radius: 16px; position: relative; z-index: 2;">
             </div>
             <div class="split-content animate-up delay-2">
                 <span style="color: var(--secondary-blue); font-weight: 600; text-transform: uppercase; font-size: 14px; margin-bottom: 10px; display: block;">Who We Are</span>
                 <div style="width: 64px; height: 4px; background: var(--secondary-blue); margin-bottom: 20px; transform: skewX(-12deg);"></div>
                 <h2 style="font-size: 36px; margin-bottom: 20px;">Your Premier HR Partner in the UAE</h2>
                 <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 16px;">
-                    PrimePath HR is a MOHRE-licensed human resource consultancy operating across Dubai and the wider GCC. We bridge the gap between organizational ambitions and exceptional human capital through specialized workforce solutions built for long-term resilience.
+                    PrimePath HR is a MOHRE-licensed human resource consultancy operating out of Dubai. Our primary mission is helping UAE residents, expats, and international professionals secure highly rewarding careers in the UAE and Europe.
                 </p>
                 <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 16px;">
-                    From bespoke talent mapping and executive search to fully compliant workforce deployment, our strategies integrate seamlessly with your corporate culture — powered by our proprietary SmartHR Enterprise Platform.
+                    Whether you are an expat looking for direct placement in Europe or seeking your next big opportunity within the GCC, we provide end-to-end guidance—from resume optimization and interview prep to visa assistance and relocation support.
                 </p>
                 <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
                     <div style="display: flex; align-items: center; gap: 10px;">
@@ -73,7 +73,7 @@ include 'includes/header.php';
             <div class="mission-card animate-up delay-2">
                 <div class="mission-icon"><i class="fas fa-eye"></i></div>
                 <h3>Our Vision</h3>
-                <p>To be the premier benchmark for strategic talent acquisition and HR advisory in the GCC — recognized for redefining workplace cultures and optimizing corporate potential across the region.</p>
+                <p>A world where dreams, talent, and opportunity unite.</p>
             </div>
         </div>
     </div>
@@ -85,9 +85,9 @@ include 'includes/header.php';
         <div style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
             <div class="animate-up delay-1" style="flex: 0 0 280px; position: relative;">
                 <div style="position: absolute; inset: -16px; background: var(--secondary-blue); opacity: 0.05; border-radius: 50%; filter: blur(20px);"></div>
-                <img src="assets/images/ceo.webp" alt="Shishir Yogi, CEO of PrimePath HR Services" 
+                <img src="assets/images/ceo.jpeg" alt="Shishir Yogi, CEO of PrimePath HR Services" loading="lazy"
                      onerror="this.src='https://ui-avatars.com/api/?name=Shishir+Yogi&size=280&background=1B264F&color=fff&rounded=true'"
-                     style="width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 4px solid white; box-shadow: var(--shadow-card); position: relative; z-index: 2;">
+                     style="width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 4px solid white; box-shadow: var(--shadow-card); position: relative; z-index: 2; object-position: top;">
             </div>
             <div class="animate-up delay-2" style="flex: 1; min-width: 300px;">
                 <span style="color: var(--secondary-blue); font-weight: 600; text-transform: uppercase; font-size: 14px; display: block; margin-bottom: 8px;">A Message from Our CEO</span>
@@ -100,33 +100,145 @@ include 'includes/header.php';
     </div>
 </section>
 
-<!-- What Sets Us Apart -->
-<section id="values" class="section section-bg-white" style="padding: 120px 0;">
+<!-- Our Leadership Team -->
+<section id="team" class="section section-bg-white" style="padding: 120px 0;">
     <div class="container">
         <div class="section-title">
-            <h2>What Sets Us <span>Apart</span></h2>
-            <p>A results-driven approach backed by regional expertise and advanced technology.</p>
+            <h2>Our Executive <span>Leadership</span></h2>
+            <p>The visionaries and industry veterans driving PrimePath HR Services forward across the GCC.</p>
+        </div>
+        
+        <div class="team-grid">
+            <!-- Shishir Yogi -->
+            <div class="team-card animate-up delay-1">
+                <div class="team-card-img-wrapper">
+                    <img src="assets/images/ceo.jpeg" alt="Shishir Yogi - CEO" onerror="this.src='https://ui-avatars.com/api/?name=Shishir+Yogi&size=400&background=1B264F&color=fff&bold=true'" style="object-position: top;">
+                    <div class="team-card-socials">
+                        <a href="https://www.linkedin.com/company/primepathhr/" target="_blank" rel="noopener noreferrer" class="team-social-btn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:primepathhrservices@gmail.com" class="team-social-btn"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-card-body">
+                    <div>
+                        <div class="team-role">Chief Executive Officer</div>
+                        <h3 class="team-name">Shishir Yogi</h3>
+                        <p class="team-desc">"At PrimePath, we believe building a team should be a milestone to celebrate, not an operational complication. We lead with transparency, speed, and customized HR frameworks."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ramesh Karki -->
+            <div class="team-card animate-up delay-2">
+                <div class="team-card-img-wrapper">
+                    <img src="assets/images/ramesh.jpeg" alt="Ramesh Karki - Business Development Director" onerror="this.src='https://ui-avatars.com/api/?name=Ramesh+Karki&size=400&background=007A99&color=fff&bold=true'">
+                    <div class="team-card-socials">
+                        <a href="https://www.linkedin.com/company/primepathhr/" target="_blank" rel="noopener noreferrer" class="team-social-btn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:primepathhrservices@gmail.com" class="team-social-btn"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-card-body">
+                    <div>
+                        <div class="team-role">Business Development Director</div>
+                        <h3 class="team-name">Ramesh Karki</h3>
+                        <p class="team-desc">Globally experienced leader in HR, Recruitment, Corporate Training, and Business Consulting with over two decades across Hospitality, Retail, Tourism, and IT. MBA in HRM.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pratik Dahal -->
+            <div class="team-card animate-up delay-3">
+                <div class="team-card-img-wrapper">
+                    <img src="assets/images/pratik.jpeg" alt="Pratik Dahal - Head of Product & Contracting" onerror="this.src='https://ui-avatars.com/api/?name=Pratik+Dahal&size=400&background=1B264F&color=fff&bold=true'">
+                    <div class="team-card-socials">
+                        <a href="https://www.linkedin.com/company/primepathhr/" target="_blank" rel="noopener noreferrer" class="team-social-btn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:primepathhrservices@gmail.com" class="team-social-btn"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-card-body">
+                    <div>
+                        <div class="team-role">Head of Product & Contracting</div>
+                        <h3 class="team-name">Pratik Dahal</h3>
+                        <p class="team-desc">Over a decade of distinguished experience spanning tourism, hospitality, and retail. Translates global commercial acumen into high-integrity contracting and scalable recruitment solutions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Amit Karki -->
+            <div class="team-card animate-up delay-1">
+                <div class="team-card-img-wrapper">
+                    <img src="assets/images/amit.jpeg" alt="Amit Karki - Sales Manager" onerror="this.src='https://ui-avatars.com/api/?name=Amit+Karki&size=400&background=007A99&color=fff&bold=true'">
+                    <div class="team-card-socials">
+                        <a href="https://www.linkedin.com/company/primepathhr/" target="_blank" rel="noopener noreferrer" class="team-social-btn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:primepathhrservices@gmail.com" class="team-social-btn"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-card-body">
+                    <div>
+                        <div class="team-role">Sales Manager</div>
+                        <h3 class="team-name">Amit Karki</h3>
+                        <p class="team-desc">Leading business development and client relationship initiatives across the UAE and GCC. Dedicated to understanding client needs and delivering tailored HR solutions that drive corporate growth.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manisha Kumal -->
+            <div class="team-card animate-up delay-2">
+                <div class="team-card-img-wrapper">
+                    <img src="assets/images/manisha.jpeg" alt="Manisha Kumal - Content Creator" onerror="this.src='https://ui-avatars.com/api/?name=Manisha+Kumal&size=400&background=1B264F&color=fff&bold=true'">
+                    <div class="team-card-socials">
+                        <a href="https://www.linkedin.com/company/primepathhr/" target="_blank" rel="noopener noreferrer" class="team-social-btn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:primepathhrservices@gmail.com" class="team-social-btn"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-card-body">
+                    <div>
+                        <div class="team-role">Content Creator</div>
+                        <h3 class="team-name">Manisha Kumal</h3>
+                        <p class="team-desc">Creates engaging digital and social media content to share the latest updates on job opportunities, work visa services, recruitment, HR solutions, and career guidance across the region.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Join Our Team Teaser -->
+            <div class="team-card animate-up delay-3" style="background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%); color: white; justify-content: center; align-items: center; text-align: center; padding: 40px 30px;">
+                <div style="width: 70px; height: 70px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; margin-bottom: 20px;">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h3 style="color: white; font-size: 24px; margin-bottom: 12px;">Join Our Executive Advisory</h3>
+                <p style="color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 25px;">We are always looking for visionary consultants, recruiters, and HR leaders to join our growing presence in Dubai & Sharjah.</p>
+                <a href="jobs.php" class="btn" style="background: white; color: var(--primary-navy); font-weight: 700; padding: 12px 28px; border-radius: 30px;">View Careers <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Core Values (From Brochure) -->
+<section id="values" class="section" style="background: var(--bg-light); padding: 120px 0;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Core <span>Values</span></h2>
+            <p>Our operational values dictate how we handle talent and navigate complex corporate client requirements — our firm commitment to ethical, premium workforce management.</p>
         </div>
         <div class="value-grid">
             <div class="value-card animate-up delay-1">
-                <div class="icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>MOHRE Compliant</h3>
-                <p style="color: var(--text-muted); font-size: 14px;">Full regulatory alignment with UAE labor law, WPS processing, and Emiratisation quotas — ensuring zero compliance risk for your operations.</p>
+                <div class="icon"><i class="fas fa-balance-scale"></i></div>
+                <h3>Regulatory Integrity & Governance</h3>
+                <p style="color: var(--text-muted); font-size: 14px;">We ensure absolute clarity in fee structures, unbiased candidate appraisals, and flawless compliance with the latest UAE Ministry of Human Resources and Emiratisation (MOHRE) frameworks.</p>
             </div>
             <div class="value-card animate-up delay-2">
-                <div class="icon"><i class="fas fa-bolt"></i></div>
-                <h3>Rapid Turnaround</h3>
-                <p style="color: var(--text-muted); font-size: 14px;">Our Precision Placement Matrix delivers qualified executive shortlists within 14 days — without sacrificing cultural fit or technical competency.</p>
+                <div class="icon"><i class="fas fa-user-tie"></i></div>
+                <h3>Human-Centric Excellence</h3>
+                <p style="color: var(--text-muted); font-size: 14px;">By pairing human-centric consulting with our proprietary SmartHR Enterprise Platform, we empower organizational leaders and HR departments to scale seamlessly.</p>
             </div>
             <div class="value-card animate-up delay-3">
-                <div class="icon"><i class="fas fa-desktop"></i></div>
-                <h3>SmartHR Platform</h3>
-                <p style="color: var(--text-muted); font-size: 14px;">Our proprietary technology platform gives you real-time visibility into talent pipelines, payroll status, and compliance dashboards.</p>
+                <div class="icon"><i class="fas fa-bolt"></i></div>
+                <h3>Agile Innovation</h3>
+                <p style="color: var(--text-muted); font-size: 14px;">We continuously invest in advanced workforce analytics, predictive AI talent filtering, and remote verification protocols to elevate our partner experience.</p>
             </div>
             <div class="value-card animate-up delay-4">
-                <div class="icon"><i class="fas fa-handshake"></i></div>
-                <h3>98% Retention</h3>
-                <p style="color: var(--text-muted); font-size: 14px;">Our placements stick. With a 98% post-placement retention rate, our candidates become long-term assets — not short-term fixes.</p>
+                <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Sustained Reliability</h3>
+                <p style="color: var(--text-muted); font-size: 14px;">Built on trust, our advisory model acts as an extension of your executive suite, ensuring data privacy and consistent, high-impact talent pipelines.</p>
             </div>
         </div>
     </div>

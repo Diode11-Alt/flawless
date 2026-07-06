@@ -26,3 +26,13 @@ test_suite.py
 health_checker.sh
 admin/config.php
 data/*.json
+.vercel/
+__pycache__/
+*.py
+*.patch
+*.txt
+*.json
+!package.json
+!package-lock.json
+!vercel.json
+!data/*.json

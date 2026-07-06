@@ -9,6 +9,13 @@ if (empty($_SESSION['csrf_token'])) {
 }
 require_once '../includes/db.php';
 $jobs = get_jobs();
+$contacts_file = '../data/contacts.json';
+$leads = file_exists($contacts_file) ? json_decode(file_get_contents($contacts_file), true) : [];
+$leads = array_reverse($leads); // newest first
+
+$registrations_file = '../data/registrations.json';
+$applications = file_exists($registrations_file) ? json_decode(file_get_contents($registrations_file), true) : [];
+$applications = array_reverse($applications); // newest first
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -118,6 +125,86 @@ $jobs = get_jobs();
                         </td>
                     </tr>
                     <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- LEADS SECTION -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 60px; margin-bottom: 30px;">
+            <h2>Leads & Inquiries</h2>
+        </div>
+        
+        <div style="background: white; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); overflow: hidden; margin-bottom: 50px; overflow-x: auto;">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Contact Info</th>
+                        <th>Service Required</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (empty($leads)): ?>
+                        <tr><td colspan="5" style="text-align: center; color: var(--text-muted);">No leads found.</td></tr>
+                    <?php else: ?>
+                        <?php foreach($leads as $lead): ?>
+                        <tr>
+                            <td style="white-space: nowrap;"><?= htmlspecialchars($lead['date'] ?? '') ?></td>
+                            <td><strong><?= htmlspecialchars($lead['name'] ?? '') ?></strong></td>
+                            <td>
+                                <a href="mailto:<?= htmlspecialchars($lead['email'] ?? '') ?>" style="color: var(--secondary-blue); display: block;"><?= htmlspecialchars($lead['email'] ?? '') ?></a>
+                                <span style="font-size: 13px; color: var(--text-muted);"><?= htmlspecialchars($lead['phone'] ?? '') ?></span>
+                            </td>
+                            <td><span style="background: rgba(0, 180, 216, 0.1); color: var(--secondary-blue); padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;"><?= htmlspecialchars($lead['subject'] ?? 'General') ?></span></td>
+                            <td style="max-width: 300px; white-space: pre-wrap; font-size: 14px; color: var(--text-dark);"><?= htmlspecialchars($lead['message'] ?? '') ?></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CAREER APPLICATIONS SECTION -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 60px; margin-bottom: 30px;">
+            <h2>Career Applications</h2>
+        </div>
+        
+        <div style="background: white; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); overflow: hidden; margin-bottom: 80px; overflow-x: auto;">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Contact Info</th>
+                        <th>Job Title Applied For</th>
+                        <th>Resume / CV</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (empty($applications)): ?>
+                        <tr><td colspan="5" style="text-align: center; color: var(--text-muted);">No applications found.</td></tr>
+                    <?php else: ?>
+                        <?php foreach($applications as $app): ?>
+                        <tr>
+                            <td style="white-space: nowrap;"><?= htmlspecialchars($app['date'] ?? '') ?></td>
+                            <td><strong><?= htmlspecialchars($app['name'] ?? '') ?></strong></td>
+                            <td>
+                                <a href="mailto:<?= htmlspecialchars($app['email'] ?? '') ?>" style="color: var(--secondary-blue); display: block;"><?= htmlspecialchars($app['email'] ?? '') ?></a>
+                                <span style="font-size: 13px; color: var(--text-muted);"><?= htmlspecialchars($app['phone'] ?? '') ?></span>
+                            </td>
+                            <td><span style="background: rgba(46, 204, 113, 0.1); color: #2ecc71; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;"><?= htmlspecialchars($app['job_title'] ?: 'General Application') ?></span></td>
+                            <td>
+                                <?php if (!empty($app['cv'])): ?>
+                                    <a href="../<?= htmlspecialchars($app['cv']) ?>" target="_blank" class="btn btn-outline" style="padding: 5px 12px; font-size: 12px;"><i class="fas fa-file-download" style="margin-right: 5px;"></i> Download CV</a>
+                                <?php else: ?>
+                                    <span style="color: var(--text-muted); font-size: 13px;">No file uploaded</span>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>

@@ -115,9 +115,7 @@ if ($sort === 'salary') {
                     foreach($jobs as $job): ?>
                     <div class="job-card animate-up delay-<?= min($delay++, 3) ?>">
                         <div class="job-card-header">
-                            <div class="company-logo-placeholder">
-                                <?= strtoupper(substr($job['company'], 0, 2)) ?>
-                            </div>
+
                             <div class="job-card-top-info">
                                 <span class="job-type-badge <?= strtolower(str_replace(' ', '-', $job['type'])) ?>">
                                     <?= htmlspecialchars($job['type']) ?>
@@ -147,6 +145,28 @@ if ($sort === 'salary') {
                             </a>
                         </div>
                     </div>
+                    <!-- SEO Schema Markup -->
+                    <script type="application/ld+json">
+                    {
+                      "@context": "https://schema.org/",
+                      "@type": "JobPosting",
+                      "title": "<?= htmlspecialchars($job['title']) ?>",
+                      "datePosted": "<?= htmlspecialchars($job['posted_date'] ?? date('Y-m-d')) ?>",
+                      "employmentType": "<?= htmlspecialchars(strtoupper(str_replace('-', '_', $job['type']))) ?>",
+                      "hiringOrganization": {
+                        "@type": "Organization",
+                        "name": "<?= htmlspecialchars($job['company']) ?>"
+                      },
+                      "jobLocation": {
+                        "@type": "Place",
+                        "address": {
+                          "@type": "PostalAddress",
+                          "addressLocality": "<?= htmlspecialchars($job['location']) ?>",
+                          "addressCountry": "AE"
+                        }
+                      }
+                    }
+                    </script>
                     <?php endforeach; ?>
                 </div>
             </main>

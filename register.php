@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $file = 'data/registrations.json';
     $current = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
-    $current[] = [
+    $registration_data = [
         'name' => htmlspecialchars(strip_tags(trim($_POST['name'] ?? ''))),
         'email' => filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL),
         'phone' => htmlspecialchars(strip_tags(trim($_POST['phone'] ?? ''))),
@@ -34,7 +34,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'cv' => $cv_path,
         'date' => date('Y-m-d H:i:s')
     ];
+    $current[] = $registration_data;
     file_put_contents($file, json_encode($current, JSON_PRETTY_PRINT));
+    
+    // Format data for Zoho CRM
+    $zoho_data = [
+        'name' => $registration_data['name'],
+        'email' => $registration_data['email'],
+        'phone' => $registration_data['phone'],
+        'message' => "Career Application for Job: " . ($registration_data['job_title'] ?: 'General Application'),
+        'cv_path' => $registration_data['cv']
+    ];
+    send_to_zoho_crm($zoho_data);
     header("Location: thankyou.php");
     exit;
 }
@@ -64,7 +75,7 @@ require_once 'includes/header.php';
             </div>
             <?php endif; ?>
             
-            <form action="register.php" method="POST" enctype="multipart/form-data">
+            <form action="register.php" method="POST" enctype="multipart/form-data" onsubmit="return validateFileSize()">
                 <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
                 <input type="hidden" name="job_id" value="<?= htmlspecialchars($job_id) ?>">
                 <input type="hidden" name="job_title" value="<?= htmlspecialchars($job_title) ?>">
@@ -85,15 +96,40 @@ require_once 'includes/header.php';
                 </div>
 
                 <div class="form-group">
-                    <input type="file" name="cv" accept=".pdf,.doc,.docx"
+                    <input type="file" name="cv" id="reg_cv" accept=".pdf,.doc,.docx"
                            style="padding: 12px; border: 2px dashed #E2E8F0; border-radius: 12px; width: 100%;">
                     <label style="position: static; font-size: 12px; color: var(--text-muted); margin-top: 4px; display: block;">
                         Upload CV (PDF or Word, max 5MB)
                     </label>
+                    <div id="file_error" style="color: red; font-size: 13px; margin-top: 5px; display: none;">File is too large. Maximum size is 5MB.</div>
                 </div>
                 
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Submit Application</button>
+                <div style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 10px;">
+                    <input type="checkbox" id="accept_terms_reg" name="accept_terms" required style="margin-top: 5px;">
+                    <label for="accept_terms_reg" style="font-size: 13px; color: var(--text-muted); cursor: pointer; position: static; transform: none; color: var(--text-muted); pointer-events: auto;">
+                        I agree to the <a href="terms.php" target="_blank" style="color: var(--secondary-blue); text-decoration: underline;">Terms & Conditions</a> and <a href="privacy.php" target="_blank" style="color: var(--secondary-blue); text-decoration: underline;">Privacy Policy</a>.
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Submit Application</button>
             </form>
+            
+            <script>
+            function validateFileSize() {
+                var fileInput = document.getElementById('reg_cv');
+                var errorDiv = document.getElementById('file_error');
+                if (fileInput.files.length > 0) {
+                    var fileSize = fileInput.files[0].size; // in bytes
+                    var maxSize = 5 * 1024 * 1024; // 5MB
+                    if (fileSize > maxSize) {
+                        errorDiv.style.display = 'block';
+                        return false; // Prevent form submission
+                    }
+                }
+                errorDiv.style.display = 'none';
+                return true;
+            }
+            </script>
         </div>
     </div>
 </div>

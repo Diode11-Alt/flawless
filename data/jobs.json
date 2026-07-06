@@ -1,0 +1,63 @@
+[
+    {
+        "id": 1,
+        "title": "Senior Frontend Developer",
+        "company": "TechVision UAE",
+        "location": "Dubai",
+        "type": "Full-Time",
+        "industry": "Tech",
+        "salary": "AED 18,000 - 25,000",
+        "posted_date": "2026-06-25",
+        "description": [
+            "Job DescriptionWe are looking for an experienced Senior Frontend Developer to join our team at TechVision UAE. You will be responsible for overseeing various projects, collaborating with cross-functional teams, and driving innovation.",
+            "Key ResponsibilitiesLead the development and implementation of key strategies.Collaborate closely with internal stakeholders.Ensure compliance with company standards and industry regulations.RequirementsMinimum 5 years of experience in a similar role.Excellent communication and leadership skills.Bachelor's degree in a relevant field."
+        ]
+    },
+    {
+        "id": 2,
+        "title": "HR Manager",
+        "company": "Global Solutions Group",
+        "location": "Abu Dhabi",
+        "type": "Full-Time",
+        "industry": "Finance",
+        "salary": "AED 15,000 - 22,000",
+        "posted_date": "2026-06-20",
+        "description": [
+            "Job DescriptionWe are seeking an HR Manager to oversee HR operations, manage employee relations, and ensure compliance with labor laws.",
+            "Key ResponsibilitiesManage recruitment and onboarding processes.Develop and implement HR policies.Resolve employee conflicts and issues.RequirementsMinimum 7 years of HR experience.Strong knowledge of UAE labor laws.Bachelor's degree in Human Resources."
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Data Scientist",
+        "company": "AI Innovators",
+        "location": "Dubai",
+        "type": "Contract",
+        "industry": "Tech",
+        "salary": "AED 20,000 - 30,000",
+        "posted_date": "2026-06-27",
+        "description": [
+            "Job DescriptionJoin our AI team to build predictive models and analyze complex datasets.",
+            "Key ResponsibilitiesDevelop machine learning models.Analyze large datasets for insights.Collaborate with engineering teams to deploy models.RequirementsMaster's degree in Data Science or related field.Proficiency in Python and SQL.Experience with deep learning frameworks."
+        ]
+    },
+    {
+        "title": "Doctor",
+        "company": "Thulo hospital",
+        "location": "USA",
+        "type": "Full-Time",
+        "salary": "$5000",
+        "industry": "healthcare",
+        "description": [
+            "DR ho DR"
+        ],
+        "responsibilities": [
+            "DR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DR"
+        ],
+        "requirements": [
+            "DR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DRDR ho DR"
+        ],
+        "posted_date": "2026-07-06",
+        "id": 4
+    }
+]
