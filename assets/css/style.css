@@ -630,6 +630,11 @@ a:hover {
   padding: 0 5px;
 }
 
+.form-group textarea + label,
+.form-group textarea ~ label {
+  top: 24px;
+}
+
 .form-group input:focus,
 .form-group input:not(:placeholder-shown),
 .form-group textarea:focus,
@@ -647,7 +652,7 @@ a:hover {
 .form-group textarea:not(:placeholder-shown) + label,
 .form-group select:focus + label,
 .form-group select:not(:placeholder-shown) + label {
-  top: 0;
+  top: 0 !important;
   font-size: 13px;
   color: var(--secondary-blue);
   font-weight: 600;
@@ -891,6 +896,9 @@ a:hover {
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .service-card-image:hover {
   transform: translateY(-5px);
@@ -903,6 +911,9 @@ a:hover {
 }
 .service-card-content {
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .service-card-content span.subtitle {
   color: var(--text-muted);
@@ -921,15 +932,16 @@ a:hover {
   color: var(--text-muted);
   margin-bottom: 20px;
   font-size: 15px;
+  flex-grow: 1;
 }
 .service-card-content .cta-btn {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease !important;
-}
-.service-card-image:hover .cta-btn {
   opacity: 1;
   transform: translateY(0);
+  transition: all 0.3s ease !important;
+  margin-top: auto;
+}
+.service-card-image:hover .cta-btn {
+  background-color: var(--primary-navy) !important;
 }
 
 /* Split Section (About Us) */
@@ -2223,11 +2235,28 @@ body {
     
     /* Footer Fixes */
     .footer-grid {
-        text-align: center !important;
+        text-align: left !important;
         gap: 35px !important;
+        padding: 0 10px;
+    }
+    .footer-widget {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding-bottom: 25px;
+    }
+    .footer-widget:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .footer-widget h4 {
+        color: var(--secondary-blue) !important;
+        margin-bottom: 15px !important;
+        font-size: 18px !important;
+    }
+    .footer-links li {
+        margin-bottom: 12px !important;
     }
     .social-links {
-        justify-content: center !important;
+        justify-content: flex-start !important;
     }
 }
 
@@ -2315,7 +2344,7 @@ body {
         display: flex !important;
     }
     body {
-        padding-bottom: 60px !important;
+        padding-bottom: 85px !important;
     }
     /* Prevent iOS Safari input auto-zoom */
     input, select, textarea {

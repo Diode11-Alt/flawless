@@ -114,7 +114,7 @@ require_once 'includes/header.php';
 
                 <div class="form-group">
                     <textarea name="message" id="contact_message" rows="4" required placeholder=" " style="width: 100%; padding: 16px 20px; border: 2px solid #E2E8F0; border-radius: 12px; font-family: var(--font-body); font-size: 15px; background-color: transparent; transition: all 0.3s ease; resize: vertical;"></textarea>
-                    <label for="contact_message" style="top: 25px;">Message</label>
+                    <label for="contact_message">Message</label>
                 </div>
                 
                 <div style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 10px;">
