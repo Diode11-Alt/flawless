@@ -5,8 +5,8 @@ if (session_status() === PHP_SESSION_NONE) {
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
-require_once 'db.php';
-require_once 'helpers.php';
+require_once __DIR__ . '/db.php';
+require_once __DIR__ . '/helpers.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

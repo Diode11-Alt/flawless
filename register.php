@@ -25,18 +25,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             die('Error: Invalid file type. Only PDF, DOC, and DOCX files are allowed.');
         }
         
-        $upload_dir = 'uploads/';
+        $upload_dir = __DIR__ . '/uploads/';
         if (!is_dir($upload_dir)) {
             mkdir($upload_dir, 0755, true);
         }
         $filename = time() . '_' . bin2hex(random_bytes(4)) . '.' . $ext;
         $target_file = $upload_dir . $filename;
         if (move_uploaded_file($_FILES['cv']['tmp_name'], $target_file)) {
-            $cv_path = $target_file;
+            $cv_path = 'uploads/' . $filename;
         }
     }
 
-    $file = 'data/registrations.json';
+    $file = __DIR__ . '/data/registrations.json';
     $current = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
     $registration_data = [
         'name' => htmlspecialchars(strip_tags(trim($_POST['name'] ?? ''))),

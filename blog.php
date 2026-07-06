@@ -1,7 +1,7 @@
 <?php
 $page_title = "Career Insights & HR News | PrimePath HR";
-include 'includes/header.php';
-require_once 'includes/markdown.php';
+include __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/includes/markdown.php';
 
 $articles = get_all_articles();
 ?>

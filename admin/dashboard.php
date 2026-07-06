@@ -7,13 +7,13 @@ if (!check_admin_auth()) {
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
-require_once '../includes/db.php';
+require_once __DIR__ . '/../includes/db.php';
 $jobs = get_jobs();
-$contacts_file = '../data/contacts.json';
+$contacts_file = __DIR__ . '/../data/contacts.json';
 $leads = file_exists($contacts_file) ? json_decode(file_get_contents($contacts_file), true) : [];
 $leads = array_reverse($leads); // newest first
 
-$registrations_file = '../data/registrations.json';
+$registrations_file = __DIR__ . '/../data/registrations.json';
 $applications = file_exists($registrations_file) ? json_decode(file_get_contents($registrations_file), true) : [];
 $applications = array_reverse($applications); // newest first
 ?>

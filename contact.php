@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         die('Invalid CSRF token');
     }
 
-    $file = 'data/contacts.json';
+    $file = __DIR__ . '/data/contacts.json';
     $current = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
     
     // Sanitization

@@ -1,6 +1,6 @@
 <?php
 header("Content-Type: application/xml; charset=utf-8");
-require_once 'includes/db.php';
+require_once __DIR__ . '/includes/db.php';
 
 echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 ?>
