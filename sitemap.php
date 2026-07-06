@@ -1,5 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?php
+header("Content-Type: application/xml; charset=utf-8");
+require_once 'includes/db.php';
+
+echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Core Pages -->
     <url>
         <loc>https://primepathuae.com/</loc>
         <changefreq>daily</changefreq>
@@ -55,44 +61,37 @@
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
+
+    <!-- Dynamic Jobs -->
+    <?php
+    $jobs = get_jobs();
+    foreach ($jobs as $job):
+        if (isset($job['id'])):
+    ?>
     <url>
-        <loc>https://primepathuae.com/job-detail.php?id=1</loc>
+        <loc>https://primepathuae.com/job-detail.php?id=<?= $job['id'] ?></loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+    <?php 
+        endif;
+    endforeach; 
+    ?>
+
+    <!-- Dynamic Articles -->
+    <?php
+    $articles = glob('content/*.md');
+    if ($articles):
+        foreach ($articles as $article):
+            $slug = basename($article, '.md');
+    ?>
     <url>
-        <loc>https://primepathuae.com/job-detail.php?id=2</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/job-detail.php?id=3</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/article.php?slug=dubai-emiratisation-tawteen-guide-2026</loc>
+        <loc>https://primepathuae.com/article.php?slug=<?= urlencode($slug) ?></loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    <url>
-        <loc>https://primepathuae.com/article.php?slug=how-to-get-schengen-work-visa-from-dubai</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/article.php?slug=how-to-optimize-your-cv-for-dubai-market</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/article.php?slug=top-skills-in-demand-uae-2026</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/article.php?slug=understanding-wps-wages-protection-system-uae</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
+    <?php
+        endforeach;
+    endif;
+    ?>
 </urlset>

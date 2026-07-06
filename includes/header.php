@@ -14,37 +14,73 @@ require_once 'helpers.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no">
-    <title><?= isset($page_title) ? htmlspecialchars($page_title) : 'Find Tech, Healthcare & Skilled Trades Jobs | PrimePath HR' ?></title>
+    <?php
+    $current_url = "https://primepathuae.com" . ($_SERVER['REQUEST_URI'] ?? '/');
+    $meta_desc = isset($page_description) ? htmlspecialchars($page_description) : 'Leading Dubai recruitment agency helping UAE expats secure AI, Healthcare, Project Management, and skilled jobs in the UAE and Europe with visa sponsorship. 100% MOHRE Compliant.';
+    $meta_title = isset($page_title) ? htmlspecialchars($page_title) : 'Find Tech, Healthcare & Skilled Trades Jobs | PrimePath HR';
+    $meta_img = isset($page_image) ? "https://primepathuae.com" . $page_image : "https://primepathuae.com/assets/images/logo.png";
+    ?>
+    <title><?= $meta_title ?></title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Material Symbols -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <?php if (basename($_SERVER['PHP_SELF']) === 'index.php' || $_SERVER['PHP_SELF'] === '/'): ?>
     <link rel="preload" as="image" href="/assets/images/hero-bg.jpg">
-    <!-- SEO Meta -->
+    <?php endif; ?>
+    <!-- SEO Meta & Social Tags -->
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
-    <meta property="og:image" content="https://primepathuae.com/assets/images/og-image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Find Tech, Healthcare & Skilled Trades Jobs | PrimePath HR">
-    <meta name="description" content="Leading Dubai recruitment agency helping UAE expats secure AI, Healthcare, Project Management, and skilled Blue-Collar jobs in the UAE and Europe with visa sponsorship.">
-    <meta name="keywords" content="Jobs in Dubai for expats, Europe work visa from UAE, DHA healthcare jobs Dubai, Tech jobs UAE, AI jobs Dubai, skilled trades jobs UAE, blue-collar jobs Dubai to Europe, recruitment agency Dubai, ATS optimized CV UAE">
+    <meta name="description" content="<?= $meta_desc ?>">
+    <meta name="keywords" content="Jobs in Dubai for expats, Europe work visa from UAE, DHA healthcare jobs Dubai, Tech jobs UAE, AI jobs Dubai, skilled trades jobs UAE, blue-collar jobs Dubai to Europe, recruitment agency Dubai, ATS optimized CV UAE, MOHRE compliant recruitment">
+    <link rel="canonical" href="<?= htmlspecialchars($current_url) ?>">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Find Tech, Healthcare & Skilled Trades Jobs | PrimePath HR">
-    <meta property="og:description" content="Leading Dubai recruitment agency helping UAE expats secure AI, Healthcare, Project Management, and skilled Blue-Collar jobs in the UAE and Europe with visa sponsorship.">
-    <meta property="og:url" content="https://primepathuae.com/">
-    <link rel="canonical" href="https://primepathuae.com/">
-    <!-- Structured Data -->
+    <meta property="og:title" content="<?= $meta_title ?>">
+    <meta property="og:description" content="<?= $meta_desc ?>">
+    <meta property="og:url" content="<?= htmlspecialchars($current_url) ?>">
+    <meta property="og:image" content="<?= $meta_img ?>">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?= $meta_title ?>">
+    <meta name="twitter:description" content="<?= $meta_desc ?>">
+    <meta name="twitter:image" content="<?= $meta_img ?>">
+    <!-- Structured Data: EmploymentAgency & LocalBusiness Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "PrimePath HR",
+      "@type": "EmploymentAgency",
+      "name": "PrimePath HR Services",
+      "alternateName": "PrimePath HR UAE",
       "url": "https://primepathuae.com/",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+971 54 548 0972",
-        "contactType": "customer service"
-      }
+      "logo": "https://primepathuae.com/assets/images/logo.png",
+      "image": "https://primepathuae.com/assets/images/logo.png",
+      "description": "<?= $meta_desc ?>",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Business Village, Block B - Office 923",
+        "addressLocality": "Deira",
+        "addressRegion": "Dubai",
+        "addressCountry": "AE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.2532,
+        "longitude": 55.3283
+      },
+      "telephone": "+971 54 548 0972",
+      "email": "primepathhrservices@gmail.com",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/PrimePathHR",
+        "https://www.linkedin.com/company/primepathhr/"
+      ]
     }
     </script>
     <!-- Typed.js -->

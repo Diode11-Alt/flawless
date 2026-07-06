@@ -5,3 +5,4 @@ Disallow: /data/
 Disallow: /includes/
 
 Sitemap: https://primepathuae.com/sitemap.xml
+Sitemap: https://primepathuae.com/sitemap.php

@@ -20,13 +20,39 @@ if (preg_match('/^# (.*)$/m', $content_raw, $matches)) {
 }
 
 $page_title = htmlspecialchars($title) . " | PrimePath HR";
-$meta_description = substr(strip_tags(parse_basic_markdown($content_raw)), 0, 160);
+$page_description = substr(strip_tags(parse_basic_markdown($content_raw)), 0, 160);
 include 'includes/header.php';
 
 $parsed_content = parse_basic_markdown($content_raw);
 // Remove the first h1 since we render it in the header
 $parsed_content = preg_replace('/<h1>.*?<\/h1>/i', '', $parsed_content, 1);
 ?>
+
+<!-- Structured Data (Article Schema) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "<?= htmlspecialchars($title) ?>",
+  "image": "https://primepathuae.com/assets/images/logo.png",
+  "author": {
+    "@type": "Organization",
+    "name": "PrimePath HR Services",
+    "url": "https://primepathuae.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PrimePath HR Services",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://primepathuae.com/assets/images/logo.png"
+    }
+  },
+  "datePublished": "<?= date('c', filemtime($file)) ?>",
+  "dateModified": "<?= date('c', filemtime($file)) ?>",
+  "description": "<?= htmlspecialchars($page_description) ?>"
+}
+</script>
 
 <section class="page-header" style="background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%); padding: 120px 0 80px; text-align: center; color: white;">
     <div class="container">

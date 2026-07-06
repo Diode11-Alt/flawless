@@ -3,6 +3,8 @@ include 'includes/db.php';
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 1;
 $job = get_job_by_id($id);
 $page_title = ($job ? $job['title'] . " | PrimePath HR" : "Job Not Found");
+$job_desc_schema = $job && !empty($job['description']) ? implode(" ", is_array($job['description']) ? $job['description'] : [$job['description']]) : "Details in description.";
+$page_description = $job ? "Apply for " . $job['title'] . " in " . $job['location'] . " with PrimePath HR. Salary: " . ($job['salary'] ?? 'Competitive') . ". Leading Dubai recruitment agency." : "Find jobs in Dubai and GCC.";
 include 'includes/header.php'; 
 
 if(!$job) {
@@ -14,9 +16,6 @@ if(!$job) {
 // Share parameters
 $current_url = urlencode((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
 $share_title = urlencode("Check out this job opening: " . $job['title'] . " at " . $job['company']);
-
-// Prepare Schema data
-$job_desc_schema = !empty($job['description']) ? implode(" ", is_array($job['description']) ? $job['description'] : [$job['description']]) : "Details in description.";
 ?>
 
 <!-- Structured Data (JobPosting Schema) -->
@@ -31,13 +30,14 @@ $job_desc_schema = !empty($job['description']) ? implode(" ", is_array($job['des
     "name": "<?= htmlspecialchars($job['company']) ?>",
     "value": "PRM-<?= $job['id'] ?>"
   },
-  "datePosted" : "2026-07-06",
-  "validThrough" : "2026-12-31T00:00",
-  "employmentType" : "<?= htmlspecialchars($job['type'] ?? 'FULL_TIME') ?>",
+  "datePosted" : "<?= !empty($job['posted_date']) ? htmlspecialchars($job['posted_date']) : date('Y-m-d') ?>",
+  "validThrough" : "<?= date('Y-m-d\TH:i', strtotime('+6 months')) ?>",
+  "employmentType" : "<?= htmlspecialchars(str_replace(' ', '_', strtoupper($job['type'] ?? 'FULL_TIME'))) ?>",
   "hiringOrganization" : {
     "@type" : "Organization",
     "name" : "<?= htmlspecialchars($job['company']) ?>",
-    "sameAs" : "https://primepathuae.com"
+    "sameAs" : "https://primepathuae.com",
+    "logo" : "https://primepathuae.com/assets/images/logo.png"
   },
   "jobLocation": {
     "@type": "Place",
