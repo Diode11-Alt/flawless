@@ -20,7 +20,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-widget">
-                    <a href="index.php"><img src="/assets/images/logo.png" alt="PrimePath HR Services" style="height: 50px; width: auto; filter: brightness(0) invert(1); margin-bottom: 10px;"></a>
+                    <a href="index.php"><img src="/assets/images/logo.png" alt="PrimePath HR Services" style="height: 55px; width: auto; margin-bottom: 15px;"></a>
                     <p style="color: rgba(255,255,255,0.7); line-height: 1.7;">Strategic Progression for forward-thinking enterprises.</p>
                 </div>
                 <div class="footer-widget">
