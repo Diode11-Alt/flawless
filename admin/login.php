@@ -5,7 +5,11 @@ if (isset($_SESSION['admin_logged_in'])) {
     exit;
 }
 
-require_once 'config.php';
+if (file_exists(__DIR__ . '/config.php')) {
+    require_once __DIR__ . '/config.php';
+} else {
+    require_once __DIR__ . '/config.example.php';
+}
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
