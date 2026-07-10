@@ -50,8 +50,9 @@ if ($sort === 'salary') {
 <!-- Premium Hero -->
 <section class="jobs-hero animate-up">
     <div class="container">
-        <h1>Available Positions</h1>
-        <p style="opacity: 0.9; margin-top: 15px; font-size: 18px;">Find your next career defining moment with PrimePath UAE.</p>
+        <span class="badge-tag" style="background: rgba(255,255,255,0.15); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; display: inline-block; margin-bottom: 10px;">Executive Search & Specialist Portal</span>
+        <h1>Executive & Specialist Opportunities</h1>
+        <p style="opacity: 0.9; margin-top: 10px; font-size: 17px;">Explore active C-suite, technical leadership, and specialist mandates managed by PrimePath HR across Dubai and the GCC.</p>
     </div>
 </section>
 

@@ -81,6 +81,7 @@ include 'includes/header.php';
                 <p style="margin-bottom: 30px; opacity: 0.9;">Drop us a message and our B2B team will contact you within 24 hours.</p>
                 <form action="contact.php" method="POST">
                     <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
+                    <input type="hidden" name="inquiry_type" value="employer">
                     <div style="margin-bottom: 15px;">
                         <input type="text" name="company" placeholder="Company Name" required style="width: 100%; padding: 12px; border-radius: 8px; border: none;">
                     </div>

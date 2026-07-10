@@ -7,7 +7,7 @@ include 'includes/header.php';
 <section class="page-header" style="background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%); padding: 120px 0 80px; text-align: center; color: white;">
     <div class="container">
         <h1 style="font-size: 42px; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">How We Work</h1>
-        <p style="font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto;">Our proven 4-step process delivers the right talent, every time.</p>
+        <p style="font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto;">Our proven 4-step cross-border process delivers reliable international talent to Malta.</p>
     </div>
 </section>
 
@@ -22,29 +22,29 @@ include 'includes/header.php';
             <div class="process-step animate-up delay-1">
                 <div class="step-number">01</div>
                 <div class="step-icon"><i class="fas fa-comments"></i></div>
-                <h3>Discovery Call</h3>
-                <p>We learn your organization's culture, goals, and exact requirements through a structured briefing.</p>
+                <h3>Malta Discovery</h3>
+                <p>We analyze your organization's volume needs, skill requirements, and timelines to establish a precise staffing blueprint.</p>
             </div>
             <div class="process-connector"></div>
             <div class="process-step animate-up delay-2">
                 <div class="step-number">02</div>
                 <div class="step-icon"><i class="fas fa-search"></i></div>
-                <h3>Talent Mapping</h3>
-                <p>Our proprietary database and active search methodology targets passive candidates not visible on job boards.</p>
+                <h3>Global Sourcing & Vetting</h3>
+                <p>From our UAE hub, we tap into vast networks across Asia and the Middle East, conducting rigorous trade tests and interviews.</p>
             </div>
             <div class="process-connector"></div>
             <div class="process-step animate-up delay-3">
                 <div class="step-number">03</div>
-                <div class="step-icon"><i class="fas fa-user-check"></i></div>
-                <h3>Shortlist Delivery</h3>
-                <p>We deliver a curated shortlist of 3–5 vetted candidates within 14 business days.</p>
+                <div class="step-icon"><i class="fas fa-passport"></i></div>
+                <h3>Visa & Immigration</h3>
+                <p>We seamlessly manage the entire Identity Malta work permit process, ensuring full compliance and fast processing.</p>
             </div>
             <div class="process-connector"></div>
             <div class="process-step animate-up delay-4">
                 <div class="step-number">04</div>
-                <div class="step-icon"><i class="fas fa-handshake"></i></div>
-                <h3>Placement & Support</h3>
-                <p>We manage offer negotiation, onboarding, and provide a 90-day placement guarantee.</p>
+                <div class="step-icon"><i class="fas fa-plane-arrival"></i></div>
+                <h3>Deployment & Arrival</h3>
+                <p>We handle flight logistics, pre-departure orientation, and arrival support so your new staff hit the ground running.</p>
             </div>
         </div>
     </div>
@@ -52,9 +52,16 @@ include 'includes/header.php';
 
 <section class="section" style="background: var(--bg-light); padding: 80px 0; text-align: center;">
     <div class="container">
-        <h2 style="margin-bottom: 20px;">Start Your Hiring Process</h2>
-        <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 16px;">Let us help you find the right leaders for your organization.</p>
-        <a href="contact.php" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%);">Schedule a Discovery Call <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+        <h2 style="margin-bottom: 20px;">Initiate Your Global Deployment</h2>
+        <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 16px;">Let our advisory team streamline your volume recruitment, Identity Malta visa processing, and relocation logistics.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="contact.php" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%); padding: 15px 32px; border-radius: 30px;">
+                Schedule a Discovery Call <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
+            <a href="solutions.php" class="btn btn-outline" style="border-color: var(--primary-navy); color: var(--primary-navy); padding: 15px 32px; border-radius: 30px;">
+                <i class="fas fa-globe" style="margin-right: 8px;"></i> Explore Global Solutions
+            </a>
+        </div>
     </div>
 </section>
 

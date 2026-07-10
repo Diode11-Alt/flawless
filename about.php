@@ -6,8 +6,8 @@ include 'includes/header.php';
 <!-- Page Header -->
 <section class="page-header" style="background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%); padding: 120px 0 80px; text-align: center; color: white;">
     <div class="container">
-        <h1 style="font-size: 42px; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">About Us</h1>
-        <p style="font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto;">Your Premier HR Partner in the UAE and GCC.</p>
+        <h1 style="font-family: var(--font-heading); font-size: 42px; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">About Us</h1>
+        <p style="font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto;">Connecting great people with great opportunities in Malta.</p>
     </div>
 </section>
 
@@ -22,29 +22,29 @@ include 'includes/header.php';
             <div class="split-content animate-up delay-2">
                 <span style="color: var(--secondary-blue); font-weight: 600; text-transform: uppercase; font-size: 14px; margin-bottom: 10px; display: block;">Who We Are</span>
                 <div style="width: 64px; height: 4px; background: var(--secondary-blue); margin-bottom: 20px; transform: skewX(-12deg);"></div>
-                <h2 style="font-size: 36px; margin-bottom: 20px;">Your Premier HR Partner in the UAE</h2>
-                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 16px;">
-                    PrimePath HR is a MOHRE-licensed human resource consultancy operating out of Dubai. Our primary mission is helping UAE residents, expats, and international professionals secure highly rewarding careers in the UAE and Europe.
+                <h2 style="font-family: var(--font-heading); font-size: 36px; margin-bottom: 20px;">Connecting Global Talent with Malta's Best Companies</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 16px; line-height: 1.7;">
+                    PrimePath HR is a passionate recruitment team based in Dubai. Our main goal is simple: helping companies in Malta find dedicated, hardworking staff for their hospitality, construction, and retail teams.
                 </p>
-                <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 16px;">
-                    Whether you are an expat looking for direct placement in Europe or seeking your next big opportunity within the GCC, we provide end-to-end guidance—from resume optimization and interview prep to visa assistance and relocation support.
+                <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 16px; line-height: 1.7;">
+                    We know that international hiring can feel overwhelming. That's why we manage everything for you—from sourcing and interviewing candidates to handling the complex Identity Malta visa applications. We take care of the paperwork so you can welcome your new team members stress-free.
                 </p>
                 <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <div style="width: 45px; height: 45px; background: var(--bg-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">
-                            <i class="fas fa-building" style="color: var(--primary-navy);"></i>
+                            <i class="fas fa-globe-europe" style="color: var(--primary-navy);"></i>
                         </div>
-                        <span style="font-weight: 600; color: var(--primary-navy); font-size: 14px;">Licensed by MOHRE UAE</span>
+                        <span style="font-weight: 600; color: var(--primary-navy); font-size: 14px;">Cross-Border Deployment Experts</span>
                     </div>
                 </div>
                 <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 30px;">
                     <a href="contact.php" class="btn btn-primary"
                        style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%);">
-                        Work With Us <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                        Request a Consultation <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
                     </a>
                     <a href="process.php" class="btn btn-outline"
                        style="border-color: var(--primary-navy); color: var(--primary-navy);">
-                        How We Work
+                        View Our Process
                     </a>
                 </div>
             </div>
@@ -65,15 +65,15 @@ include 'includes/header.php';
         </div>
         
         <div class="mission-grid">
-            <div class="mission-card animate-up delay-1">
-                <div class="mission-icon"><i class="fas fa-flag"></i></div>
-                <h3>Our Mission</h3>
-                <p>To elevate organizational performance by deploying sustainable, high-impact HR solutions rooted in deep industry expertise and absolute transparency — leveraging innovative technology to give our partners a distinctive competitive edge.</p>
+            <div class="mission-card animate-up delay-1" style="border-radius: 16px;">
+                <div class="mission-icon" style="background: rgba(255,255,255,0.1); color: var(--secondary-blue);"><i class="fas fa-heart"></i></div>
+                <h3 style="font-family: var(--font-heading);">Our Mission</h3>
+                <p>To make international hiring a positive, seamless experience. We want to remove the stress of visa processing and global sourcing, connecting you with people who will help your business thrive.</p>
             </div>
-            <div class="mission-card animate-up delay-2">
-                <div class="mission-icon"><i class="fas fa-eye"></i></div>
-                <h3>Our Vision</h3>
-                <p>A world where dreams, talent, and opportunity unite.</p>
+            <div class="mission-card animate-up delay-2" style="border-radius: 16px;">
+                <div class="mission-icon" style="background: rgba(255,255,255,0.1); color: var(--secondary-blue);"><i class="fas fa-globe"></i></div>
+                <h3 style="font-family: var(--font-heading);">Our Vision</h3>
+                <p>To be the most trusted and friendly recruitment partner bridging the gap between exceptional global talent and the vibrant European market.</p>
             </div>
         </div>
     </div>
@@ -91,9 +91,9 @@ include 'includes/header.php';
             </div>
             <div class="animate-up delay-2" style="flex: 1; min-width: 300px;">
                 <span style="color: var(--secondary-blue); font-weight: 600; text-transform: uppercase; font-size: 14px; display: block; margin-bottom: 8px;">A Message from Our CEO</span>
-                <h2 style="font-size: 28px; margin-bottom: 5px;">Shishir Yogi, <span style="color: var(--secondary-blue);">CEO</span></h2>
+                <h2 style="font-family: var(--font-heading); font-size: 28px; margin-bottom: 5px;">Shishir Yogi, <span style="color: var(--secondary-blue);">CEO</span></h2>
                 <div style="color: var(--text-muted); font-size: 16px; line-height: 1.8; margin-top: 20px;">
-                    <p style="font-style: italic; font-size: 18px; border-left: 3px solid var(--secondary-blue); padding-left: 20px;">"At PrimePath, we built our consultancy on a simple principle: hiring should be a milestone, not a complication. Whether you need C-suite leaders, Emiratisation programs, or full-scale staff outsourcing, our team delivers with transparency, speed, and outstanding service."</p>
+                    <p style="font-style: italic; font-size: 18px; border-left: 3px solid var(--secondary-blue); padding-left: 20px;">"At PrimePath, we believe that hiring international talent shouldn't be a daunting process. Whether you need an entire hospitality crew or specialized retail staff, our goal is to deliver exactly who you need, handle all the visa paperwork, and make sure your new team members arrive ready to make a difference."</p>
                 </div>
             </div>
         </div>
@@ -104,8 +104,8 @@ include 'includes/header.php';
 <section id="team" class="section section-bg-white" style="padding: 120px 0;">
     <div class="container">
         <div class="section-title">
-            <h2>Our Executive <span>Leadership</span></h2>
-            <p>The visionaries and industry veterans driving PrimePath HR Services forward across the GCC.</p>
+            <h2>Our <span>Leadership</span></h2>
+            <p>The leadership team managing our international operations.</p>
         </div>
         
         <div class="team-grid">
@@ -122,7 +122,7 @@ include 'includes/header.php';
                     <div>
                         <div class="team-role">Chief Executive Officer</div>
                         <h3 class="team-name">Shishir Yogi</h3>
-                        <p class="team-desc">"At PrimePath, we believe building a team should be a milestone to celebrate, not an operational complication. We lead with transparency, speed, and customized HR frameworks."</p>
+                        <p class="team-desc">"At PrimePath, we believe international hiring should be a growth engine, not an operational headache. We lead with strict compliance and transparent timelines."</p>
                     </div>
                 </div>
             </div>
@@ -158,7 +158,7 @@ include 'includes/header.php';
                     <div>
                         <div class="team-role">Head of Product & Contracting</div>
                         <h3 class="team-name">Pratik Dahal</h3>
-                        <p class="team-desc">Over a decade of distinguished experience spanning tourism, hospitality, and retail. Translates global commercial acumen into high-integrity contracting and scalable recruitment solutions.</p>
+                        <p class="team-desc">Pratik leads our commercial contracting division, bringing over a decade of operational experience to architect our international workforce agreements.</p>
                     </div>
                 </div>
             </div>
@@ -176,7 +176,7 @@ include 'includes/header.php';
                     <div>
                         <div class="team-role">Sales Manager</div>
                         <h3 class="team-name">Amit Karki</h3>
-                        <p class="team-desc">Leading business development and client relationship initiatives across the UAE and GCC. Dedicated to understanding client needs and delivering tailored HR solutions that drive corporate growth.</p>
+                        <p class="team-desc">Leading business development and client relationship initiatives across the UAE. Dedicated to understanding client requirements and delivering workforce solutions that meet exact operational needs.</p>
                     </div>
                 </div>
             </div>
@@ -194,7 +194,7 @@ include 'includes/header.php';
                     <div>
                         <div class="team-role">Content Creator</div>
                         <h3 class="team-name">Manisha Kumal</h3>
-                        <p class="team-desc">Creates engaging digital and social media content to share the latest updates on job opportunities, work visa services, recruitment, HR solutions, and career guidance across the region.</p>
+                        <p class="team-desc">Manages our digital communication and candidate engagement platforms, ensuring clear updates on job opportunities and work visa requirements.</p>
                     </div>
                 </div>
             </div>
@@ -204,8 +204,8 @@ include 'includes/header.php';
                 <div style="width: 70px; height: 70px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; margin-bottom: 20px;">
                     <i class="fas fa-user-plus"></i>
                 </div>
-                <h3 style="color: white; font-size: 24px; margin-bottom: 12px;">Join Our Executive Advisory</h3>
-                <p style="color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 25px;">We are always looking for visionary consultants, recruiters, and HR leaders to join our growing presence in Dubai & Sharjah.</p>
+                <h3 style="color: white; font-size: 24px; margin-bottom: 12px;">Join Our Advisory Team</h3>
+                <p style="color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 25px;">We are always looking for visionary recruiters and mobilization experts to join our growing global operations.</p>
                 <a href="jobs.php" class="btn" style="background: white; color: var(--primary-navy); font-weight: 700; padding: 12px 28px; border-radius: 30px;">View Careers <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
             </div>
         </div>
@@ -217,28 +217,28 @@ include 'includes/header.php';
     <div class="container">
         <div class="section-title">
             <h2>Our Core <span>Values</span></h2>
-            <p>Our operational values dictate how we handle talent and navigate complex corporate client requirements — our firm commitment to ethical, premium workforce management.</p>
+            <p>Our operational values dictate how we handle talent and navigate immigration requirements.</p>
         </div>
         <div class="value-grid">
             <div class="value-card animate-up delay-1">
                 <div class="icon"><i class="fas fa-balance-scale"></i></div>
-                <h3>Regulatory Integrity & Governance</h3>
-                <p style="color: var(--text-muted); font-size: 14px;">We ensure absolute clarity in fee structures, unbiased candidate appraisals, and flawless compliance with the latest UAE Ministry of Human Resources and Emiratisation (MOHRE) frameworks.</p>
+                <h3>Regulatory Compliance</h3>
+                <p style="color: var(--text-muted); font-size: 14px;">We ensure absolute clarity in fee structures and flawless compliance with Identity Malta and European immigration frameworks.</p>
             </div>
             <div class="value-card animate-up delay-2">
                 <div class="icon"><i class="fas fa-user-tie"></i></div>
-                <h3>Human-Centric Excellence</h3>
-                <p style="color: var(--text-muted); font-size: 14px;">By pairing human-centric consulting with our proprietary SmartHR Enterprise Platform, we empower organizational leaders and HR departments to scale seamlessly.</p>
+                <h3>Operational Transparency</h3>
+                <p style="color: var(--text-muted); font-size: 14px;">Employers have full visibility into the mobilization process, from initial shortlisting to visa status updates.</p>
             </div>
             <div class="value-card animate-up delay-3">
                 <div class="icon"><i class="fas fa-bolt"></i></div>
-                <h3>Agile Innovation</h3>
-                <p style="color: var(--text-muted); font-size: 14px;">We continuously invest in advanced workforce analytics, predictive AI talent filtering, and remote verification protocols to elevate our partner experience.</p>
+                <h3>Strict Skill Vetting</h3>
+                <p style="color: var(--text-muted); font-size: 14px;">We do not rely on CVs alone. We implement practical trade tests and face-to-face interviews to guarantee candidate capability.</p>
             </div>
             <div class="value-card animate-up delay-4">
                 <div class="icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Sustained Reliability</h3>
-                <p style="color: var(--text-muted); font-size: 14px;">Built on trust, our advisory model acts as an extension of your executive suite, ensuring data privacy and consistent, high-impact talent pipelines.</p>
+                <h3>Reliable Timelines</h3>
+                <p style="color: var(--text-muted); font-size: 14px;">We provide realistic mobilization schedules based on current embassy processing times, preventing costly operational delays.</p>
             </div>
         </div>
     </div>
@@ -251,8 +251,8 @@ include 'includes/header.php';
             <div class="split-content animate-up delay-1">
                 <span style="color: var(--secondary-blue); font-weight: 600; text-transform: uppercase; font-size: 14px; margin-bottom: 10px; display: block;">Why Choose Us</span>
                 <div style="width: 64px; height: 4px; background: var(--secondary-blue); margin-bottom: 20px; transform: skewX(-12deg);"></div>
-                <h2 style="font-size: 36px; margin-bottom: 20px;">Why Choose PrimePath?</h2>
-                <p style="color: var(--text-muted); margin-bottom: 30px;">At PrimePath, our operational values dictate how we handle talent and navigate complex corporate client requirements. They serve as our firm commitment to ethical, premium workforce management.</p>
+                <h2 style="font-size: 36px; margin-bottom: 20px;">Why Employers Trust PrimePath</h2>
+                <p style="color: var(--text-muted); margin-bottom: 30px;">We eliminate the administrative friction of cross-border hiring, allowing you to focus on running your business in Malta.</p>
                 
                 <div style="display: flex; flex-direction: column; gap: 25px; margin-bottom: 30px;">
                     <div style="display: flex; align-items: flex-start; gap: 15px;">
@@ -260,8 +260,8 @@ include 'includes/header.php';
                             <i class="fas fa-users" style="color: var(--secondary-blue); font-size: 18px;"></i>
                         </div>
                         <div>
-                            <h4 style="margin-bottom: 5px; font-size: 17px;">Comprehensive HR Operations</h4>
-                            <p style="color: var(--text-muted); font-size: 14px; margin: 0;">Managing the full talent lifecycle from initial identification to payroll, benefits, and contract lifecycle compliance.</p>
+                            <h4 style="margin-bottom: 5px; font-size: 17px;">End-to-End Mobilization</h4>
+                            <p style="color: var(--text-muted); font-size: 14px; margin: 0;">We handle sourcing, testing, visa applications, and flight logistics as a single integrated service.</p>
                         </div>
                     </div>
                     <div style="display: flex; align-items: flex-start; gap: 15px;">
@@ -269,8 +269,8 @@ include 'includes/header.php';
                             <i class="fas fa-crosshairs" style="color: var(--secondary-blue); font-size: 18px;"></i>
                         </div>
                         <div>
-                            <h4 style="margin-bottom: 5px; font-size: 17px;">Precision Placement Matrix</h4>
-                            <p style="color: var(--text-muted); font-size: 14px; margin: 0;">Rapid turnarounds achieved without sacrificing technical proficiency or structural cultural fit.</p>
+                            <h4 style="margin-bottom: 5px; font-size: 17px;">Targeted Sourcing</h4>
+                            <p style="color: var(--text-muted); font-size: 14px; margin: 0;">We source directly from specialized talent pools in the UAE and Asia for hospitality, construction, and healthcare.</p>
                         </div>
                     </div>
                     <div style="display: flex; align-items: flex-start; gap: 15px;">
@@ -278,8 +278,8 @@ include 'includes/header.php';
                             <i class="fas fa-bullseye" style="color: var(--secondary-blue); font-size: 18px;"></i>
                         </div>
                         <div>
-                            <h4 style="margin-bottom: 5px; font-size: 17px;">Strategic Executive Advisory</h4>
-                            <p style="color: var(--text-muted); font-size: 14px; margin: 0;">Consistent consultative communication at every stage of your enterprise growth journey.</p>
+                            <h4 style="margin-bottom: 5px; font-size: 17px;">Direct Communication</h4>
+                            <p style="color: var(--text-muted); font-size: 14px; margin: 0;">You work with a dedicated account manager who provides factual, timely updates on visa processing and candidate status.</p>
                         </div>
                     </div>
                     <div style="display: flex; align-items: flex-start; gap: 15px;">
@@ -287,8 +287,8 @@ include 'includes/header.php';
                             <i class="fas fa-cogs" style="color: var(--secondary-blue); font-size: 18px;"></i>
                         </div>
                         <div>
-                            <h4 style="margin-bottom: 5px; font-size: 17px;">Unified Technical Frameworks</h4>
-                            <p style="color: var(--text-muted); font-size: 14px; margin: 0;">Innovative web integrations like the SmartHR Portal that keep all stakeholders aligned and informed.</p>
+                            <h4 style="margin-bottom: 5px; font-size: 17px;">Risk Mitigation</h4>
+                            <p style="color: var(--text-muted); font-size: 14px; margin: 0;">Our 90-day retention guarantee and strict medical/skill vetting protocols protect your hiring investment.</p>
                         </div>
                     </div>
                 </div>

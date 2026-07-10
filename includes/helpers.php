@@ -59,14 +59,21 @@ function send_to_zoho_crm($data) {
         "Email" => $data['email'] ?? '',
         "Phone" => $data['phone'] ?? '',
         "Description" => $full_description,
-        "Lead_Source" => !empty($data['job_title']) ? "Job Application (Careers Page)" : (!empty($data['company']) ? "B2B Employer Inquiry" : "Website Inquiry"),
+        "Lead_Source" => "Website",
         "Lead_Status" => "Not Contacted"
     ];
     if (!empty($first_name)) $lead_record["First_Name"] = $first_name;
-    if (!empty($data['company'])) $lead_record["Company"] = $data['company'];
-    else if (!empty($data['job_title'])) $lead_record["Company"] = "Candidate: " . $data['job_title'];
-    else $lead_record["Company"] = "Individual Inquiry";
-    if (!empty($data['job_title'])) $lead_record["Designation"] = $data['job_title'];
+    if (!empty($data['company'])) {
+        $lead_record["Company"] = $data['company'];
+        $lead_record["Lead_Type"] = "Company";
+    } else if (!empty($data['job_title'])) {
+        $lead_record["Company"] = "Candidate: " . $data['job_title'];
+        $lead_record["Lead_Type"] = "Individual";
+        $lead_record["Designation"] = $data['job_title'];
+    } else {
+        $lead_record["Company"] = "Individual Inquiry";
+        $lead_record["Lead_Type"] = "Individual";
+    }
 
     $payload = [
         "data" => [ $lead_record ]

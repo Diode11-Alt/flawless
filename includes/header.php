@@ -16,8 +16,8 @@ init_csrf_token();
     $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')) ? "https" : "http";
     $host = $_SERVER['HTTP_HOST'] ?? 'primepath-tan.vercel.app';
     $current_url = $protocol . "://" . $host . ($_SERVER['REQUEST_URI'] ?? '/');
-    $meta_desc = isset($page_description) ? htmlspecialchars($page_description) : 'Leading Dubai recruitment agency helping UAE expats secure AI, Healthcare, Project Management, and skilled jobs in the UAE and Europe with visa sponsorship. 100% MOHRE Compliant.';
-    $meta_title = isset($page_title) ? htmlspecialchars($page_title) : 'Find Tech, Healthcare & Skilled Trades Jobs | PrimePath HR';
+    $meta_desc = isset($page_description) ? htmlspecialchars($page_description) : 'Premier HR consultancy in Dubai providing Cross-Border Workforce Deployment, European Staffing, and Identity Malta visa solutions.';
+    $meta_title = isset($page_title) ? htmlspecialchars($page_title) : 'International Staffing & Global Mobility | PrimePath HR';
     $meta_img = isset($page_image) ? $protocol . "://" . $host . $page_image : $protocol . "://" . $host . "/assets/images/logo.png";
     ?>
     <title><?= $meta_title ?></title>
@@ -88,17 +88,21 @@ init_csrf_token();
 <body>
 
     
+    <?php
+    $current_page = basename($_SERVER['PHP_SELF']);
+    ?>
     <!-- Top Utility Bar -->
     <div class="top-bar">
-        <div class="container">
-            <div class="top-bar-left">
-                <a href="mailto:primepathhrservices@gmail.com"><i class="fas fa-envelope"></i> primepathhrservices@gmail.com</a>
-                <a href="tel:+971545480972"><i class="fas fa-phone-alt"></i> +971 54 548 0972</a>
-                <span style="opacity: 0.7; font-size: 12px;"><i class="fas fa-map-marker-alt"></i> Business Village, Block B - Office 923, Deira, Dubai</span>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <div class="top-bar-left" style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+                <a href="mailto:primepathhrservices@gmail.com" style="display: flex; align-items: center; gap: 6px;"><i class="fas fa-envelope" style="color: var(--secondary-blue);"></i> primepathhrservices@gmail.com</a>
+                <a href="tel:+971545480972" style="display: flex; align-items: center; gap: 6px;"><i class="fas fa-phone-alt" style="color: var(--secondary-blue);"></i> +971 54 548 0972</a>
+                <span style="opacity: 0.8; font-size: 12px; display: flex; align-items: center; gap: 5px;"><i class="fas fa-map-marker-alt" style="color: #FBBF24;"></i> Business Village, Block B - Office 923, Deira, Dubai</span>
             </div>
-            <div class="top-bar-right">
-                <a href="https://www.facebook.com/PrimePathHR" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/company/primepathhr/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+            <div class="top-bar-right" style="display: flex; align-items: center; gap: 14px;">
+                <span style="font-size: 12px; font-weight: 600; color: #67E8F9; text-transform: uppercase; letter-spacing: 0.5px;">International Workforce Consultancy</span>
+                <a href="https://www.facebook.com/PrimePathHR" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/primepathhr/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
@@ -110,7 +114,7 @@ init_csrf_token();
             <div class="logo">
                 <a href="index.php" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
                     <img src="/assets/images/logo.png" alt="PrimePath HR Services" class="logo-img">
-                    <span style="font-size: 21px; font-weight: 800; color: var(--primary-navy); letter-spacing: -0.5px; line-height: 1;">Prime<span style="color: var(--secondary-blue);">Path</span></span>
+                    <span style="font-size: 22px; font-weight: 800; color: var(--primary-navy); letter-spacing: -0.5px; line-height: 1;">Prime<span style="color: var(--secondary-blue);">Path</span></span>
                 </a>
             </div>
             <nav>
@@ -122,32 +126,69 @@ init_csrf_token();
                         </a>
                         <button class="drawer-close-btn" aria-label="Close Menu"><i class="fas fa-times"></i></button>
                     </li>
-                    <li><a href="index.php"><i class="fas fa-home mobile-only-icon"></i> Home</a></li>
-                    <li><a href="employers.php"><i class="fas fa-building mobile-only-icon"></i> For Employers</a></li>
-                    <li><a href="jobs.php"><i class="fas fa-briefcase mobile-only-icon"></i> Careers <span class="nav-badge"><?= count(get_jobs()) ?></span></a></li>
+                    <li>
+                        <a href="index.php" class="<?= $current_page === 'index.php' ? 'active' : '' ?>">
+                            <i class="fas fa-home mobile-only-icon"></i> Home
+                        </a>
+                    </li>
                     <li class="has-dropdown">
-                        <a href="#"><i class="fas fa-users mobile-only-icon"></i> Company <i class="fas fa-chevron-down dropdown-arrow" style="font-size: 10px; margin-left: auto;"></i></a>
+                        <a href="solutions.php" class="<?= $current_page === 'solutions.php' ? 'active' : '' ?>">
+                            <i class="fas fa-cogs mobile-only-icon"></i> Solutions <i class="fas fa-chevron-down dropdown-arrow" style="font-size: 10px; margin-left: 4px;"></i>
+                        </a>
                         <ul class="dropdown-menu">
-                            <li><a href="about.php">About Us</a></li>
-                            <li><a href="process.php">How We Work</a></li>
-                            <li><a href="methodology.php">Methodology</a></li>
-                            <li><a href="blog.php">Insights & News</a></li>
+                            <li><a href="solutions.php"><i class="fas fa-briefcase" style="margin-right: 8px; color: var(--secondary-blue);"></i> All HR Solutions</a></li>
+                            <li><a href="index.php#europe-pathway"><i class="fas fa-globe-europe" style="margin-right: 8px; color: #2563EB;"></i> 🇲🇹 Malta Relocation &amp; Visas</a></li>
+                            <li><a href="solutions.php#staffing"><i class="fas fa-users" style="margin-right: 8px; color: var(--secondary-blue);"></i> Volume Staffing &amp; Testing</a></li>
+                            <li><a href="solutions.php#eor"><i class="fas fa-passport" style="margin-right: 8px; color: var(--secondary-blue);"></i> Visa Sponsorship &amp; Logistics</a></li>
+                            <li><a href="solutions.php#executive"><i class="fas fa-user-tie" style="margin-right: 8px; color: var(--secondary-blue);"></i> Executive Advisory</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.php"><i class="fas fa-envelope mobile-only-icon"></i> Contact Us</a></li>
+                    <li class="has-dropdown">
+                        <a href="about.php" class="<?= in_array($current_page, ['about.php', 'employers.php', 'process.php', 'methodology.php', 'blog.php']) ? 'active' : '' ?>">
+                            <i class="fas fa-building mobile-only-icon"></i> Company <i class="fas fa-chevron-down dropdown-arrow" style="font-size: 10px; margin-left: 4px;"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.php"><i class="fas fa-info-circle" style="margin-right: 8px; color: var(--secondary-blue);"></i> About PrimePath HR</a></li>
+                            <li><a href="employers.php"><i class="fas fa-award" style="margin-right: 8px; color: var(--secondary-blue);"></i> Why Choose Us</a></li>
+                            <li><a href="index.php#process"><i class="fas fa-tasks" style="margin-right: 8px; color: var(--secondary-blue);"></i> Our 4-Step Process</a></li>
+                            <li><a href="index.php#testimonials"><i class="fas fa-star" style="margin-right: 8px; color: var(--secondary-blue);"></i> Testimonials</a></li>
+                            <li><a href="methodology.php"><i class="fas fa-project-diagram" style="margin-right: 8px; color: var(--secondary-blue);"></i> Methodology &amp; Governance</a></li>
+                            <li><a href="blog.php"><i class="fas fa-chart-line" style="margin-right: 8px; color: var(--secondary-blue);"></i> Market Insights &amp; Reports</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="check-status.php" class="<?= in_array($current_page, ['check-status.php', 'jobs.php', 'job-detail.php', 'register.php']) ? 'active' : '' ?>">
+                            <i class="fas fa-user-check mobile-only-icon"></i> Candidate Portal <i class="fas fa-chevron-down dropdown-arrow" style="font-size: 10px; margin-left: 4px;"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="check-status.php" style="font-weight: 700;"><i class="fas fa-search" style="margin-right: 8px; color: #10B981;"></i> Check Application Status</a></li>
+                            <li><a href="jobs.php"><i class="fas fa-briefcase" style="margin-right: 8px; color: var(--secondary-blue);"></i> Browse Executive Careers <span class="nav-badge"><?= count(get_jobs()) ?></span></a></li>
+                            <li><a href="register.php"><i class="fas fa-file-upload" style="margin-right: 8px; color: var(--secondary-blue);"></i> Submit CV / Candidacy</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="requirement.php" class="<?= $current_page === 'requirement.php' ? 'active' : '' ?>">
+                            <i class="fas fa-clipboard-list mobile-only-icon"></i> Tell Us Your Requirement
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.php" class="<?= $current_page === 'contact.php' ? 'active' : '' ?>">
+                            <i class="fas fa-envelope mobile-only-icon"></i> Contact
+                        </a>
+                    </li>
                     <li class="mobile-only drawer-footer">
                         <div class="drawer-quick-contacts">
-                            <p class="drawer-section-title">Quick Actions</p>
+                            <p class="drawer-section-title">Client Advisory Desk</p>
                             <a href="tel:+971545480972" class="drawer-contact-link"><i class="fas fa-phone-alt"></i> +971 54 548 0972</a>
-                            <a href="https://wa.me/971545480972" target="_blank" class="drawer-contact-link whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
-                            <a href="mailto:info@primepathuae.com" class="drawer-contact-link"><i class="fas fa-envelope"></i> Email Support</a>
-                            <a href="employers.php" class="btn btn-primary drawer-cta">Hire Talent &rarr;</a>
+                            <a href="https://wa.me/971545480972" target="_blank" class="drawer-contact-link whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Advisory</a>
+                            <a href="mailto:info@primepathuae.com" class="drawer-contact-link"><i class="fas fa-envelope"></i> Employer Inquiry</a>
+                            <a href="requirement.php" class="btn btn-primary drawer-cta">Tell Us Your Requirement &rarr;</a>
                         </div>
                     </li>
                 </ul>
             </nav>
             <div class="auth-buttons">
-                <a href="employers.php" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%); padding: 12px 28px; border-radius: 30px; font-weight: 600;">Hire Talent &rarr;</a>
+                <a href="requirement.php" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%); padding: 12px 26px; border-radius: 30px; font-weight: 600; box-shadow: 0 4px 15px rgba(0, 180, 216, 0.25);">Tell Us Your Requirement &rarr;</a>
             </div>
             <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 <i class="fas fa-bars"></i>

@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "title": "Senior Frontend Developer (React / Next.js)",
+        "title": "Senior Frontend Developer (React \/ Next.js)",
         "company": "Confidential - Leading Tech & Fintech Group",
         "location": "Dubai, UAE",
         "type": "Full-Time",
@@ -10,7 +10,7 @@
         "posted_date": "2026-07-01",
         "description": [
             "Job Description: We are recruiting on behalf of a leading technology enterprise in Dubai. Our client is looking for a Senior Frontend Developer to architect high-performance web applications and drive digital transformation.",
-            "Key Responsibilities: Lead frontend architecture using React and Next.js. Collaborate closely with product managers and backend engineers. Ensure compliance with modern web performance (LCP/CWV) standards. Requirements: Minimum 5+ years of software engineering experience in GCC or global markets. Strong command of modern UI/UX and state management."
+            "Key Responsibilities: Lead frontend architecture using React and Next.js. Collaborate closely with product managers and backend engineers. Ensure compliance with modern web performance (LCP\/CWV) standards. Requirements: Minimum 5+ years of software engineering experience in GCC or global markets. Strong command of modern UI\/UX and state management."
         ]
     },
     {
@@ -38,7 +38,7 @@
         "posted_date": "2026-07-05",
         "description": [
             "Job Description: Our client, a cutting-edge AI enterprise in Dubai, is seeking an experienced AI Scientist to lead the development of predictive modeling algorithms and generative AI solutions.",
-            "Key Responsibilities: Design, train, and deploy advanced ML/DL models. Analyze large-scale enterprise datasets to unlock actionable business insights. Mentor junior data engineers and collaborate with cloud infrastructure teams. Requirements: Master's or Ph.D. in Data Science, Computer Science, or equivalent. Expertise in Python, PyTorch/TensorFlow, and cloud AI pipelines."
+            "Key Responsibilities: Design, train, and deploy advanced ML\/DL models. Analyze large-scale enterprise datasets to unlock actionable business insights. Mentor junior data engineers and collaborate with cloud infrastructure teams. Requirements: Master's or Ph.D. in Data Science, Computer Science, or equivalent. Expertise in Python, PyTorch\/TensorFlow, and cloud AI pipelines."
         ]
     }
 ]

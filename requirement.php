@@ -1,0 +1,144 @@
+<?php
+session_start();
+require_once 'includes/helpers.php';
+$message = '';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // CSRF Check
+    verify_csrf_token();
+
+    $file = get_data_file_path('contacts.json');
+    $current = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
+    
+    // Sanitization
+    $lead_data = [
+        'name' => htmlspecialchars(strip_tags(trim($_POST['name'] ?? 'Employer Contact'))),
+        'company' => htmlspecialchars(strip_tags(trim($_POST['company'] ?? ''))),
+        'email' => filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL),
+        'phone' => htmlspecialchars(strip_tags(trim($_POST['phone'] ?? ''))),
+        'job_titles' => htmlspecialchars(strip_tags(trim($_POST['job_titles'] ?? ''))),
+        'vacancies' => htmlspecialchars(strip_tags(trim($_POST['vacancies'] ?? ''))),
+        'timeline' => htmlspecialchars(strip_tags(trim($_POST['timeline'] ?? ''))),
+        'subject' => 'Hiring Requirement Submitted by ' . htmlspecialchars(strip_tags(trim($_POST['company'] ?? ''))),
+        'message' => 'Hiring Requirement details: Jobs - ' . htmlspecialchars(strip_tags(trim($_POST['job_titles'] ?? ''))) . 
+                     ' | Vacancies - ' . htmlspecialchars(strip_tags(trim($_POST['vacancies'] ?? ''))) . 
+                     ' | Timeline - ' . htmlspecialchars(strip_tags(trim($_POST['timeline'] ?? ''))),
+        'date' => date('Y-m-d H:i:s')
+    ];
+    $current[] = $lead_data;
+    
+    file_put_contents($file, json_encode($current, JSON_PRETTY_PRINT));
+    
+    // Push to Zoho CRM
+    send_to_zoho_crm($lead_data);
+    header("Location: thankyou.php");
+    exit;
+}
+
+$page_title = "Tell Us Your Requirement | PrimePath HR";
+require_once 'includes/header.php';
+?>
+
+<!-- Page Header -->
+<section class="page-header"
+    style="background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%); padding: 120px 0 80px; text-align: center; color: white;">
+    <div class="container">
+        <h1 style="font-family: var(--font-heading); font-size: 42px; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">Tell Us Your Hiring Requirement
+        </h1>
+        <p style="font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto;">Partner with our overseas recruitment agency for expert foreign worker recruitment and deployment solutions.</p>
+    </div>
+</section>
+
+<!-- Requirement Form Section -->
+<section class="section section-bg-light" style="padding: 100px 0;">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1100px; margin: 0 auto; align-items: start;">
+            
+            <!-- Left Info Column -->
+            <div class="animate-up delay-1">
+                <h2 style="font-family: var(--font-heading); font-size: 32px; color: var(--primary-navy); margin-bottom: 20px;">Are you Hiring?</h2>
+                <h3 style="font-size: 22px; color: var(--secondary-blue); margin-bottom: 30px;">Send your requirement to our overseas employment agency</h3>
+                
+                <p style="font-size: 16px; color: var(--text-dark); line-height: 1.8; margin-bottom: 25px;">
+                    PrimePath HR is a leading international recruiting agency sourcing skilled talent for employers in Malta. We source talent from regions across Asia, the Middle East, and Europe.
+                </p>
+                <p style="font-size: 16px; color: var(--text-dark); line-height: 1.8; margin-bottom: 35px;">
+                    To get started, simply share your hiring requirement with us—include job titles, number of positions, required qualifications, and expected timeline. We streamline the process and ensure you receive quality candidates quickly.
+                </p>
+                
+                <div style="background: white; padding: 25px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 20px;">
+                    <div style="width: 50px; height: 50px; background: rgba(14, 165, 233, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--secondary-blue); font-size: 24px;">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <span style="display: block; font-size: 14px; color: var(--text-muted); margin-bottom: 5px;">Prefer to speak directly?</span>
+                        <a href="tel:+971545480972" style="font-family: var(--font-heading); font-size: 20px; font-weight: 600; color: var(--primary-navy); text-decoration: none;">+971 54 548 0972</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Form Column -->
+            <div class="animate-up delay-2" style="background: white; padding: 40px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);">
+                <form action="requirement.php" method="POST" id="requirementForm">
+                    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--primary-navy); margin-bottom: 8px;">Full Name *</label>
+                            <input type="text" name="name" required style="width: 100%; padding: 14px 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; font-size: 15px; outline: none; transition: border-color 0.3s;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--primary-navy); margin-bottom: 8px;">Company Name *</label>
+                            <input type="text" name="company" required style="width: 100%; padding: 14px 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; font-size: 15px; outline: none; transition: border-color 0.3s;">
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--primary-navy); margin-bottom: 8px;">Email Address *</label>
+                            <input type="email" name="email" required style="width: 100%; padding: 14px 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; font-size: 15px; outline: none; transition: border-color 0.3s;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--primary-navy); margin-bottom: 8px;">Phone Number *</label>
+                            <input type="tel" name="phone" required style="width: 100%; padding: 14px 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; font-size: 15px; outline: none; transition: border-color 0.3s;">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label style="display: block; font-size: 13px; font-weight: 600; color: var(--primary-navy); margin-bottom: 8px;">Required Job Titles *</label>
+                        <textarea name="job_titles" required rows="3" placeholder="e.g. 5 Masons, 3 Electricians, 10 Retail Associates" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; font-size: 15px; outline: none; transition: border-color 0.3s; resize: vertical;"></textarea>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group" style="margin-bottom: 25px;">
+                            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--primary-navy); margin-bottom: 8px;">Total Vacancies</label>
+                            <select name="vacancies" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; font-size: 15px; outline: none; background: white;">
+                                <option value="1-5">1 - 5</option>
+                                <option value="6-20">6 - 20</option>
+                                <option value="21-50">21 - 50</option>
+                                <option value="50+">50+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 25px;">
+                            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--primary-navy); margin-bottom: 8px;">Expected Timeline</label>
+                            <select name="timeline" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; font-size: 15px; outline: none; background: white;">
+                                <option value="Immediate (ASAP)">Immediate (ASAP)</option>
+                                <option value="Within 1 Month">Within 1 Month</option>
+                                <option value="1-3 Months">1 - 3 Months</option>
+                                <option value="More than 3 Months">More than 3 Months</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 16px; font-weight: 600; border-radius: 12px;">Submit Requirement</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<?php require_once 'includes/footer.php'; ?>

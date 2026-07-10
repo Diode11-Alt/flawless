@@ -2,12 +2,12 @@
 <section style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%); padding: 70px 0;">
     <div class="container" style="display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap;">
         <div>
-            <h2 style="color: white; font-size: 32px; margin-bottom: 10px;">Ready to find exceptional talent?</h2>
-            <p style="color: rgba(255,255,255,0.85); font-size: 16px; margin: 0;">Partner with PrimePath HR to build your dream team across the GCC.</p>
+            <h2 style="color: white; font-size: 32px; margin-bottom: 10px;">Ready to scale your Malta operations?</h2>
+            <p style="color: rgba(255,255,255,0.85); font-size: 16px; margin: 0;">Partner with PrimePath HR for reliable cross-border volume staffing.</p>
         </div>
         <div style="display: flex; gap: 16px; flex-wrap: wrap; flex-shrink: 0;">
             <a href="contact.php" class="btn" style="background: white; color: var(--secondary-blue); font-weight: 700; padding: 16px 36px; border-radius: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
-                Start a Search <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                Request Staffing Proposal <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
             </a>
             <a href="tel:+971545480972" class="btn" style="background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.4); padding: 16px 36px; border-radius: 30px;">
                 <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Call Now
@@ -21,15 +21,16 @@
             <div class="footer-grid">
                 <div class="footer-widget">
                     <a href="index.php"><img src="/assets/images/logo.png" alt="PrimePath HR Services" style="height: 55px; width: auto; margin-bottom: 15px;"></a>
-                    <p style="color: rgba(255,255,255,0.7); line-height: 1.7;">Strategic Progression for forward-thinking enterprises.</p>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.7;">Connecting Global Talent with Malta's Growth.</p>
                 </div>
                 <div class="footer-widget">
                     <h4>Services</h4>
                     <ul class="footer-links">
-                        <li><a href="solutions.php">Executive Search</a></li>
-                        <li><a href="solutions.php">Strategic HR</a></li>
-                        <li><a href="solutions.php">Payroll Outsourcing</a></li>
+                        <li><a href="solutions.php#staffing">Volume Staffing</a></li>
+                        <li><a href="solutions.php#eor">Visa Processing</a></li>
+                        <li><a href="solutions.php#relocation">Relocation Logistics</a></li>
                         <li><a href="jobs.php">Careers</a></li>
+                        <li><a href="check-status.php" style="color: #67E8F9; font-weight: 600;"><i class="fas fa-search" style="margin-right: 4px;"></i> Check Status</a></li>
                     </ul>
                 </div>
                 <div class="footer-widget">
@@ -37,7 +38,8 @@
                     <ul class="footer-links">
                         <li><a href="about.php">About Us</a></li>
                         <li><a href="about.php#why-us">Why Choose Us</a></li>
-                        <li><a href="process.php">How We Work</a></li>
+                        <li><a href="index.php#process">How We Work</a></li>
+                        <li><a href="index.php#testimonials">Testimonials</a></li>
                         <li><a href="methodology.php">Methodology</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
@@ -62,7 +64,7 @@
             </div>
             <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                 <div style="display: flex; flex-direction: column; gap: 5px;">
-                    <p style="margin: 0;">&copy; <?php echo date('Y'); ?> PrimePath HR Services. All Rights Reserved. Licensed by MOHRE UAE.</p>
+                    <p style="margin: 0;">&copy; <?php echo date('Y'); ?> PrimePath HR Services. All Rights Reserved. Hub: Dubai, UAE.</p>
                     <div style="font-size: 13px;">
                         <a href="privacy.php" style="color: rgba(255,255,255,0.7); text-decoration: underline; margin-right: 15px;">Privacy Policy</a>
                         <a href="terms.php" style="color: rgba(255,255,255,0.7); text-decoration: underline;">Terms & Conditions</a>
