@@ -4,7 +4,7 @@ $id = isset($_GET['id']) ? (int)$_GET['id'] : 1;
 $job = get_job_by_id($id);
 $page_title = ($job ? $job['title'] . " | PrimePath HR" : "Job Not Found");
 $job_desc_schema = $job && !empty($job['description']) ? implode(" ", is_array($job['description']) ? $job['description'] : [$job['description']]) : "Details in description.";
-$page_description = $job ? "Apply for " . $job['title'] . " in " . $job['location'] . " with PrimePath HR. Salary: " . ($job['salary'] ?? 'Competitive') . ". Leading Dubai recruitment agency." : "Find jobs in Dubai and GCC.";
+$page_description = $job ? "Apply for " . $job['title'] . " in " . $job['location'] . " with PrimePath HR. Salary: " . ($job['salary'] ?? 'Competitive') . ". Trade-tested placements in Malta." : "Find jobs in Malta with PrimePath HR.";
 include 'includes/header.php'; 
 
 if(!$job) {
@@ -44,7 +44,7 @@ $share_title = urlencode("Check out this job opening: " . $job['title'] . " at "
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "<?= htmlspecialchars($job['location']) ?>",
-      "addressCountry": "AE"
+      "addressCountry": "MT"
     }
   },
   "baseSalary": {

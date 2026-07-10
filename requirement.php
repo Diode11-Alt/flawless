@@ -60,7 +60,7 @@ require_once 'includes/header.php';
                 <h3 style="font-size: 22px; color: var(--secondary-blue); margin-bottom: 30px;">Send your requirement to our overseas employment agency</h3>
                 
                 <p style="font-size: 16px; color: var(--text-dark); line-height: 1.8; margin-bottom: 25px;">
-                    PrimePath HR is a leading international recruiting agency sourcing skilled talent for employers in Malta. We source talent from regions across Asia, the Middle East, and Europe.
+                    PrimePath HR is a leading international recruiting agency sourcing skilled talent for employers in Malta. We exclusively source trade-tested, visa-ready talent from our strategic hub in the United Arab Emirates.
                 </p>
                 <p style="font-size: 16px; color: var(--text-dark); line-height: 1.8; margin-bottom: 35px;">
                     To get started, simply share your hiring requirement with us—include job titles, number of positions, required qualifications, and expected timeline. We streamline the process and ensure you receive quality candidates quickly.
@@ -137,6 +137,83 @@ require_once 'includes/header.php';
                 </form>
             </div>
             
+        </div>
+    </div>
+</section>
+
+<!-- Industries Section -->
+<section class="section" style="background: white; padding: 80px 0;">
+    <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <h2 style="font-family: var(--font-heading); font-size: 32px; color: var(--primary-navy); margin-bottom: 40px;">Industries We Place Talent In</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+            <div style="padding: 20px; background: var(--bg-light); border-radius: 12px; border: 1px solid var(--border-color);">
+                <i class="fas fa-utensils" style="font-size: 32px; color: var(--secondary-blue); margin-bottom: 15px;"></i>
+                <h4 style="font-size: 18px; margin-bottom: 0;">Hospitality & F&B</h4>
+            </div>
+            <div style="padding: 20px; background: var(--bg-light); border-radius: 12px; border: 1px solid var(--border-color);">
+                <i class="fas fa-shopping-bag" style="font-size: 32px; color: var(--secondary-blue); margin-bottom: 15px;"></i>
+                <h4 style="font-size: 18px; margin-bottom: 0;">Retail & Sales</h4>
+            </div>
+            <div style="padding: 20px; background: var(--bg-light); border-radius: 12px; border: 1px solid var(--border-color);">
+                <i class="fas fa-hard-hat" style="font-size: 32px; color: var(--secondary-blue); margin-bottom: 15px;"></i>
+                <h4 style="font-size: 18px; margin-bottom: 0;">Construction</h4>
+            </div>
+            <div style="padding: 20px; background: var(--bg-light); border-radius: 12px; border: 1px solid var(--border-color);">
+                <i class="fas fa-truck-loading" style="font-size: 32px; color: var(--secondary-blue); margin-bottom: 15px;"></i>
+                <h4 style="font-size: 18px; margin-bottom: 0;">Logistics & Warehousing</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="section" style="background: var(--bg-light); padding: 80px 0; border-top: 1px solid var(--border-color);">
+    <div class="container" style="max-width: 900px; margin: 0 auto;">
+        <h2 style="font-family: var(--font-heading); font-size: 32px; color: var(--primary-navy); margin-bottom: 40px; text-align: center;">Why Employers Work With PrimePath</h2>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; gap: 20px; align-items: flex-start; background: white; padding: 25px; border-radius: 16px; box-shadow: var(--shadow-sm);">
+                <div style="min-width: 40px; height: 40px; background: rgba(14, 165, 233, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--secondary-blue); font-size: 18px;"><i class="fas fa-check"></i></div>
+                <div>
+                    <h4 style="font-size: 18px; margin-bottom: 8px;">Trade-Tested Quality</h4>
+                    <p style="color: var(--text-muted); font-size: 15px; margin: 0;">All candidates are physically tested and vetted in the UAE before shortlisting, ensuring immediate productivity.</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 20px; align-items: flex-start; background: white; padding: 25px; border-radius: 16px; box-shadow: var(--shadow-sm);">
+                <div style="min-width: 40px; height: 40px; background: rgba(14, 165, 233, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--secondary-blue); font-size: 18px;"><i class="fas fa-check"></i></div>
+                <div>
+                    <h4 style="font-size: 18px; margin-bottom: 8px;">Turnkey Visa Processing</h4>
+                    <p style="color: var(--text-muted); font-size: 15px; margin: 0;">We manage the entire Identity Malta Single Permit application process locally, removing the administrative burden from your team.</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 20px; align-items: flex-start; background: white; padding: 25px; border-radius: 16px; box-shadow: var(--shadow-sm);">
+                <div style="min-width: 40px; height: 40px; background: rgba(14, 165, 233, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--secondary-blue); font-size: 18px;"><i class="fas fa-check"></i></div>
+                <div>
+                    <h4 style="font-size: 18px; margin-bottom: 8px;">Speed to Deployment</h4>
+                    <p style="color: var(--text-muted); font-size: 15px; margin: 0;">By sourcing from the UAE, we bypass the complexities of direct-from-Asia recruitment, significantly reducing deployment times.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section" style="background: white; padding: 80px 0; border-top: 1px solid var(--border-color);">
+    <div class="container" style="max-width: 800px; margin: 0 auto;">
+        <h2 style="font-family: var(--font-heading); font-size: 32px; color: var(--primary-navy); margin-bottom: 40px; text-align: center;">Frequently Asked Questions</h2>
+        
+        <div style="margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid #e2e8f0;">
+            <h4 style="font-size: 18px; color: var(--primary-navy); margin-bottom: 10px;">How long does deployment take from the UAE to Malta?</h4>
+            <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">Once the Identity Malta Single Permit is approved, deployment generally takes 15-30 days, including final exit formalities and flights.</p>
+        </div>
+        
+        <div style="margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid #e2e8f0;">
+            <h4 style="font-size: 18px; color: var(--primary-navy); margin-bottom: 10px;">Do you guarantee the skills of the candidates?</h4>
+            <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">Yes. Our 95%+ success rate is driven by mandatory practical trade testing conducted at our UAE facilities before any candidate is presented to you.</p>
+        </div>
+        
+        <div style="margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid #e2e8f0;">
+            <h4 style="font-size: 18px; color: var(--primary-navy); margin-bottom: 10px;">Can you handle large volume requests?</h4>
+            <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">Absolutely. We regularly process cohorts of 300+ candidates for hospitality and construction projects, managing everything from bulk interviews to synchronized visa applications.</p>
         </div>
     </div>
 </section>

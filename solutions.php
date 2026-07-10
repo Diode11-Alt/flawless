@@ -17,7 +17,7 @@ include 'includes/header.php';
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;">
             
             <!-- Volume Sourcing -->
-            <div class="service-detail-card animate-up delay-1" style="background: var(--bg-light); border-radius: 20px; padding: 40px; border: 1px solid var(--border-color);">
+            <div class="service-detail-card animate-up delay-1" id="volume-sourcing" style="background: var(--bg-light); border-radius: 20px; padding: 40px; border: 1px solid var(--border-color);">
                 <div style="width: 60px; height: 60px; background: rgba(14, 165, 233, 0.1); color: var(--secondary-blue); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 25px;">
                     <i class="fas fa-users"></i>
                 </div>
@@ -33,7 +33,7 @@ include 'includes/header.php';
             </div>
 
             <!-- Trade Testing & Vetting -->
-            <div class="service-detail-card animate-up delay-2" style="background: var(--bg-light); border-radius: 20px; padding: 40px; border: 1px solid var(--border-color);">
+            <div class="service-detail-card animate-up delay-2" id="trade-testing" style="background: var(--bg-light); border-radius: 20px; padding: 40px; border: 1px solid var(--border-color);">
                 <div style="width: 60px; height: 60px; background: rgba(14, 165, 233, 0.1); color: var(--secondary-blue); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 25px;">
                     <i class="fas fa-clipboard-check"></i>
                 </div>
@@ -49,7 +49,7 @@ include 'includes/header.php';
             </div>
 
             <!-- Identity Malta Visa Facilitation -->
-            <div class="service-detail-card animate-up delay-3" style="background: var(--bg-light); border-radius: 20px; padding: 40px; border: 1px solid var(--border-color);">
+            <div class="service-detail-card animate-up delay-3" id="visa-immigration" style="background: var(--bg-light); border-radius: 20px; padding: 40px; border: 1px solid var(--border-color);">
                 <div style="width: 60px; height: 60px; background: rgba(14, 165, 233, 0.1); color: var(--secondary-blue); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 25px;">
                     <i class="fas fa-passport"></i>
                 </div>
@@ -65,7 +65,7 @@ include 'includes/header.php';
             </div>
 
             <!-- Relocation Logistics -->
-            <div class="service-detail-card animate-up delay-1" style="background: var(--bg-light); border-radius: 20px; padding: 40px; border: 1px solid var(--border-color);">
+            <div class="service-detail-card animate-up delay-1" id="relocation-logistics" style="background: var(--bg-light); border-radius: 20px; padding: 40px; border: 1px solid var(--border-color);">
                 <div style="width: 60px; height: 60px; background: rgba(14, 165, 233, 0.1); color: var(--secondary-blue); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 25px;">
                     <i class="fas fa-plane-arrival"></i>
                 </div>

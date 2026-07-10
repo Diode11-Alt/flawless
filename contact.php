@@ -109,9 +109,9 @@ require_once 'includes/header.php';
                         <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 132, 255, 0.12); color: var(--secondary-blue); display: flex; align-items: center; justify-content: center; font-size: 22px;">
                             <i class="fas fa-id-card"></i>
                         </div>
-                        <h4 style="font-size: 16px; font-weight: 700; color: var(--primary-navy); margin: 0;">Scan & Upload Visiting Card (AI OCR)</h4>
+                        <h4 style="font-size: 16px; font-weight: 700; color: var(--primary-navy); margin: 0;">Auto-fill from business card</h4>
                         <p style="font-size: 13px; color: var(--text-muted); margin: 0; max-width: 320px;">
-                            Upload or snap your business card — our AI will read and auto-fill your details instantly.
+                            Upload or snap your business card and we'll read and auto-fill your details instantly.
                         </p>
                         <label for="visiting_card_input" style="margin-top: 6px; display: inline-block; padding: 8px 18px; background: var(--primary-navy); color: white; font-size: 13px; font-weight: 600; border-radius: 8px; cursor: pointer; transition: 0.2s;">
                             <i class="fas fa-upload" style="margin-right: 6px;"></i> Select Card Image
@@ -119,7 +119,7 @@ require_once 'includes/header.php';
                         <input type="file" name="visiting_card" id="visiting_card_input" accept="image/*,.pdf" style="display: none;" onchange="handleVisitingCardScan(this)">
                     </div>
                     <div id="ocrStatusBar" style="display: none; margin-top: 14px; padding: 10px 14px; border-radius: 8px; background: rgba(16, 185, 129, 0.1); color: #065F46; font-size: 13px; font-weight: 600; align-items: center; justify-content: center; gap: 8px;">
-                        <i class="fas fa-spinner fa-spin"></i> <span>Scanning card with AI Vision...</span>
+                        <i class="fas fa-spinner fa-spin"></i> <span>Scanning card...</span>
                     </div>
                 </div>
 
@@ -166,13 +166,12 @@ require_once 'includes/header.php';
                 <div class="form-group">
                     <select name="subject" id="contact_subject" style="width: 100%; padding: 16px 20px; border: 2px solid #E2E8F0; border-radius: 12px; font-family: var(--font-body); font-size: 15px; background-color: transparent; outline: none; appearance: none; color: var(--text-dark);">
                         <option value="" disabled <?= empty($requested_service) ? 'selected' : '' ?>>Select a Service</option>
-                        <option value="Malta Placement Candidate" <?= stripos($requested_service, 'Malta Placement') !== false ? 'selected' : '' ?>>🇲🇹 Malta Work Placement & Relocation (Candidate)</option>
-                        <option value="International Staffing" <?= stripos($requested_service, 'International Staffing') !== false ? 'selected' : '' ?>>🇲🇹 Malta Employer Volume Staffing (B2B)</option>
+                        <option value="Volume Sourcing" <?= $requested_service === 'Volume Sourcing' ? 'selected' : '' ?>>Volume Sourcing</option>
+                        <option value="Trade Testing" <?= $requested_service === 'Trade Testing' ? 'selected' : '' ?>>Trade Testing & Vetting</option>
                         <option value="Visa Processing" <?= $requested_service === 'Visa Processing' ? 'selected' : '' ?>>Identity Malta Visa Processing</option>
-                        <option value="Contract Staffing" <?= $requested_service === 'Contract Staffing' ? 'selected' : '' ?>>Contract & Project Staffing</option>
-                        <option value="Relocation Services" <?= $requested_service === 'Relocation Services' ? 'selected' : '' ?>>Turnkey Relocation & Logistics</option>
-                        <option value="Executive Search" <?= $requested_service === 'Executive Search' ? 'selected' : '' ?>>Executive Search & C-Suite Recruitment</option>
-                        <option value="Other">Other Consulting / Candidate Inquiry</option>
+                        <option value="Relocation Services" <?= $requested_service === 'Relocation Services' ? 'selected' : '' ?>>Relocation & Logistics</option>
+                        <option value="Candidate Inquiry" <?= $requested_service === 'Candidate Inquiry' ? 'selected' : '' ?>>I'm a Candidate / Job Seeker</option>
+                        <option value="Other">Other</option>
                     </select>
                     <label for="contact_subject" style="top: 25px; display: none;">Service Required</label>
                 </div>

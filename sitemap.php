@@ -1,97 +1,54 @@
 <?php
-header("Content-Type: application/xml; charset=utf-8");
-require_once __DIR__ . '/includes/db.php';
-
+header('Content-Type: application/xml');
 echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Core Pages -->
-    <url>
-        <loc>https://primepathuae.com/</loc>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/about.php</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/solutions.php</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/employers.php</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/process.php</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/jobs.php</loc>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/blog.php</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/methodology.php</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/contact.php</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/privacy.php</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/terms.php</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
+echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
 
-    <!-- Dynamic Jobs -->
-    <?php
-    $jobs = get_jobs();
-    foreach ($jobs as $job):
-        if (isset($job['id'])):
-    ?>
-    <url>
-        <loc>https://primepathuae.com/job-detail.php?id=<?= $job['id'] ?></loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <?php 
-        endif;
-    endforeach; 
-    ?>
+$base_url = 'https://primepathuae.com';
+$pages = [
+    '/' => 1.0,
+    '/requirement.php' => 1.0,
+    '/solutions.php' => 0.9,
+    '/jobs.php' => 0.8,
+    '/about.php' => 0.7,
+    '/process.php' => 0.7,
+    '/blog.php' => 0.7,
+    '/contact.php' => 0.6,
+    '/privacy.php' => 0.3,
+    '/terms.php' => 0.3
+];
 
-    <!-- Dynamic Articles -->
-    <?php
-    $articles = glob('content/*.md');
-    if ($articles):
-        foreach ($articles as $article):
-            $slug = basename($article, '.md');
-    ?>
-    <url>
-        <loc>https://primepathuae.com/article.php?slug=<?= urlencode($slug) ?></loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <?php
-        endforeach;
-    endif;
-    ?>
-</urlset>
+foreach ($pages as $url => $priority) {
+    echo "  <url>\n";
+    echo "    <loc>" . $base_url . $url . "</loc>\n";
+    echo "    <changefreq>weekly</changefreq>\n";
+    echo "    <priority>" . $priority . "</priority>\n";
+    echo "  </url>\n";
+}
+
+// Add dynamic jobs
+$jobs_file = __DIR__ . '/data/jobs.json';
+if (file_exists($jobs_file)) {
+    $jobs = json_decode(file_get_contents($jobs_file), true);
+    if (is_array($jobs)) {
+        foreach ($jobs as $job) {
+            echo "  <url>\n";
+            echo "    <loc>" . $base_url . "/job-detail.php?id=" . $job['id'] . "</loc>\n";
+            echo "    <changefreq>weekly</changefreq>\n";
+            echo "    <priority>0.7</priority>\n";
+            echo "  </url>\n";
+        }
+    }
+}
+
+// Add dynamic articles
+$articles = glob(__DIR__ . '/content/*.md');
+foreach ($articles as $article) {
+    $slug = basename($article, '.md');
+    echo "  <url>\n";
+    echo "    <loc>" . $base_url . "/article.php?slug=" . $slug . "</loc>\n";
+    echo "    <changefreq>monthly</changefreq>\n";
+    echo "    <priority>0.6</priority>\n";
+    echo "  </url>\n";
+}
+
+echo '</urlset>';

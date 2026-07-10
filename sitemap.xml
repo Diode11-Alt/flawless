@@ -1,113 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://primepathuae.com/</loc>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/about.php</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/solutions.php</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/employers.php</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/process.php</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/jobs.php</loc>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/blog.php</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/methodology.php</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/contact.php</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/privacy.php</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/terms.php</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/job-detail.php?id=1</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/job-detail.php?id=2</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/job-detail.php?id=3</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/article.php?slug=dubai-emiratisation-tawteen-guide-2026</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/article.php?slug=how-to-get-schengen-work-visa-from-dubai</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/article.php?slug=how-to-optimize-your-cv-for-dubai-market</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/article.php?slug=top-skills-in-demand-uae-2026</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/article.php?slug=understanding-wps-wages-protection-system-uae</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/article.php?slug=uae-labor-law-gratuity-calculation-2026</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/article.php?slug=dubai-tech-salary-benchmarks-2026-ai-healthcare</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://primepathuae.com/article.php?slug=dha-license-verification-job-search-healthcare</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
+<url><loc>https://primepathuae.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>https://primepathuae.com/requirement.php</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://primepathuae.com/solutions.php</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://primepathuae.com/jobs.php</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://primepathuae.com/about.php</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://primepathuae.com/process.php</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://primepathuae.com/blog.php</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://primepathuae.com/contact.php</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+<url><loc>https://primepathuae.com/privacy.php</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+<url><loc>https://primepathuae.com/terms.php</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

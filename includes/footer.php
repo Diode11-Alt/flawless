@@ -26,10 +26,10 @@
                 <div class="footer-widget">
                     <h4>Services</h4>
                     <ul class="footer-links">
-                        <li><a href="solutions.php">Volume Sourcing</a></li>
-                        <li><a href="solutions.php">Trade Testing</a></li>
-                        <li><a href="solutions.php">Visa Processing</a></li>
-                        <li><a href="solutions.php">Relocation Logistics</a></li>
+                        <li><a href="solutions.php#volume-sourcing">Volume Sourcing</a></li>
+                        <li><a href="solutions.php#trade-testing">Trade Testing</a></li>
+                        <li><a href="solutions.php#visa-immigration">Visa Processing</a></li>
+                        <li><a href="solutions.php#relocation-logistics">Relocation Logistics</a></li>
                     </ul>
                 </div>
                 <div class="footer-widget">
@@ -37,6 +37,8 @@
                     <ul class="footer-links">
                         <li><a href="about.php">About Us</a></li>
                         <li><a href="process.php">How We Work</a></li>
+                        <li><a href="jobs.php">Careers</a></li>
+                        <li><a href="blog.php">Insights</a></li>
                         <li><a href="requirement.php">Post a Requirement</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>

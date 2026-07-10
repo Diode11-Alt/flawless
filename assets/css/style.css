@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary-navy: #0F172A; /* Slate 900 */
-  --primary-navy-dark: #020617;
-  --secondary-blue: #0EA5E9; /* Sky 500 (Vibrant, Approachable) */
-  --secondary-blue-light: #38BDF8;
+  --primary-navy: #0B1221; /* Custom Deep Navy */
+  --primary-navy-dark: #050A14;
+  --secondary-blue: #0081B4; /* Custom Cerulean */
+  --secondary-blue-light: #1DA2D8;
   --bg-white: #ffffff;
   --bg-light: #F8FAFC;
   --text-dark: #334155;

@@ -1,44 +1,86 @@
 [
     {
         "id": 1,
-        "title": "Senior Frontend Developer (React \/ Next.js)",
-        "company": "Confidential - Leading Tech & Fintech Group",
-        "location": "Dubai, UAE",
+        "title": "Room Attendant",
+        "company": "Confidential — 4-Star Hotel Group",
+        "location": "St. Julian's, Malta",
         "type": "Full-Time",
-        "industry": "Tech",
-        "salary": "AED 18,000 - 25,000",
+        "industry": "hospitality",
+        "salary": "€1,100 - €1,300 / month",
         "posted_date": "2026-07-01",
         "description": [
-            "Job Description: We are recruiting on behalf of a leading technology enterprise in Dubai. Our client is looking for a Senior Frontend Developer to architect high-performance web applications and drive digital transformation.",
-            "Key Responsibilities: Lead frontend architecture using React and Next.js. Collaborate closely with product managers and backend engineers. Ensure compliance with modern web performance (LCP\/CWV) standards. Requirements: Minimum 5+ years of software engineering experience in GCC or global markets. Strong command of modern UI\/UX and state management."
+            "Job Description: We're recruiting on behalf of a hotel group in St. Julian's for experienced Room Attendants to join their housekeeping team ahead of peak season.",
+            "Key Responsibilities: Maintain guest rooms to a 4-star standard, restock amenities, report maintenance issues. Requirements: Prior housekeeping experience preferred. Physically able to stand/walk for full shifts. Basic spoken English."
         ]
     },
     {
         "id": 2,
-        "title": "Group HR & Emiratisation Manager",
-        "company": "Confidential - Regional Financial Services Group",
-        "location": "Abu Dhabi, UAE",
+        "title": "Chef de Partie",
+        "company": "Confidential — Fine Dining Restaurant Group",
+        "location": "Valletta, Malta",
         "type": "Full-Time",
-        "industry": "Finance",
-        "salary": "AED 22,000 - 28,000",
+        "industry": "hospitality",
+        "salary": "€1,400 - €1,700 / month",
         "posted_date": "2026-07-03",
         "description": [
-            "Job Description: We are seeking an experienced HR & Emiratisation Manager for a major financial services organization in Abu Dhabi. You will oversee end-to-end HR operations, talent acquisition, and MOHRE compliance.",
-            "Key Responsibilities: Drive strategic recruitment and onboarding across all departments. Manage UAE National (Tawteen) hiring quotas in compliance with MOHRE regulations. Oversee employee relations and labor law compliance. Requirements: Minimum 7 years of GCC HR leadership experience. Deep expertise in UAE labor laws and WPS."
+            "Job Description: A Valletta restaurant group is looking for a Chef de Partie to run a specific station in a busy kitchen.",
+            "Key Responsibilities: Manage a kitchen section during service, maintain food safety standards, train junior kitchen staff. Requirements: 2+ years of kitchen experience in a similar-sized operation. Trade tested on practical cooking skills before shortlisting."
         ]
     },
     {
         "id": 3,
-        "title": "Lead AI & Applied Machine Learning Scientist",
-        "company": "Confidential - Artificial Intelligence Innovation Lab",
-        "location": "Dubai, UAE",
-        "type": "Contract",
-        "industry": "Tech",
-        "salary": "AED 25,000 - 35,000",
+        "title": "Retail Sales Associate",
+        "company": "Confidential — Retail Chain",
+        "location": "Sliema, Malta",
+        "type": "Full-Time",
+        "industry": "retail",
+        "salary": "€1,000 - €1,200 / month",
         "posted_date": "2026-07-05",
         "description": [
-            "Job Description: Our client, a cutting-edge AI enterprise in Dubai, is seeking an experienced AI Scientist to lead the development of predictive modeling algorithms and generative AI solutions.",
-            "Key Responsibilities: Design, train, and deploy advanced ML\/DL models. Analyze large-scale enterprise datasets to unlock actionable business insights. Mentor junior data engineers and collaborate with cloud infrastructure teams. Requirements: Master's or Ph.D. in Data Science, Computer Science, or equivalent. Expertise in Python, PyTorch\/TensorFlow, and cloud AI pipelines."
+            "Job Description: A retail chain with stores across Malta is hiring Sales Associates for its Sliema location.",
+            "Key Responsibilities: Customer service on the shop floor, stock replenishment, till operations. Requirements: Retail or customer-facing experience. Conversational English required."
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Mason",
+        "company": "Confidential — Construction Contractor",
+        "location": "Malta (site-based)",
+        "type": "Full-Time",
+        "industry": "construction",
+        "salary": "€1,300 - €1,600 / month",
+        "posted_date": "2026-07-02",
+        "description": [
+            "Job Description: A construction contractor operating across multiple Maltese sites needs experienced Masons for ongoing residential projects.",
+            "Key Responsibilities: Blockwork, plastering, and general masonry on active construction sites. Requirements: Verified trade experience — all candidates complete a practical trade test before being shortlisted."
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Electrician",
+        "company": "Confidential — Construction Contractor",
+        "location": "Malta (site-based)",
+        "type": "Full-Time",
+        "industry": "construction",
+        "salary": "€1,400 - €1,800 / month",
+        "posted_date": "2026-07-04",
+        "description": [
+            "Job Description: Site electrician needed for residential and commercial construction projects across Malta.",
+            "Key Responsibilities: First and second fix electrical work, reading site drawings, working to Maltese electrical code. Requirements: Recognized electrical trade qualification or verified equivalent experience."
+        ]
+    },
+    {
+        "id": 6,
+        "title": "F&B Supervisor",
+        "company": "Confidential — Hotel Group",
+        "location": "Qawra, Malta",
+        "type": "Full-Time",
+        "industry": "hospitality",
+        "salary": "€1,500 - €1,800 / month",
+        "posted_date": "2026-07-06",
+        "description": [
+            "Job Description: A hotel group in Qawra needs an F&B Supervisor to oversee front-of-house restaurant and bar operations.",
+            "Key Responsibilities: Supervise service staff, manage shift rotas, maintain service standards during peak hours. Requirements: Prior supervisory experience in hospitality F&B. Team leadership experience required."
         ]
     }
 ]

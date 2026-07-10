@@ -50,9 +50,9 @@ if ($sort === 'salary') {
 <!-- Premium Hero -->
 <section class="jobs-hero animate-up">
     <div class="container">
-        <span class="badge-tag" style="background: rgba(255,255,255,0.15); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; display: inline-block; margin-bottom: 10px;">Executive Search & Specialist Portal</span>
-        <h1>Executive & Specialist Opportunities</h1>
-        <p style="opacity: 0.9; margin-top: 10px; font-size: 17px;">Explore active C-suite, technical leadership, and specialist mandates managed by PrimePath HR across Dubai and the GCC.</p>
+        <span class="badge-tag" style="background: rgba(255,255,255,0.15); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; display: inline-block; margin-bottom: 10px;">Open Roles in Malta</span>
+        <h1>Careers in Malta</h1>
+        <p style="opacity: 0.9; margin-top: 10px; font-size: 17px;">Hospitality, retail, and construction roles with employers across Malta — every listing is trade-tested and visa-supported through PrimePath HR.</p>
     </div>
 </section>
 
@@ -62,8 +62,10 @@ if ($sort === 'salary') {
             <input type="text" name="q" placeholder="Job Title, Keyword or Company..." style="flex: 2; min-width: 250px;">
             <select name="location" style="flex: 1; min-width: 150px;">
                 <option value="">All Locations</option>
-                <option value="dubai" <?= $loc === 'dubai' ? 'selected' : '' ?>>Dubai</option>
-                <option value="abudhabi" <?= $loc === 'abudhabi' ? 'selected' : '' ?>>Abu Dhabi</option>
+                <option value="valletta" <?= $loc === 'valletta' ? 'selected' : '' ?>>Valletta</option>
+                <option value="sliema" <?= $loc === 'sliema' ? 'selected' : '' ?>>Sliema</option>
+                <option value="st. julian's" <?= $loc === "st. julian's" ? 'selected' : '' ?>>St. Julian's</option>
+                <option value="qawra" <?= $loc === 'qawra' ? 'selected' : '' ?>>Qawra</option>
             </select>
             <button type="submit" class="btn btn-primary" style="flex: 0 0 150px;">Search</button>
         </form>
@@ -91,9 +93,9 @@ if ($sort === 'salary') {
                     
                     <div class="filter-group">
                         <label><strong>Industry</strong></label>
-                        <label><input type="checkbox" name="industry[]" value="tech" <?= in_array('tech', $industries) ? 'checked' : '' ?>> Technology</label>
-                        <label><input type="checkbox" name="industry[]" value="finance" <?= in_array('finance', $industries) ? 'checked' : '' ?>> Finance</label>
-                        <label><input type="checkbox" name="industry[]" value="healthcare" <?= in_array('healthcare', $industries) ? 'checked' : '' ?>> Healthcare</label>
+                        <label><input type="checkbox" name="industry[]" value="hospitality" <?= in_array('hospitality', $industries) ? 'checked' : '' ?>> Hospitality</label>
+                        <label><input type="checkbox" name="industry[]" value="retail" <?= in_array('retail', $industries) ? 'checked' : '' ?>> Retail</label>
+                        <label><input type="checkbox" name="industry[]" value="construction" <?= in_array('construction', $industries) ? 'checked' : '' ?>> Construction</label>
                     </div>
                     
                     <button type="submit" class="btn btn-outline" style="width: 100%; margin-top: 10px;">Apply Filters</button>
@@ -158,12 +160,12 @@ if ($sort === 'salary') {
                         "@type": "Organization",
                         "name": "<?= htmlspecialchars($job['company']) ?>"
                       },
-                      "jobLocation": {
+                        "jobLocation": {
                         "@type": "Place",
                         "address": {
                           "@type": "PostalAddress",
                           "addressLocality": "<?= htmlspecialchars($job['location']) ?>",
-                          "addressCountry": "AE"
+                          "addressCountry": "MT"
                         }
                       }
                     }
@@ -175,5 +177,11 @@ if ($sort === 'salary') {
         </div>
     </div>
 </section>
+
+<div class="container" style="text-align: center; margin-bottom: 60px;">
+    <p style="font-size: 16px; color: var(--text-muted);">
+        Hiring instead of job hunting? &rarr; <a href="requirement.php" style="color: var(--secondary-blue); font-weight: 600; text-decoration: underline;">Tell us your requirement</a>
+    </p>
+</div>
 
 <?php include 'includes/footer.php'; ?>

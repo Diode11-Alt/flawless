@@ -136,9 +136,11 @@ init_csrf_token();
                             <i class="fas fa-cogs mobile-only-icon"></i> Solutions <i class="fas fa-chevron-down dropdown-arrow" style="font-size: 10px; margin-left: 4px;"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="solutions.php"><i class="fas fa-briefcase" style="margin-right: 8px; color: var(--secondary-blue);"></i> All Staffing Solutions</a></li>
-                            <li><a href="solutions.php"><i class="fas fa-users" style="margin-right: 8px; color: var(--secondary-blue);"></i> Volume Sourcing</a></li>
-                            <li><a href="solutions.php"><i class="fas fa-passport" style="margin-right: 8px; color: var(--secondary-blue);"></i> Visa & Immigration</a></li>
+                            <li><a href="solutions.php"><i class="fas fa-th-large" style="margin-right: 8px; color: var(--secondary-blue);"></i> All Staffing Solutions</a></li>
+                            <li><a href="solutions.php#volume-sourcing"><i class="fas fa-users" style="margin-right: 8px; color: var(--secondary-blue);"></i> Volume Sourcing</a></li>
+                            <li><a href="solutions.php#trade-testing"><i class="fas fa-clipboard-check" style="margin-right: 8px; color: var(--secondary-blue);"></i> Trade Testing & Vetting</a></li>
+                            <li><a href="solutions.php#visa-immigration"><i class="fas fa-passport" style="margin-right: 8px; color: var(--secondary-blue);"></i> Visa & Immigration</a></li>
+                            <li><a href="solutions.php#relocation-logistics"><i class="fas fa-plane-arrival" style="margin-right: 8px; color: var(--secondary-blue);"></i> Relocation Logistics</a></li>
                         </ul>
                     </li>
                     <li class="has-dropdown">
@@ -150,6 +152,8 @@ init_csrf_token();
                             <li><a href="process.php"><i class="fas fa-tasks" style="margin-right: 8px; color: var(--secondary-blue);"></i> Our Process</a></li>
                         </ul>
                     </li>
+                    <li><a href="jobs.php" class="<?= in_array($current_page, ['jobs.php','job-detail.php']) ? 'active' : '' ?>"><i class="fas fa-briefcase mobile-only-icon"></i> Careers</a></li>
+                    <li><a href="blog.php" class="<?= in_array($current_page, ['blog.php','article.php']) ? 'active' : '' ?>"><i class="fas fa-chart-line mobile-only-icon"></i> Insights</a></li>
                     <li>
                         <a href="requirement.php" class="<?= $current_page === 'requirement.php' ? 'active' : '' ?>">
                             <i class="fas fa-clipboard-list mobile-only-icon"></i> Tell Us Your Requirement
@@ -166,6 +170,7 @@ init_csrf_token();
                             <a href="tel:+971545480972" class="drawer-contact-link"><i class="fas fa-phone-alt"></i> +971 54 548 0972</a>
                             <a href="https://wa.me/971545480972" target="_blank" class="drawer-contact-link whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Advisory</a>
                             <a href="mailto:info@primepathuae.com" class="drawer-contact-link"><i class="fas fa-envelope"></i> Employer Inquiry</a>
+                            <a href="jobs.php" class="drawer-contact-link"><i class="fas fa-briefcase"></i> Browse Open Roles</a>
                             <a href="requirement.php" class="btn btn-primary drawer-cta">Tell Us Your Requirement &rarr;</a>
                         </div>
                     </li>
