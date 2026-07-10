@@ -6,8 +6,8 @@
             <p style="color: rgba(255,255,255,0.85); font-size: 16px; margin: 0;">Partner with PrimePath HR for reliable cross-border volume staffing.</p>
         </div>
         <div style="display: flex; gap: 16px; flex-wrap: wrap; flex-shrink: 0;">
-            <a href="contact.php" class="btn" style="background: white; color: var(--secondary-blue); font-weight: 700; padding: 16px 36px; border-radius: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
-                Request Staffing Proposal <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            <a href="requirement.php" class="btn" style="background: white; color: var(--secondary-blue); font-weight: 700; padding: 16px 36px; border-radius: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+                Tell Us Your Requirement <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
             </a>
             <a href="tel:+971545480972" class="btn" style="background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.4); padding: 16px 36px; border-radius: 30px;">
                 <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Call Now
@@ -26,21 +26,18 @@
                 <div class="footer-widget">
                     <h4>Services</h4>
                     <ul class="footer-links">
-                        <li><a href="solutions.php#staffing">Volume Staffing</a></li>
-                        <li><a href="solutions.php#eor">Visa Processing</a></li>
-                        <li><a href="solutions.php#relocation">Relocation Logistics</a></li>
-                        <li><a href="jobs.php">Careers</a></li>
-                        <li><a href="check-status.php" style="color: #67E8F9; font-weight: 600;"><i class="fas fa-search" style="margin-right: 4px;"></i> Check Status</a></li>
+                        <li><a href="solutions.php">Volume Sourcing</a></li>
+                        <li><a href="solutions.php">Trade Testing</a></li>
+                        <li><a href="solutions.php">Visa Processing</a></li>
+                        <li><a href="solutions.php">Relocation Logistics</a></li>
                     </ul>
                 </div>
                 <div class="footer-widget">
                     <h4>Company</h4>
                     <ul class="footer-links">
                         <li><a href="about.php">About Us</a></li>
-                        <li><a href="about.php#why-us">Why Choose Us</a></li>
-                        <li><a href="index.php#process">How We Work</a></li>
-                        <li><a href="index.php#testimonials">Testimonials</a></li>
-                        <li><a href="methodology.php">Methodology</a></li>
+                        <li><a href="process.php">How We Work</a></li>
+                        <li><a href="requirement.php">Post a Requirement</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>

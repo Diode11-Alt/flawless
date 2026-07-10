@@ -136,34 +136,18 @@ init_csrf_token();
                             <i class="fas fa-cogs mobile-only-icon"></i> Solutions <i class="fas fa-chevron-down dropdown-arrow" style="font-size: 10px; margin-left: 4px;"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="solutions.php"><i class="fas fa-briefcase" style="margin-right: 8px; color: var(--secondary-blue);"></i> All HR Solutions</a></li>
-                            <li><a href="index.php#europe-pathway"><i class="fas fa-globe-europe" style="margin-right: 8px; color: #2563EB;"></i> 🇲🇹 Malta Relocation &amp; Visas</a></li>
-                            <li><a href="solutions.php#staffing"><i class="fas fa-users" style="margin-right: 8px; color: var(--secondary-blue);"></i> Volume Staffing &amp; Testing</a></li>
-                            <li><a href="solutions.php#eor"><i class="fas fa-passport" style="margin-right: 8px; color: var(--secondary-blue);"></i> Visa Sponsorship &amp; Logistics</a></li>
-                            <li><a href="solutions.php#executive"><i class="fas fa-user-tie" style="margin-right: 8px; color: var(--secondary-blue);"></i> Executive Advisory</a></li>
+                            <li><a href="solutions.php"><i class="fas fa-briefcase" style="margin-right: 8px; color: var(--secondary-blue);"></i> All Staffing Solutions</a></li>
+                            <li><a href="solutions.php"><i class="fas fa-users" style="margin-right: 8px; color: var(--secondary-blue);"></i> Volume Sourcing</a></li>
+                            <li><a href="solutions.php"><i class="fas fa-passport" style="margin-right: 8px; color: var(--secondary-blue);"></i> Visa & Immigration</a></li>
                         </ul>
                     </li>
                     <li class="has-dropdown">
-                        <a href="about.php" class="<?= in_array($current_page, ['about.php', 'employers.php', 'process.php', 'methodology.php', 'blog.php']) ? 'active' : '' ?>">
+                        <a href="about.php" class="<?= in_array($current_page, ['about.php', 'process.php']) ? 'active' : '' ?>">
                             <i class="fas fa-building mobile-only-icon"></i> Company <i class="fas fa-chevron-down dropdown-arrow" style="font-size: 10px; margin-left: 4px;"></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="about.php"><i class="fas fa-info-circle" style="margin-right: 8px; color: var(--secondary-blue);"></i> About PrimePath HR</a></li>
-                            <li><a href="employers.php"><i class="fas fa-award" style="margin-right: 8px; color: var(--secondary-blue);"></i> Why Choose Us</a></li>
-                            <li><a href="index.php#process"><i class="fas fa-tasks" style="margin-right: 8px; color: var(--secondary-blue);"></i> Our 4-Step Process</a></li>
-                            <li><a href="index.php#testimonials"><i class="fas fa-star" style="margin-right: 8px; color: var(--secondary-blue);"></i> Testimonials</a></li>
-                            <li><a href="methodology.php"><i class="fas fa-project-diagram" style="margin-right: 8px; color: var(--secondary-blue);"></i> Methodology &amp; Governance</a></li>
-                            <li><a href="blog.php"><i class="fas fa-chart-line" style="margin-right: 8px; color: var(--secondary-blue);"></i> Market Insights &amp; Reports</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="check-status.php" class="<?= in_array($current_page, ['check-status.php', 'jobs.php', 'job-detail.php', 'register.php']) ? 'active' : '' ?>">
-                            <i class="fas fa-user-check mobile-only-icon"></i> Candidate Portal <i class="fas fa-chevron-down dropdown-arrow" style="font-size: 10px; margin-left: 4px;"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="check-status.php" style="font-weight: 700;"><i class="fas fa-search" style="margin-right: 8px; color: #10B981;"></i> Check Application Status</a></li>
-                            <li><a href="jobs.php"><i class="fas fa-briefcase" style="margin-right: 8px; color: var(--secondary-blue);"></i> Browse Executive Careers <span class="nav-badge"><?= count(get_jobs()) ?></span></a></li>
-                            <li><a href="register.php"><i class="fas fa-file-upload" style="margin-right: 8px; color: var(--secondary-blue);"></i> Submit CV / Candidacy</a></li>
+                            <li><a href="process.php"><i class="fas fa-tasks" style="margin-right: 8px; color: var(--secondary-blue);"></i> Our Process</a></li>
                         </ul>
                     </li>
                     <li>
