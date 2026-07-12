@@ -1,127 +1,164 @@
 <?php 
-$page_title = "About PrimePath HR | Premier UAE Human Resource Consultancy";
-$page_description = "Learn about PrimePath HR. We are a premier Human Resource Consultancy and strategic talent advisor operating across Sharjah, Dubai, and the wider GCC region.";
+$page_title = "About Us | PrimePath HR";
 include 'includes/header.php'; 
 ?>
 
-<!-- Page Header -->
-<section class="hero-about perspective-container" style="padding: 180px 0 120px; border-bottom: 1px solid var(--border-color);">
-    <div class="container reveal-left">
-        <h1 style="font-family: var(--font-heading); font-size: 56px; margin-bottom: 16px; color: var(--primary-navy); font-weight: 800; letter-spacing: -1.5px;">About PrimePath</h1>
-        <p style="font-size: 22px; color: var(--primary-navy); font-weight: 400; max-width: 600px; line-height: 1.4;">Architecting workforce solutions designed for long-term operational resilience.</p>
-    </div>
+<main>
+<!-- Hero Section -->
+<section class="relative bg-deep-navy text-white pt-24 pb-48 overflow-hidden diagonal-bg">
+<div class="relative z-10 px-margin-desktop grid md:grid-cols-12 gap-gutter">
+<div class="md:col-span-7">
+<h1 class="font-display-lg text-display-lg mb-6 leading-tight">Architecting the Future of <span class="text-primary-fixed-dim">Talent in the UAE.</span></h1>
+<p class="font-body-lg text-body-lg text-surface-variant/90 max-w-xl mb-8">
+                        PrimePath HR Services bridges the gap between executive potential and organizational excellence. Based in the heart of Sharjah and Dubai, we pair human-centric talent advisory with our proprietary SmartHR Enterprise Platform.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-primary-container text-white px-8 py-3 rounded-[6px] font-semibold hover:bg-secondary transition-all">Explore Solutions</button>
+<button class="border border-surface-variant/30 text-white px-8 py-3 rounded-[6px] font-semibold hover:bg-white/10 transition-all">Our Methodology</button>
+</div>
+</div>
+</div>
 </section>
-
-<!-- Corporate Overview Section -->
-<section id="about" class="section" style="padding: 120px 0; background: var(--bg-white);">
-    <div class="container">
-        <div style="display: flex; gap: 80px; flex-wrap: wrap; align-items: flex-start;">
-            <div class="reveal-left delay-100" style="flex: 1; min-width: 300px;">
-                <span style="display: inline-block; padding: 4px 12px; border: 1px solid var(--secondary-blue); color: var(--secondary-blue); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 24px;">Corporate Overview</span>
-                <h2 style="font-family: var(--font-heading); font-size: 40px; margin-bottom: 32px; color: var(--primary-navy); font-weight: 800; line-height: 1.1; letter-spacing: -1px;">Strategic. Reliable. Trusted.</h2>
-                <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 16px; line-height: 1.8;">
-                    PrimePath stands as a premier Human Resource Consultancy and strategic talent advisor, operating dynamically across corporate ecosystems in Sharjah, Dubai, and the wider GCC region. We exist to bridge the gap between complex organizational ambitions and extraordinary human capital.
-                </p>
-                <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 16px; line-height: 1.8;">
-                    In a rapidly changing economic landscape, we realize that corporate agility depends entirely on the caliber of your leadership and team structures. PrimePath offers bespoke talent mapping, executive search, and compliant workforce deployment frameworks that integrate seamlessly with your internal corporate culture.
-                </p>
-                <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 16px; line-height: 1.8;">
-                    By pairing human-centric consulting with our proprietary SmartHR Enterprise Platform, we empower organizational leaders to scale seamlessly, remain completely insulated from compliance risks, and secure high-impact talent across critical market sectors.
-                </p>
-                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-                    <a href="contact.php" class="btn btn-primary" style="background: var(--primary-navy); color: #fff; padding: 12px 28px; border-radius: 6px; font-weight: 600; text-decoration: none;">
-                        Engage Our Firm
-                    </a>
-                </div>
-            </div>
-            <div class="reveal-right delay-200" style="flex: 1; min-width: 300px;">
-                <img src="assets/images/about-team.png" alt="PrimePath Recruitment Team" loading="lazy" style="border-radius: 0px; width: 100%; height: auto; filter: grayscale(100%);">
-            </div>
-        </div>
-    </div>
+<!-- Mission & Vision Overlap -->
+<section class="px-margin-desktop -mt-32 relative z-20">
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-white p-12 rounded-lg soft-shadow border-t border-surface-variant/20">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: &#39;FILL&#39; 1;">rocket_launch</span>
+<h2 class="font-headline-md text-headline-md text-deep-navy">Our Mission</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        "To elevate organizational performance by identifying and cultivating high-impact leadership, ensuring a seamless alignment between human capital and strategic vision."
+                    </p>
+</div>
+<div class="bg-white p-12 rounded-lg soft-shadow border-t border-surface-variant/20">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: &#39;FILL&#39; 1;">visibility</span>
+<h2 class="font-headline-md text-headline-md text-deep-navy">Our Vision</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        "To serve as the premier architectural benchmark for HR consultancy in the Middle East, revolutionizing talent acquisition through the synthesis of data-driven intelligence and intuitive human expertise."
+                    </p>
+</div>
+</div>
 </section>
-
-<!-- Mission & Vision -->
-<section class="section bg-cinematic-1" style="padding: 120px 0; background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-dark) 100%);">
-    <div class="container">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px;">
-            <div class="reveal delay-100" style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px;">
-                <div style="font-family: var(--font-heading); font-size: 14px; font-weight: 700; color: var(--secondary-blue); letter-spacing: 1px; margin-bottom: 20px;">01.</div>
-                <h3 style="font-family: var(--font-heading); color: #ffffff; margin-bottom: 24px; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">Our Mission</h3>
-                <p style="color: rgba(255,255,255,0.7); font-size: 16px; line-height: 1.7;">To elevate organizational performance across the region by deploying sustainable, high-impact human resource solutions rooted in deep industry expertise, legal compliance and absolute transparency. We are dedicated to cultivating meaningful corporate partnerships by championing robust verification models, embracing modern behavioral analytics, and maintaining an unwavering commitment to candidate and client alignment.</p>
-            </div>
-            <div class="reveal delay-200" style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px;">
-                <div style="font-family: var(--font-heading); font-size: 14px; font-weight: 700; color: var(--secondary-blue); letter-spacing: 1px; margin-bottom: 20px;">02.</div>
-                <h3 style="font-family: var(--font-heading); color: #ffffff; margin-bottom: 24px; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">Our Vision</h3>
-                <p style="color: rgba(255,255,255,0.7); font-size: 16px; line-height: 1.7;">To serve as the premier architectural benchmark for strategic talent acquisition and human resource advisory in the GCC, recognized for redefining workplace cultures and optimizing corporate potential.</p>
-            </div>
-        </div>
-    </div>
+<!-- HR & Technology Section (White background) -->
+<section class="py-32 px-margin-desktop bg-white">
+<div class="grid md:grid-cols-12 gap-16 items-center">
+<div class="md:col-span-5 relative">
+<div class="aspect-square rounded-lg overflow-hidden soft-shadow relative z-10 grayscale-[0.2]">
+<img alt="Professional meeting in Dubai" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgxMyaCMozmveztxWy3mfEpNp7_bsm_I5lYskqsiCVVPVCJ8hcD_VSGgqtX_T9y8mg63XTP4EDhEhUv9XqmBxOiorEqZzKLBQ7yORnp6k7L7UfLLUAlOK0WXN6kmSjhxlFzUg07oGsbp9vdEg23oSBMFYx7DyJbodjV5KGIOevg6aGN2l41Oh0r6CEaQpFO93l_BHduswlMeTuqLh9dV9TA2E6uVEFK78Om0ARBgg1l4Dl4mWedET9Cg"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-48 h-48 bg-surface-sky -z-10 rounded-lg"></div>
+</div>
+<div class="md:col-span-7">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-4 block">The Synergy</span>
+<h2 class="font-headline-md text-headline-md text-deep-navy mb-6">Human Centricity meets <br/>SmartHR Enterprise.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                        In an era of rapid digital transformation, we believe that technology should empower people, not replace them. Our executive search process is enhanced by the <strong>SmartHR Enterprise Platform</strong>, a sophisticated suite of tools that provides real-time analytics, predictive performance modeling, and cultural alignment scoring.
+                    </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &#39;FILL&#39; 1;">check_circle</span>
+<span class="font-body-md text-on-surface">Precision-targeted executive headhunting for niche roles.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &#39;FILL&#39; 1;">check_circle</span>
+<span class="font-body-md text-on-surface">Data-backed talent advisory leveraging GCC market insights.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &#39;FILL&#39; 1;">check_circle</span>
+<span class="font-body-md text-on-surface">Scalable HR technology solutions for enterprise growth.</span>
+</li>
+</ul>
+</div>
+</div>
 </section>
-
-<!-- Core Values -->
-<section class="section" style="padding: 120px 0; background: var(--bg-white);">
-    <div class="container">
-        <div class="reveal" style="margin-bottom: 60px; text-align: center;">
-            <h2 style="color: var(--primary-navy); font-size: 40px; font-family: var(--font-heading); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px;">Core Values</h2>
-            <p style="color: var(--text-muted); font-size: 18px; max-width: 600px; margin: 0 auto; line-height: 1.6;">At PrimePath, our operational values dictate how we handle talent and navigate complex corporate client requirements. They serve as our firm commitment to ethical, premium workforce management.</p>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
-            <div class="reveal delay-100" style="padding: 30px; border: 1px solid var(--border-color); border-radius: 12px; background: #fff;">
-                <div style="width: 50px; height: 50px; background: rgba(14,165,233,0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; color: var(--secondary-blue);"><i class="fas fa-university"></i></div>
-                <h3 style="font-family: var(--font-heading); color: var(--primary-navy); margin-bottom: 16px; font-size: 20px; font-weight: 700; letter-spacing: -0.5px;">Regulatory Integrity & Governance</h3>
-                <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6;">We ensure absolute clarity in fee structures, unbiased candidate appraisals, and flawless compliance with the latest UAE Ministry of Human Resources and Emiratisation (MOHRE) frameworks.</p>
-            </div>
-            
-            <div class="reveal delay-200" style="padding: 30px; border: 1px solid var(--border-color); border-radius: 12px; background: #fff;">
-                <div style="width: 50px; height: 50px; background: rgba(14,165,233,0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; color: var(--secondary-blue);"><i class="fas fa-users"></i></div>
-                <h3 style="font-family: var(--font-heading); color: var(--primary-navy); margin-bottom: 16px; font-size: 20px; font-weight: 700; letter-spacing: -0.5px;">Human-Centric Excellence</h3>
-                <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6;">We prioritize cultural alignment and candidate well-being, believing that true success happens when individuals are placed in roles that genuinely suit their strengths.</p>
-            </div>
-            
-            <div class="reveal delay-300" style="padding: 30px; border: 1px solid var(--border-color); border-radius: 12px; background: #fff;">
-                <div style="width: 50px; height: 50px; background: rgba(14,165,233,0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; color: var(--secondary-blue);"><i class="fas fa-lightbulb"></i></div>
-                <h3 style="font-family: var(--font-heading); color: var(--primary-navy); margin-bottom: 16px; font-size: 20px; font-weight: 700; letter-spacing: -0.5px;">Agile Innovation</h3>
-                <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6;">We continuously invest in advanced workforce analytics, predictive AI talent filtering, and remote verification protocols to elevate our partner experience.</p>
-            </div>
-            
-            <div class="reveal delay-400" style="padding: 30px; border: 1px solid var(--border-color); border-radius: 12px; background: #fff;">
-                <div style="width: 50px; height: 50px; background: rgba(14,165,233,0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; color: var(--secondary-blue);"><i class="fas fa-shield-alt"></i></div>
-                <h3 style="font-family: var(--font-heading); color: var(--primary-navy); margin-bottom: 16px; font-size: 20px; font-weight: 700; letter-spacing: -0.5px;">Sustained Reliability</h3>
-                <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6;">Built on trust, our advisory model acts as an extension of your executive suite, ensuring data privacy and consistent talent pipelines.</p>
-            </div>
-        </div>
-    </div>
+<!-- Leadership Team (Smooth transition to light tinted background) -->
+<section class="py-32 light-gradient-transition px-margin-desktop border-t border-surface-container">
+<div class="text-center mb-24">
+<span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-4 block">The Architects</span>
+<h2 class="font-headline-md text-headline-md text-deep-navy">Our Leadership Team</h2>
+<div class="h-1 w-16 bg-primary-container/30 mx-auto mt-4 rounded-full"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-10">
+<!-- Team Member 1 -->
+<div class="bg-white p-6 rounded-xl border border-surface-container soft-shadow transition-all duration-300 hover:border-primary-container/30">
+<div class="aspect-square rounded-lg overflow-hidden mb-6 bg-surface-container">
+<img alt="Shishir Yogi" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsD3l6cc4Ict-cg5ri9p5Zf8AhjuAtp7g8zn6_N76QFsSYX9FOOL4MhSWdOX_DOpjgyKuhy06v57SvTMJs_IruamS8YBgMcjBq-en2DqLqT5SRIKG2Gmp71LGk4YPgeWiLP_Ae_o-_80izXSNwAL2sIUKr5CuipOSnxBFajjAMarNF6MLNZC1r9P0oEYGXc-xCr5BN-Gzlq7k4uQ4gfW-hQfwdBHFTxdWkoIrYzlWUIf2o603AEHW_UQ"/>
+</div>
+<h3 class="font-headline-sm text-[20px] text-deep-navy mb-1">Shishir Yogi</h3>
+<p class="font-label-caps text-label-caps text-primary/80 mb-4">CEO &amp; Founder</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Leading the strategic vision and architecting PrimePath's growth across the UAE.</p>
+</div>
+<!-- Team Member 2 -->
+<div class="bg-white p-6 rounded-xl border border-surface-container soft-shadow transition-all duration-300 hover:border-primary-container/30">
+<div class="aspect-square rounded-lg overflow-hidden mb-6 bg-surface-container">
+<img alt="Ramesh Karki" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj9YbO-Di9tSpXHKQpVsEptUilEH0lX_tpEpzxNcIBgulgiub83z5Y-boZmgtyXPTmhPU5I92kU-Gbo-f6_HKGVLpeWvfiWiTdv5VP4rdQ0mI4V2PCi_SrWWkOU1FUf2jd4iSNhp2O81OoRKDmFGRz8AU1YCn4zuBkOquHYj3BKWwkRs4J44qVBSaRxNgzRjWztxX3097yg-XIcOc_bDY_chP_iDkcWKbnblqdJTXfojj3vcV3RZ23xw"/>
+</div>
+<h3 class="font-headline-sm text-[20px] text-deep-navy mb-1">Ramesh Karki</h3>
+<p class="font-label-caps text-label-caps text-primary/80 mb-4">Business Development Director</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Driving client relationships and expanding our footprint in global talent markets.</p>
+</div>
+<!-- Team Member 3 -->
+<div class="bg-white p-6 rounded-xl border border-surface-container soft-shadow transition-all duration-300 hover:border-primary-container/30">
+<div class="aspect-square rounded-lg overflow-hidden mb-6 bg-surface-container">
+<img alt="Pratik Dahal" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFnSW2LjKpauvpVufp62ZzMOmVrRzfXROTP5x8LdXNckk2KVssAgoSpNCn_ITiv18iz11BplYy2Glk3ERZHigISjMI8RokzXemYClwPtsxNZUU4F5PyzxC68L4DLLxGPCLdzeFKixlo-fH0EZuE2f_fnype-jbiJ6Q3IEf2eoGaR6aBHFHU3Dd4OoQmtAinSVTF5O1tiaXA0zr1UC3ZTynwKahie4ZDzqe7VGubUquy1euxOGT5uZznA"/>
+</div>
+<h3 class="font-headline-sm text-[20px] text-deep-navy mb-1">Pratik Dahal</h3>
+<p class="font-label-caps text-label-caps text-primary/80 mb-4">Product Architect</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Masterminding the SmartHR Enterprise Platform to revolutionize talent management.</p>
+</div>
+<!-- Team Member 4 -->
+<div class="bg-white p-6 rounded-xl border border-surface-container soft-shadow transition-all duration-300 hover:border-primary-container/30">
+<div class="aspect-square rounded-lg overflow-hidden mb-6 bg-surface-container">
+<img alt="Puspa Dhungel" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWKMtF0Yh9Bq4uFVnT7Y81RIh8rLvYTSFgBWGbl_FNd1QRDM19k4hRSImaUG_cI1Q5xBDM4PkOgRs3RJDGNWiT24LdITwrH-2c_tEQTxrrVDIXZ8oMKG2OD3lD1FoqlLA6MMoFAy5rtYvLnoJ9KqCvtPXrzq3BAo1Dmp-SU5oLLfJgdsoMLGefUn9Jcp9TPXcNjvXj61v-Tpz-Nq9hI3IDImP8LKPnfv_1_lV1MtSZx1fpRcXVOuCaKQ"/>
+</div>
+<h3 class="font-headline-sm text-[20px] text-deep-navy mb-1">Puspa Dhungel</h3>
+<p class="font-label-caps text-label-caps text-primary/80 mb-4">Sales Director</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Strategic leadership in sales operations and partnership acquisitions.</p>
+</div>
+<!-- Team Member 5 -->
+<div class="bg-white p-6 rounded-xl border border-surface-container soft-shadow transition-all duration-300 hover:border-primary-container/30">
+<div class="aspect-square rounded-lg overflow-hidden mb-6 bg-surface-container">
+<img alt="Amit Karki" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRM4c3sfglND1idsjxRmS60rzA0wcppFBhH2TrLlivKuRcixvJAWxqhdfp-8-CyZ9qHWooeNpAEb9G7y4ltd82OsUe4ZT6A6HftDlx4kL9QslsZqaB8R95gflvJ_zBSmuQmlRWnxR_2RqIh1HXwx8ryo5qGuE8dWYzDMD5437N4Chl4uzqZjjhcw-KSG2a3AICgRJ-k9jZzVmo5Uk0m6FaDiftkCjDI6G5e5r2uIkjJFrrOuOj90sLUA"/>
+</div>
+<h3 class="font-headline-sm text-[20px] text-deep-navy mb-1">Amit Karki</h3>
+<p class="font-label-caps text-label-caps text-primary/80 mb-4">Sales Specialist</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Optimizing client acquisition funnels and delivering bespoke HR solutions.</p>
+</div>
+<!-- Team Member 6 -->
+<div class="bg-white p-6 rounded-xl border border-surface-container soft-shadow transition-all duration-300 hover:border-primary-container/30">
+<div class="aspect-square rounded-lg overflow-hidden mb-6 bg-surface-container">
+<img alt="Manisha Kumal" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt4MmEnaTZIk6QUUGfhx8PvrINVPj1ob8a9OQ-CZ8CqbbrSjqkA0ifB5fZdmkBijK4H6V_HRnp1cKYpjumcNgw5lUXAAHaoL0h1SjiXshokaXz9Y8lmHLlUYZQFOflXLLmhePAsQXi1UQU4CnfIori_aSsn6y3_wakr4NQ4FFp1kgGANywmaOnM8Al-p4Aem742t0RhLDGcRGhzq3AiwP0AhetA6Cf5ItoNtYP1dLL6cvdcB52ZGa-ug"/>
+</div>
+<h3 class="font-headline-sm text-[20px] text-deep-navy mb-1">Manisha Kumal</h3>
+<p class="font-label-caps text-label-caps text-primary/80 mb-4">Content Strategist</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Defining our brand narrative and leading thought leadership initiatives.</p>
+</div>
+</div>
 </section>
-
-<!-- CEO Message Section -->
-<section class="section" style="padding: 120px 0; background: var(--bg-light); border-top: 1px solid var(--border-color);">
-    <div class="container">
-        <div style="display: flex; gap: 60px; flex-wrap: wrap; align-items: center;">
-            <div class="reveal-left delay-100" style="flex: 1; min-width: 300px;">
-                <img src="assets/images/ceo.jpg" alt="Shishir Yogi, CEO" loading="lazy" style="border-radius: 50%; max-width: 400px; width: 100%; height: auto; border: 10px solid var(--bg-white); box-shadow: 0 20px 40px rgba(0,0,0,0.08);" onerror="this.src='https://via.placeholder.com/400?text=CEO'">
-            </div>
-            <div class="reveal-right delay-200" style="flex: 1.5; min-width: 320px;">
-                <h2 style="font-family: var(--font-heading); font-size: 48px; color: var(--primary-navy); margin-bottom: 32px; font-weight: 800; letter-spacing: -1px;">Message from our CEO</h2>
-                <p style="color: var(--text-muted); font-size: 17px; line-height: 1.7; margin-bottom: 24px;">
-                    Welcome to PrimePath—your trusted gateway to top-tier talent in the UAE. Based across Sharjah and Dubai, we specialize in making talent acquisition, onboarding, and human resource management fast, simple, and stress-free, so you can focus entirely on your core business growth.
-                </p>
-                <p style="color: var(--text-muted); font-size: 17px; line-height: 1.7; margin-bottom: 24px;">
-                    At PrimePath, we believe that building a team should be a milestone to celebrate, not a operational complication. Whether you are seeking specialized executive leaders, implementing nationalization programs, or managing large-scale staff outsourcing, our expert team is here to support you with absolute transparency, speed, and outstanding service.
-                </p>
-                <p style="color: var(--text-muted); font-size: 17px; line-height: 1.7; margin-bottom: 32px;">
-                    With customizable HR frameworks and a tech-powered management system trusted by companies worldwide, we are proud to be the foundation of your business success in the UAE.<br><br>
-                    Thank you for choosing PrimePath. We are ready to build your future workforce.
-                </p>
-                
-                <div>
-                    <h4 style="color: var(--primary-navy); font-size: 20px; font-weight: 700; margin-bottom: 4px;">Shishir Yogi</h4>
-                    <span style="color: var(--secondary-blue); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">CEO, PrimePath HR Services</span>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- Dynamic Statistics (Transition to white) -->
+<section class="py-24 px-margin-desktop bg-white">
+<div class="grid md:grid-cols-4 gap-gutter text-center">
+<div>
+<div class="font-stats-number text-stats-number text-secondary mb-2">500+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Executive Placements</div>
+</div>
+<div>
+<div class="font-stats-number text-stats-number text-secondary mb-2">98%</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Retention Rate</div>
+</div>
+<div>
+<div class="font-stats-number text-stats-number text-secondary mb-2">12</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Global Partners</div>
+</div>
+<div>
+<div class="font-stats-number text-stats-number text-secondary mb-2">Sharjah</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">HQ Location</div>
+</div>
+</div>
 </section>
+</main>
 
 <?php include 'includes/footer.php'; ?>

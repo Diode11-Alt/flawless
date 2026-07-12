@@ -94,77 +94,165 @@ init_csrf_token();
       ]
     }
     </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#939bb3",
+                    "inverse-primary": "#89ceff",
+                    "on-background": "#171c1f",
+                    "primary": "#006591",
+                    "on-primary-fixed": "#001e2f",
+                    "on-surface-variant": "#3e4850",
+                    "inverse-on-surface": "#edf1f5",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#565e74",
+                    "secondary": "#0051d5",
+                    "on-primary-fixed-variant": "#004c6e",
+                    "on-secondary-fixed-variant": "#003ea8",
+                    "surface-sky": "#EFF6FF",
+                    "outline-variant": "#bec8d2",
+                    "on-surface": "#171c1f",
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#fefcff",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#f6fafe",
+                    "outline": "#6e7881",
+                    "secondary-container": "#316bf3",
+                    "surface-dim": "#d6dade",
+                    "primary-fixed-dim": "#89ceff",
+                    "deep-navy": "#1D2547",
+                    "border-slate": "#E2E8F0",
+                    "secondary-fixed": "#dbe1ff",
+                    "on-tertiary-fixed": "#131b2e",
+                    "primary-container": "#0ea5e9",
+                    "surface-variant": "#dfe3e7",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2c3134",
+                    "surface-bright": "#f6fafe",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "on-primary-container": "#003751",
+                    "surface-container-highest": "#dfe3e7",
+                    "on-tertiary-container": "#2b3347",
+                    "surface-container-low": "#f0f4f8",
+                    "surface-container": "#eaeef2",
+                    "tertiary-fixed": "#dae2fd",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#006591",
+                    "background": "#f6fafe",
+                    "primary-fixed": "#c9e6ff",
+                    "surface-container-high": "#e4e9ed",
+                    "on-secondary-fixed": "#00174b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "diagonal-offset": "48px",
+                    "overlap-sm": "24px",
+                    "overlap-md": "80px",
+                    "gutter": "32px",
+                    "margin-mobile": "24px",
+                    "margin-desktop": "100px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Playfair Display"],
+                    "stats-number": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600", "letterSpacing": "0.01em"}],
+                    "stats-number": ["36px", {"lineHeight": "1", "letterSpacing": "-0.03em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.8", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700", "letterSpacing": "0.02em"}],
+                    "body-lg": ["18px", {"lineHeight": "1.8", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600", "letterSpacing": "0.02em"}],
+                    "display-lg": ["56px", {"lineHeight": "1.15", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.08em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .diagonal-cut {
+            clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+        }
+        .diagonal-cut-reverse {
+            clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+        }
+        .premium-shadow {
+            box-shadow: 0 4px 20px rgba(13, 148, 136, 0.04), 0 2px 4px rgba(0, 0, 0, 0.01);
+        }
+        .premium-shadow-hover:hover {
+            box-shadow: 0 10px 30px rgba(0, 101, 145, 0.06);
+        }
+        .header-gradient-border {
+            position: relative;
+        }
+        .header-gradient-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, rgba(14, 165, 233, 0.1), rgba(37, 99, 235, 0.1));
+        }
+        .bg-sky-gradient-light {
+            background: linear-gradient(180deg, #F0F9FF 0%, #FFFFFF 100%);
+        }
+        .btn-primary-gradient {
+            background: linear-gradient(to right, #0EA5E9, #2563EB);
+            transition: all 0.3s ease;
+        }
+        .btn-primary-gradient:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+        }
+    </style>
 </head>
-<body>
-
-    <?php
-    $current_page = basename($_SERVER['PHP_SELF']);
-    ?>
-    <!-- Top Utility Bar -->
-    <div class="top-bar" style="background: var(--primary-navy); border-bottom: none; color: var(--bg-white); padding: 8px 0;">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-            <div class="top-bar-left" style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
-                <a href="mailto:info@primepathuae.com" style="display: flex; align-items: center; gap: 8px; color: var(--bg-white); font-size: 13px; text-decoration: none;"><i class="fas fa-envelope" style="color: var(--secondary-blue-light);"></i> info@primepathuae.com</a>
-                <a href="tel:+971545480972" style="display: flex; align-items: center; gap: 8px; color: var(--bg-white); font-size: 13px; text-decoration: none;"><i class="fas fa-phone-alt" style="color: var(--secondary-blue-light);"></i> +971 54 548 0972</a>
-            </div>
-            <div class="top-bar-right" style="display: flex; align-items: center; gap: 16px;">
-                <span style="font-size: 12px; font-weight: 500; color: var(--bg-white); text-transform: uppercase; letter-spacing: 0.5px;">Global Staffing Solutions - UAE</span>
-                <a href="https://www.linkedin.com/company/primepathhr/" target="_blank" rel="noopener noreferrer" style="color: var(--bg-white); font-size: 14px;"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Navigation -->
-    <header class="site-header" style="background: var(--bg-white); border-bottom: 1px solid var(--border-color); padding: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.02); position: sticky; top: 0; z-index: 1000;">
-        <div class="mobile-menu-overlay" aria-hidden="true"></div>
-        <div class="container header-inner" style="display: flex; justify-content: space-between; align-items: center;">
-            <div class="logo">
-                <a href="index.php" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
-                    <img src="/assets/images/logo.png" alt="PrimePath HR" style="height: 40px; width: auto;" onerror="this.style.display='none'">
-                    <span style="font-size: 22px; font-weight: 700; color: var(--primary-navy); letter-spacing: -0.5px; line-height: 1;">Prime<span class="text-primary">Path</span> HR</span>
-                </a>
-            </div>
-            <nav>
-                <ul class="nav-links" style="display: flex; list-style: none; gap: 28px; margin: 0; padding: 0; align-items: center;">
-                    <li>
-                        <a href="index.php" class="<?= $current_page === 'index.php' ? 'active' : '' ?>" style="color: <?= $current_page === 'index.php' ? 'var(--secondary-blue)' : 'var(--text-dark)' ?>; font-weight: 600; font-size: 14px; text-decoration: none;">Home</a>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="solutions.php" class="<?= in_array($current_page, ['solutions.php']) ? 'active' : '' ?>" style="color: <?= in_array($current_page, ['solutions.php']) ? 'var(--secondary-blue)' : 'var(--text-dark)' ?>; font-weight: 600; font-size: 14px; text-decoration: none;">Solutions <i class="fas fa-chevron-down" style="font-size: 9px; margin-left: 4px; opacity: 0.5;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="solutions.php#executive-search"><i class="fas fa-user-tie" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Executive Search</a></li>
-                            <li><a href="solutions.php#hr-outsourcing"><i class="fas fa-users-cog" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> HR Outsourcing</a></li>
-                            <li><a href="solutions.php#corporate-training"><i class="fas fa-chalkboard-teacher" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Corporate Training</a></li>
-                            <li><a href="solutions.php#hr-compliance"><i class="fas fa-clipboard-check" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> HR Compliance</a></li>
-                            <li><a href="solutions.php#emiratization"><i class="fas fa-hands-helping" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Emiratization</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="about.php" class="<?= in_array($current_page, ['about.php', 'process.php', 'team.php', 'case-studies.php']) ? 'active' : '' ?>" style="color: <?= in_array($current_page, ['about.php', 'process.php', 'team.php', 'case-studies.php']) ? 'var(--secondary-blue)' : 'var(--text-dark)' ?>; font-weight: 600; font-size: 14px; text-decoration: none;">About <i class="fas fa-chevron-down" style="font-size: 9px; margin-left: 4px; opacity: 0.5;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="about.php"><i class="fas fa-building" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Our Story</a></li>
-                            <li><a href="team.php"><i class="fas fa-user-tie" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Leadership Team</a></li>
-                            <li><a href="process.php"><i class="fas fa-project-diagram" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Our Process</a></li>
-                            <li><a href="case-studies.php"><i class="fas fa-chart-line" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Case Studies</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="jobs.php" class="<?= in_array($current_page, ['jobs.php','job-detail.php']) ? 'active' : '' ?>" style="color: <?= in_array($current_page, ['jobs.php','job-detail.php']) ? 'var(--secondary-blue)' : 'var(--text-dark)' ?>; font-weight: 600; font-size: 14px; text-decoration: none;">Careers</a></li>
-                    <li class="has-dropdown">
-                        <a href="blog.php" class="<?= in_array($current_page, ['blog.php','article.php','resources.php','faq.php']) ? 'active' : '' ?>" style="color: <?= in_array($current_page, ['blog.php','article.php','resources.php','faq.php']) ? 'var(--secondary-blue)' : 'var(--text-dark)' ?>; font-weight: 600; font-size: 14px; text-decoration: none;">Insights <i class="fas fa-chevron-down" style="font-size: 9px; margin-left: 4px; opacity: 0.5;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="blog.php"><i class="fas fa-newspaper" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Blog & Articles</a></li>
-                            <li><a href="resources.php"><i class="fas fa-download" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Guides & Resources</a></li>
-                            <li><a href="faq.php"><i class="fas fa-question-circle" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> FAQ</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.php" class="<?= $current_page === 'contact.php' ? 'active' : '' ?>" style="color: <?= $current_page === 'contact.php' ? 'var(--secondary-blue)' : 'var(--text-dark)' ?>; font-weight: 600; font-size: 14px; text-decoration: none;">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="auth-buttons">
-                <a href="requirement.php" style="background: var(--secondary-blue); color: #fff; padding: 10px 24px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 14px; transition: all 0.3s; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);">Request Talent</a>
-            </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false" style="color: var(--primary-navy); display: none;">
-                <i class="fas fa-bars" style="font-size: 24px;"></i>
-            </button>
-        </div>
+<body class="bg-surface-bright text-on-surface font-body-md">
+    <?php $current_page = basename($_SERVER['PHP_SELF']); ?>
+    <!-- TopNavBar -->
+    <header class="sticky top-0 z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full bg-white/90 backdrop-blur-md border-b border-border-slate">
+        <a href="index.php" class="font-headline-sm text-headline-sm font-bold text-deep-navy" style="text-decoration:none;">PrimePath HR</a>
+        
+        <nav class="hidden md:flex items-center gap-10">
+            <a class="<?= $current_page === 'index.php' ? 'text-primary font-bold border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary transition-colors' ?> font-body-md text-sm font-medium" href="index.php">Home</a>
+            <a class="<?= $current_page === 'about.php' ? 'text-primary font-bold border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary transition-colors' ?> font-body-md text-sm font-medium" href="about.php">About</a>
+            <a class="<?= $current_page === 'solutions.php' ? 'text-primary font-bold border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary transition-colors' ?> font-body-md text-sm font-medium" href="solutions.php">Solutions</a>
+            <a class="<?= $current_page === 'jobs.php' ? 'text-primary font-bold border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary transition-colors' ?> font-body-md text-sm font-medium" href="jobs.php">Jobs</a>
+            <a class="<?= $current_page === 'contact.php' ? 'text-primary font-bold border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary transition-colors' ?> font-body-md text-sm font-medium" href="contact.php">Contact</a>
+        </nav>
+        
+        <a href="contact.php" class="btn-gradient text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-transform active:scale-95 shadow-sm hidden md:inline-block" style="text-decoration:none;">
+            Get in Touch
+        </a>
+        
+        <button class="md:hidden text-on-surface">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
     </header>
