@@ -1,15 +1,15 @@
 # PrimePath HR
 
-PrimePath HR is a premier Human Resources Outsourcing and Executive Search agency based in Dubai, UAE. We specialize in strategic talent acquisition, payroll management, and comprehensive HR solutions tailored to forward-thinking enterprises.
+PrimePath HR is a premier Human Resources Outsourcing and Executive Search agency based in Malta. We specialize in strategic talent acquisition, payroll management, and comprehensive HR solutions tailored to forward-thinking enterprises.
 
-This repository contains the source code for the PrimePath HR official website, built with PHP, CSS, and modern web design principles to reflect professionalism, trust, and compliance with the UAE Ministry of Human Resources and Emiratisation (MOHRE) regulations.
+This repository contains the source code for the PrimePath HR official website, built with PHP, CSS, and modern web design principles to reflect professionalism, trust, and compliance with Jobsplus Malta regulations and GDPR.
 
 ## Features
 
 - **Modern Glassmorphism UI:** A professional and contemporary aesthetic featuring clean layouts, smooth animations, and responsive components.
 - **Dynamic Routing & Modularity:** Reusable header, footer, and helper components across standard PHP files for maintainability.
 - **SEO & Performance Optimized:** Structured data (JSON-LD) for job listings, semantic HTML, and fast-loading assets.
-- **MOHRE Compliant:** Explicitly compliant Terms and Privacy pages protecting candidate rights, with clear distinctions between free core recruitment services and optional premium candidate services.
+- **Jobsplus Compliant:** Explicitly compliant Terms and Privacy pages protecting candidate rights, with clear distinctions between free core recruitment services and optional premium candidate services.
 - **Content Management:** Markdown-based article rendering system for blogs and insights.
 - **Security Best Practices:** Secure form handling, path traversal prevention in routing, and robust admin login protection.
 
@@ -47,7 +47,7 @@ This project is configured for seamless deployment on **Vercel** using the Serve
 
 ## Compliance & Legal
 
-The Terms and Conditions, Privacy Policy, and fee structures embedded in this site have been meticulously crafted to comply with UAE Federal Decree-Law No. 45 of 2021 on Personal Data Protection and MOHRE recruitment regulations. PrimePath HR strictly prohibits charging candidates for core recruitment services.
+The Terms and Conditions, Privacy Policy, and fee structures embedded in this site have been meticulously crafted to comply with the General Data Protection Regulation (GDPR) and Jobsplus Malta recruitment regulations. PrimePath HR strictly prohibits charging candidates for core recruitment services.
 
 ## License
 

@@ -19,7 +19,7 @@ $applications = array_reverse($applications); // newest first
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Dashboard - PrimePath UAE</title>
+    <title>Admin Dashboard - PrimePath HR</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
         .admin-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
@@ -57,7 +57,7 @@ $applications = array_reverse($applications); // newest first
                 
                 <div class="form-group"><input type="text" name="title" id="jobTitle" required placeholder=" "><label>Job Title</label></div>
                 <div class="form-group"><input type="text" name="company" id="jobCompany" required placeholder=" "><label>Company</label></div>
-                <div class="form-group"><input type="text" name="location" id="jobLocation" required placeholder=" "><label>Location (e.g. Dubai)</label></div>
+                <div class="form-group"><input type="text" name="location" id="jobLocation" required placeholder=" "><label>Location (e.g. Valletta)</label></div>
                 <div class="form-group">
                     <select name="type" id="jobType" required style="padding: 16px; border: 2px solid #E2E8F0; border-radius: 8px; font-size: 15px;">
                         <option value="">Select Type</option>

@@ -1,86 +1,77 @@
 [
-    {
-        "id": 1,
-        "title": "Room Attendant",
-        "company": "Confidential — 4-Star Hotel Group",
-        "location": "St. Julian's, Malta",
-        "type": "Full-Time",
-        "industry": "hospitality",
-        "salary": "€1,100 - €1,300 / month",
-        "posted_date": "2026-07-01",
-        "description": [
-            "Job Description: We're recruiting on behalf of a hotel group in St. Julian's for experienced Room Attendants to join their housekeeping team ahead of peak season.",
-            "Key Responsibilities: Maintain guest rooms to a 4-star standard, restock amenities, report maintenance issues. Requirements: Prior housekeeping experience preferred. Physically able to stand/walk for full shifts. Basic spoken English."
-        ]
-    },
-    {
-        "id": 2,
-        "title": "Chef de Partie",
-        "company": "Confidential — Fine Dining Restaurant Group",
-        "location": "Valletta, Malta",
-        "type": "Full-Time",
-        "industry": "hospitality",
-        "salary": "€1,400 - €1,700 / month",
-        "posted_date": "2026-07-03",
-        "description": [
-            "Job Description: A Valletta restaurant group is looking for a Chef de Partie to run a specific station in a busy kitchen.",
-            "Key Responsibilities: Manage a kitchen section during service, maintain food safety standards, train junior kitchen staff. Requirements: 2+ years of kitchen experience in a similar-sized operation. Trade tested on practical cooking skills before shortlisting."
-        ]
-    },
-    {
-        "id": 3,
-        "title": "Retail Sales Associate",
-        "company": "Confidential — Retail Chain",
-        "location": "Sliema, Malta",
-        "type": "Full-Time",
-        "industry": "retail",
-        "salary": "€1,000 - €1,200 / month",
-        "posted_date": "2026-07-05",
-        "description": [
-            "Job Description: A retail chain with stores across Malta is hiring Sales Associates for its Sliema location.",
-            "Key Responsibilities: Customer service on the shop floor, stock replenishment, till operations. Requirements: Retail or customer-facing experience. Conversational English required."
-        ]
-    },
-    {
-        "id": 4,
-        "title": "Mason",
-        "company": "Confidential — Construction Contractor",
-        "location": "Malta (site-based)",
-        "type": "Full-Time",
-        "industry": "construction",
-        "salary": "€1,300 - €1,600 / month",
-        "posted_date": "2026-07-02",
-        "description": [
-            "Job Description: A construction contractor operating across multiple Maltese sites needs experienced Masons for ongoing residential projects.",
-            "Key Responsibilities: Blockwork, plastering, and general masonry on active construction sites. Requirements: Verified trade experience — all candidates complete a practical trade test before being shortlisted."
-        ]
-    },
-    {
-        "id": 5,
-        "title": "Electrician",
-        "company": "Confidential — Construction Contractor",
-        "location": "Malta (site-based)",
-        "type": "Full-Time",
-        "industry": "construction",
-        "salary": "€1,400 - €1,800 / month",
-        "posted_date": "2026-07-04",
-        "description": [
-            "Job Description: Site electrician needed for residential and commercial construction projects across Malta.",
-            "Key Responsibilities: First and second fix electrical work, reading site drawings, working to Maltese electrical code. Requirements: Recognized electrical trade qualification or verified equivalent experience."
-        ]
-    },
-    {
-        "id": 6,
-        "title": "F&B Supervisor",
-        "company": "Confidential — Hotel Group",
-        "location": "Qawra, Malta",
-        "type": "Full-Time",
-        "industry": "hospitality",
-        "salary": "€1,500 - €1,800 / month",
-        "posted_date": "2026-07-06",
-        "description": [
-            "Job Description: A hotel group in Qawra needs an F&B Supervisor to oversee front-of-house restaurant and bar operations.",
-            "Key Responsibilities: Supervise service staff, manage shift rotas, maintain service standards during peak hours. Requirements: Prior supervisory experience in hospitality F&B. Team leadership experience required."
-        ]
-    }
+  {
+    "id": 1,
+    "title": "Head of Emiratization Strategy",
+    "location": "Dubai, UAE",
+    "type": "Full Time",
+    "category": "Human Resources",
+    "description": "We are seeking a senior strategist to lead Emiratization initiatives for a top-tier holding company, ensuring full MOHRE compliance and developing career pathways for UAE Nationals.",
+    "requirements": [
+      "Minimum 7 years of HR experience in the GCC.",
+      "In-depth knowledge of MOHRE regulations and NAFIS initiatives.",
+      "Proven track record of successful Emiratization programs.",
+      "Fluency in Arabic and English."
+    ],
+    "posted_date": "2026-07-01"
+  },
+  {
+    "id": 2,
+    "title": "Senior Legal Consultant (Corporate)",
+    "location": "Abu Dhabi, UAE",
+    "type": "Full Time",
+    "category": "Legal & Compliance",
+    "description": "A prestigious legal firm is looking for an experienced corporate lawyer to advise enterprise clients on UAE labor laws, corporate restructuring, and commercial contracts.",
+    "requirements": [
+      "Law degree and qualification in a recognized jurisdiction.",
+      "5+ years of corporate law experience within the UAE.",
+      "Strong understanding of the UAE Commercial Companies Law.",
+      "Excellent negotiation and drafting skills."
+    ],
+    "posted_date": "2026-07-05"
+  },
+  {
+    "id": 3,
+    "title": "Chief Financial Officer (CFO)",
+    "location": "Sharjah, UAE",
+    "type": "Contract",
+    "category": "Finance",
+    "description": "Interim CFO required for a rapidly expanding logistics firm. Will oversee financial planning, risk management, and the implementation of UAE Corporate Tax frameworks.",
+    "requirements": [
+      "CPA, ACCA, or equivalent professional qualification.",
+      "Extensive experience operating at a C-level within the GCC.",
+      "Deep understanding of UAE Corporate Tax laws.",
+      "Strong leadership and change management skills."
+    ],
+    "posted_date": "2026-07-08"
+  },
+  {
+    "id": 4,
+    "title": "Senior Payroll & Benefits Manager",
+    "location": "Dubai, UAE",
+    "type": "Full Time",
+    "category": "Human Resources",
+    "description": "Manage end-to-end payroll operations for an enterprise workforce of 2000+ employees, ensuring WPS compliance and managing complex expat benefit structures.",
+    "requirements": [
+      "Proven experience with UAE Wage Protection System (WPS).",
+      "Familiarity with enterprise ERPs (e.g., Oracle, SAP).",
+      "High degree of accuracy and confidentiality.",
+      "Strong understanding of UAE labor law regarding end-of-service benefits."
+    ],
+    "posted_date": "2026-07-10"
+  },
+  {
+    "id": 5,
+    "title": "Lead Software Engineer (FinTech)",
+    "location": "DIFC, Dubai",
+    "type": "Full Time",
+    "category": "Technology",
+    "description": "An innovative fintech startup in the DIFC is looking for a Lead Engineer to scale their payment processing architecture. You will lead a high-performing engineering squad.",
+    "requirements": [
+      "7+ years of experience with Node.js, Go, or Java.",
+      "Strong proficiency in cloud architecture (AWS/Azure).",
+      "Experience with financial systems and PCI-DSS compliance.",
+      "Previous technical leadership experience."
+    ],
+    "posted_date": "2026-07-11"
+  }
 ]

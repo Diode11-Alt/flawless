@@ -16,7 +16,7 @@ init_csrf_token();
     $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')) ? "https" : "http";
     $host = $_SERVER['HTTP_HOST'] ?? 'primepath-tan.vercel.app';
     $current_url = $protocol . "://" . $host . ($_SERVER['REQUEST_URI'] ?? '/');
-    $meta_desc = isset($page_description) ? htmlspecialchars($page_description) : 'Premier HR consultancy in Dubai providing Cross-Border Workforce Deployment, European Staffing, and Identity Malta visa solutions.';
+    $meta_desc = isset($page_description) ? htmlspecialchars($page_description) : 'Premier HR consultancy in the UAE providing Cross-Border Workforce Deployment, UAE Staffing, and Work Permit visa solutions.';
     $meta_title = isset($page_title) ? htmlspecialchars($page_title) : 'International Staffing & Global Mobility | PrimePath HR';
     $meta_img = isset($page_image) ? $protocol . "://" . $host . $page_image : $protocol . "://" . $host . "/assets/images/logo.png";
     ?>
@@ -25,163 +25,146 @@ init_csrf_token();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Material Symbols -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css?v=<?= filemtime(__DIR__ . '/../assets/css/style.css') ?>">
     <?php if (basename($_SERVER['PHP_SELF']) === 'index.php' || $_SERVER['PHP_SELF'] === '/'): ?>
     <link rel="preload" as="image" href="/assets/images/hero-bg.jpg">
     <?php endif; ?>
-    <!-- SEO Meta & Social Tags -->
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
-    <meta name="description" content="<?= $meta_desc ?>">
-    <link rel="canonical" href="<?= htmlspecialchars($current_url) ?>">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="<?= $meta_title ?>">
-    <meta property="og:description" content="<?= $meta_desc ?>">
-    <meta property="og:url" content="<?= htmlspecialchars($current_url) ?>">
-    <meta property="og:image" content="<?= $meta_img ?>">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<?= $meta_title ?>">
-    <meta name="twitter:description" content="<?= $meta_desc ?>">
-    <meta name="twitter:image" content="<?= $meta_img ?>">
-    <!-- Structured Data: EmploymentAgency & LocalBusiness Schema -->
+
+    <!-- SEO Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "EmploymentAgency",
+      "@type": ["EmploymentAgency", "LocalBusiness"],
       "name": "PrimePath HR Services",
-      "alternateName": "PrimePath HR UAE",
-      "url": "https://primepathuae.com/",
-      "logo": "https://primepathuae.com/assets/images/logo.png",
-      "image": "https://primepathuae.com/assets/images/logo.png",
-      "description": "<?= $meta_desc ?>",
+      "description": "Leading HR consultancy based in the UAE. We specialize in executive search, Emiratization (Tawteen), and MOHRE compliant workforce solutions.",
+      "image": "<?= SITE_URL ?>/assets/images/logo.png",
+      "@id": "<?= SITE_URL ?>",
+      "url": "<?= SITE_URL ?>",
+      "telephone": "+971545480972",
+      "email": "info@primepathuae.com",
+      "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Business Village, Block B - Office 923",
-        "addressLocality": "Deira",
-        "addressRegion": "Dubai",
+        "streetAddress": "Sharjah and Dubai",
+        "addressLocality": "Dubai",
         "addressCountry": "AE"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 25.2532,
-        "longitude": 55.3283
+        "latitude": 25.2048,
+        "longitude": 55.2708
       },
-      "telephone": "+971 54 548 0972",
-      "email": "primepathhrservices@gmail.com",
-      "priceRange": "$$",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "18:00"
-        }
-      ],
+      "areaServed": ["United Arab Emirates", "GCC", "Middle East"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "HR & Consulting Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Executive Search & Specialist Recruitment"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Emiratization (Tawteen)"
+            }
+          }
+        ]
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
       "sameAs": [
         "https://www.facebook.com/PrimePathHR",
         "https://www.linkedin.com/company/primepathhr/"
       ]
     }
     </script>
-    <!-- Typed.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 </head>
 <body>
 
-    
     <?php
     $current_page = basename($_SERVER['PHP_SELF']);
     ?>
     <!-- Top Utility Bar -->
-    <div class="top-bar">
+    <div class="top-bar" style="background: var(--primary-navy); border-bottom: none; color: var(--bg-white); padding: 8px 0;">
         <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-            <div class="top-bar-left" style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-                <a href="mailto:primepathhrservices@gmail.com" style="display: flex; align-items: center; gap: 6px;"><i class="fas fa-envelope" style="color: var(--secondary-blue);"></i> primepathhrservices@gmail.com</a>
-                <a href="tel:+971545480972" style="display: flex; align-items: center; gap: 6px;"><i class="fas fa-phone-alt" style="color: var(--secondary-blue);"></i> +971 54 548 0972</a>
-                <span style="opacity: 0.8; font-size: 12px; display: flex; align-items: center; gap: 5px;"><i class="fas fa-map-marker-alt" style="color: #FBBF24;"></i> Business Village, Block B - Office 923, Deira, Dubai</span>
+            <div class="top-bar-left" style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
+                <a href="mailto:info@primepathuae.com" style="display: flex; align-items: center; gap: 8px; color: var(--bg-white); font-size: 13px; text-decoration: none;"><i class="fas fa-envelope" style="color: var(--secondary-blue-light);"></i> info@primepathuae.com</a>
+                <a href="tel:+971545480972" style="display: flex; align-items: center; gap: 8px; color: var(--bg-white); font-size: 13px; text-decoration: none;"><i class="fas fa-phone-alt" style="color: var(--secondary-blue-light);"></i> +971 54 548 0972</a>
             </div>
-            <div class="top-bar-right" style="display: flex; align-items: center; gap: 14px;">
-                <span style="font-size: 12px; font-weight: 600; color: #67E8F9; text-transform: uppercase; letter-spacing: 0.5px;">International Workforce Consultancy</span>
-                <a href="https://www.facebook.com/PrimePathHR" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/company/primepathhr/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <div class="top-bar-right" style="display: flex; align-items: center; gap: 16px;">
+                <span style="font-size: 12px; font-weight: 500; color: var(--bg-white); text-transform: uppercase; letter-spacing: 0.5px;">Global Staffing Solutions - UAE</span>
+                <a href="https://www.linkedin.com/company/primepathhr/" target="_blank" rel="noopener noreferrer" style="color: var(--bg-white); font-size: 14px;"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
 
     <!-- Main Navigation -->
-    <header class="site-header">
+    <header class="site-header" style="background: var(--bg-white); border-bottom: 1px solid var(--border-color); padding: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.02); position: sticky; top: 0; z-index: 1000;">
         <div class="mobile-menu-overlay" aria-hidden="true"></div>
-        <div class="container header-inner">
+        <div class="container header-inner" style="display: flex; justify-content: space-between; align-items: center;">
             <div class="logo">
                 <a href="index.php" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
-                    <img src="/assets/images/logo.png" alt="PrimePath HR Services" class="logo-img">
-                    <span style="font-size: 22px; font-weight: 800; color: var(--primary-navy); letter-spacing: -0.5px; line-height: 1;">Prime<span style="color: var(--secondary-blue);">Path</span></span>
+                    <img src="/assets/images/logo.png" alt="PrimePath HR" style="height: 40px; width: auto;" onerror="this.style.display='none'">
+                    <span style="font-size: 22px; font-weight: 700; color: var(--primary-navy); letter-spacing: -0.5px; line-height: 1;">Prime<span class="text-primary">Path</span> HR</span>
                 </a>
             </div>
             <nav>
-                <ul class="nav-links">
-                    <li class="mobile-only drawer-header">
-                        <a href="index.php" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                            <img src="/assets/images/logo.png" alt="PrimePath HR Services" style="height: 32px; width: auto;">
-                            <span style="font-size: 18px; font-weight: 800; color: var(--primary-navy); letter-spacing: -0.5px; line-height: 1;">Prime<span style="color: var(--secondary-blue);">Path</span></span>
-                        </a>
-                        <button class="drawer-close-btn" aria-label="Close Menu"><i class="fas fa-times"></i></button>
-                    </li>
+                <ul class="nav-links" style="display: flex; list-style: none; gap: 28px; margin: 0; padding: 0; align-items: center;">
                     <li>
-                        <a href="index.php" class="<?= $current_page === 'index.php' ? 'active' : '' ?>">
-                            <i class="fas fa-home mobile-only-icon"></i> Home
-                        </a>
+                        <a href="index.php" class="<?= $current_page === 'index.php' ? 'active' : '' ?>" style="color: <?= $current_page === 'index.php' ? 'var(--secondary-blue)' : 'var(--text-dark)' ?>; font-weight: 600; font-size: 14px; text-decoration: none;">Home</a>
                     </li>
                     <li class="has-dropdown">
-                        <a href="solutions.php" class="<?= $current_page === 'solutions.php' ? 'active' : '' ?>">
-                            <i class="fas fa-cogs mobile-only-icon"></i> Solutions <i class="fas fa-chevron-down dropdown-arrow" style="font-size: 10px; margin-left: 4px;"></i>
-                        </a>
+                        <a href="solutions.php" class="<?= in_array($current_page, ['solutions.php']) ? 'active' : '' ?>" style="color: <?= in_array($current_page, ['solutions.php']) ? 'var(--secondary-blue)' : 'var(--text-dark)' ?>; font-weight: 600; font-size: 14px; text-decoration: none;">Solutions <i class="fas fa-chevron-down" style="font-size: 9px; margin-left: 4px; opacity: 0.5;"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="solutions.php"><i class="fas fa-th-large" style="margin-right: 8px; color: var(--secondary-blue);"></i> All Staffing Solutions</a></li>
-                            <li><a href="solutions.php#volume-sourcing"><i class="fas fa-users" style="margin-right: 8px; color: var(--secondary-blue);"></i> Volume Sourcing</a></li>
-                            <li><a href="solutions.php#trade-testing"><i class="fas fa-clipboard-check" style="margin-right: 8px; color: var(--secondary-blue);"></i> Trade Testing & Vetting</a></li>
-                            <li><a href="solutions.php#visa-immigration"><i class="fas fa-passport" style="margin-right: 8px; color: var(--secondary-blue);"></i> Visa & Immigration</a></li>
-                            <li><a href="solutions.php#relocation-logistics"><i class="fas fa-plane-arrival" style="margin-right: 8px; color: var(--secondary-blue);"></i> Relocation Logistics</a></li>
+                            <li><a href="solutions.php#executive-search"><i class="fas fa-user-tie" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Executive Search</a></li>
+                            <li><a href="solutions.php#hr-outsourcing"><i class="fas fa-users-cog" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> HR Outsourcing</a></li>
+                            <li><a href="solutions.php#corporate-training"><i class="fas fa-chalkboard-teacher" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Corporate Training</a></li>
+                            <li><a href="solutions.php#hr-compliance"><i class="fas fa-clipboard-check" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> HR Compliance</a></li>
+                            <li><a href="solutions.php#emiratization"><i class="fas fa-hands-helping" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Emiratization</a></li>
                         </ul>
                     </li>
                     <li class="has-dropdown">
-                        <a href="about.php" class="<?= in_array($current_page, ['about.php', 'process.php']) ? 'active' : '' ?>">
-                            <i class="fas fa-building mobile-only-icon"></i> Company <i class="fas fa-chevron-down dropdown-arrow" style="font-size: 10px; margin-left: 4px;"></i>
-                        </a>
+                        <a href="about.php" class="<?= in_array($current_page, ['about.php', 'process.php', 'team.php', 'case-studies.php']) ? 'active' : '' ?>" style="color: <?= in_array($current_page, ['about.php', 'process.php', 'team.php', 'case-studies.php']) ? 'var(--secondary-blue)' : 'var(--text-dark)' ?>; font-weight: 600; font-size: 14px; text-decoration: none;">About <i class="fas fa-chevron-down" style="font-size: 9px; margin-left: 4px; opacity: 0.5;"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="about.php"><i class="fas fa-info-circle" style="margin-right: 8px; color: var(--secondary-blue);"></i> About PrimePath HR</a></li>
-                            <li><a href="process.php"><i class="fas fa-tasks" style="margin-right: 8px; color: var(--secondary-blue);"></i> Our Process</a></li>
+                            <li><a href="about.php"><i class="fas fa-building" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Our Story</a></li>
+                            <li><a href="team.php"><i class="fas fa-user-tie" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Leadership Team</a></li>
+                            <li><a href="process.php"><i class="fas fa-project-diagram" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Our Process</a></li>
+                            <li><a href="case-studies.php"><i class="fas fa-chart-line" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Case Studies</a></li>
                         </ul>
                     </li>
-                    <li><a href="jobs.php" class="<?= in_array($current_page, ['jobs.php','job-detail.php']) ? 'active' : '' ?>"><i class="fas fa-briefcase mobile-only-icon"></i> Careers</a></li>
-                    <li><a href="blog.php" class="<?= in_array($current_page, ['blog.php','article.php']) ? 'active' : '' ?>"><i class="fas fa-chart-line mobile-only-icon"></i> Insights</a></li>
-                    <li>
-                        <a href="requirement.php" class="<?= $current_page === 'requirement.php' ? 'active' : '' ?>">
-                            <i class="fas fa-clipboard-list mobile-only-icon"></i> Tell Us Your Requirement
-                        </a>
+                    <li><a href="jobs.php" class="<?= in_array($current_page, ['jobs.php','job-detail.php']) ? 'active' : '' ?>" style="color: <?= in_array($current_page, ['jobs.php','job-detail.php']) ? 'var(--secondary-blue)' : 'var(--text-dark)' ?>; font-weight: 600; font-size: 14px; text-decoration: none;">Careers</a></li>
+                    <li class="has-dropdown">
+                        <a href="blog.php" class="<?= in_array($current_page, ['blog.php','article.php','resources.php','faq.php']) ? 'active' : '' ?>" style="color: <?= in_array($current_page, ['blog.php','article.php','resources.php','faq.php']) ? 'var(--secondary-blue)' : 'var(--text-dark)' ?>; font-weight: 600; font-size: 14px; text-decoration: none;">Insights <i class="fas fa-chevron-down" style="font-size: 9px; margin-left: 4px; opacity: 0.5;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog.php"><i class="fas fa-newspaper" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Blog & Articles</a></li>
+                            <li><a href="resources.php"><i class="fas fa-download" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> Guides & Resources</a></li>
+                            <li><a href="faq.php"><i class="fas fa-question-circle" style="width: 20px; color: var(--secondary-blue); margin-right: 10px;"></i> FAQ</a></li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="contact.php" class="<?= $current_page === 'contact.php' ? 'active' : '' ?>">
-                            <i class="fas fa-envelope mobile-only-icon"></i> Contact
-                        </a>
-                    </li>
-                    <li class="mobile-only drawer-footer">
-                        <div class="drawer-quick-contacts">
-                            <p class="drawer-section-title">Client Advisory Desk</p>
-                            <a href="tel:+971545480972" class="drawer-contact-link"><i class="fas fa-phone-alt"></i> +971 54 548 0972</a>
-                            <a href="https://wa.me/971545480972" target="_blank" class="drawer-contact-link whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Advisory</a>
-                            <a href="mailto:info@primepathuae.com" class="drawer-contact-link"><i class="fas fa-envelope"></i> Employer Inquiry</a>
-                            <a href="jobs.php" class="drawer-contact-link"><i class="fas fa-briefcase"></i> Browse Open Roles</a>
-                            <a href="requirement.php" class="btn btn-primary drawer-cta">Tell Us Your Requirement &rarr;</a>
-                        </div>
-                    </li>
+                    <li><a href="contact.php" class="<?= $current_page === 'contact.php' ? 'active' : '' ?>" style="color: <?= $current_page === 'contact.php' ? 'var(--secondary-blue)' : 'var(--text-dark)' ?>; font-weight: 600; font-size: 14px; text-decoration: none;">Contact</a></li>
                 </ul>
             </nav>
             <div class="auth-buttons">
-                <a href="requirement.php" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary-blue) 0%, #007A99 100%); padding: 12px 26px; border-radius: 30px; font-weight: 600; box-shadow: 0 4px 15px rgba(0, 180, 216, 0.25);">Tell Us Your Requirement &rarr;</a>
+                <a href="requirement.php" style="background: var(--secondary-blue); color: #fff; padding: 10px 24px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 14px; transition: all 0.3s; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);">Request Talent</a>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <i class="fas fa-bars"></i>
-                <span class="toggle-text">Menu</span>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false" style="color: var(--primary-navy); display: none;">
+                <i class="fas fa-bars" style="font-size: 24px;"></i>
             </button>
         </div>
     </header>

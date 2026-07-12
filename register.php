@@ -69,9 +69,9 @@ require_once 'includes/header.php';
 ?>
 
 <div class="auth-wrapper">
-    <div class="auth-sidebar" style="background: linear-gradient(135deg, var(--primary-navy-dark), var(--primary-navy));">
-        <h1 style="color: white; font-size: 40px; margin-bottom: 20px;">Start Your Journey</h1>
-        <p style="font-size: 18px; opacity: 0.9; line-height: 1.6;">Submit your details and a PrimePath consultant will be in touch within 24 hours to discuss your needs.</p>
+    <div class="auth-sidebar bg-gradient-minimal">
+        <h1 style="color: var(--primary-navy); font-size: 40px; margin-bottom: 20px;">Start Your Journey</h1>
+        <p style="font-size: 18px; color: var(--text-muted); line-height: 1.6;">Submit your details and a PrimePath consultant will be in touch within 24 hours to discuss your needs.</p>
     </div>
     
     <div class="auth-form-container">

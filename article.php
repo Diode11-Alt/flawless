@@ -26,6 +26,9 @@ include 'includes/header.php';
 $parsed_content = parse_basic_markdown($content_raw);
 // Remove the first h1 since we render it in the header
 $parsed_content = preg_replace('/<h1>.*?<\/h1>/i', '', $parsed_content, 1);
+
+$article_image_path = "assets/images/articles/{$slug}.jpg";
+$article_image_url = file_exists(__DIR__ . '/' . $article_image_path) ? SITE_URL . '/' . $article_image_path : SITE_URL . '/assets/images/logo.png';
 ?>
 
 <!-- Structured Data (Article Schema) -->
@@ -34,18 +37,18 @@ $parsed_content = preg_replace('/<h1>.*?<\/h1>/i', '', $parsed_content, 1);
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "<?= htmlspecialchars($title) ?>",
-  "image": "https://primepathuae.com/assets/images/logo.png",
+  "image": "<?= $article_image_url ?>",
   "author": {
     "@type": "Organization",
     "name": "PrimePath HR Services",
-    "url": "https://primepathuae.com/"
+    "url": "<?= SITE_URL ?>/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "PrimePath HR Services",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://primepathuae.com/assets/images/logo.png"
+      "url": "<?= SITE_URL ?>/assets/images/logo.png"
     }
   },
   "datePublished": "<?= date('c', filemtime($file)) ?>",
@@ -54,10 +57,10 @@ $parsed_content = preg_replace('/<h1>.*?<\/h1>/i', '', $parsed_content, 1);
 }
 </script>
 
-<section class="page-header" style="background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%); padding: 120px 0 80px; text-align: center; color: white;">
+<section class="page-header bg-gradient-minimal" style="padding: 120px 0 80px; text-align: center;">
     <div class="container">
-        <h1 style="font-size: 38px; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.2); max-width: 900px; margin: 0 auto;"><?= htmlspecialchars($title) ?></h1>
-        <p style="font-size: 16px; opacity: 0.8; margin-top: 15px;">Published: <?= date('F j, Y', filemtime($file)) ?></p>
+        <h1 style="font-size: 38px; margin-bottom: 15px; color: var(--primary-navy); max-width: 900px; margin: 0 auto;"><?= htmlspecialchars($title) ?></h1>
+        <p style="font-size: 16px; color: var(--text-muted); margin-top: 15px;">Published: <?= date('F j, Y', filemtime($file)) ?></p>
     </div>
 </section>
 

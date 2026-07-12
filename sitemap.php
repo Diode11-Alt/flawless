@@ -1,9 +1,10 @@
 <?php
+require_once __DIR__ . '/includes/helpers.php';
 header('Content-Type: application/xml');
 echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
 
-$base_url = 'https://primepathuae.com';
+$base_url = SITE_URL;
 $pages = [
     '/' => 1.0,
     '/requirement.php' => 1.0,
@@ -12,6 +13,10 @@ $pages = [
     '/about.php' => 0.7,
     '/process.php' => 0.7,
     '/blog.php' => 0.7,
+    '/case-studies.php' => 0.7,
+    '/faq.php' => 0.6,
+    '/team.php' => 0.6,
+    '/resources.php' => 0.6,
     '/contact.php' => 0.6,
     '/privacy.php' => 0.3,
     '/terms.php' => 0.3

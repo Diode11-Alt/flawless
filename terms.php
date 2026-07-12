@@ -4,10 +4,10 @@ include 'includes/header.php';
 ?>
 
 <!-- Page Header -->
-<section class="page-header" style="background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%); padding: 120px 0 80px; text-align: center; color: white;">
+<section class="page-header bg-gradient-minimal" style="padding: 120px 0 80px; text-align: center;">
     <div class="container">
-        <h1 style="font-size: 42px; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">Terms & Conditions</h1>
-        <p style="font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto;">The terms of use for PrimePath HR services and digital platforms.</p>
+        <h1 style="font-size: 42px; margin-bottom: 15px; color: var(--primary-navy);">Terms of Service</h1>
+        <p style="font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Rules and guidelines for using PrimePath HR services and website.</p>
     </div>
 </section>
 
@@ -16,7 +16,7 @@ include 'includes/header.php';
     <div class="container" style="max-width: 800px; margin: 0 auto; line-height: 1.8; color: var(--text-dark);">
         
         <h2 style="margin-bottom: 20px;">1. Acceptance of Terms</h2>
-        <p style="margin-bottom: 30px;">These Terms & Conditions constitute a legally binding agreement between you and PrimePath HR LLC ("PrimePath HR", "we", "us", "our"). By accessing primepathuae.com or using our services, you accept these Terms in full. We may update these Terms from time to time; continued use after changes means acceptance. We hold a valid recruitment license issued by the UAE Ministry of Human Resources and Emiratisation (MOHRE).</p>
+        <p style="margin-bottom: 30px;">These Terms & Conditions constitute a legally binding agreement between you and PrimePath HR LLC ("PrimePath HR", "we", "us", "our"). By accessing <?= SITE_URL ?> or using our services, you accept these Terms in full. We may update these Terms from time to time; continued use after changes means acceptance. We operate in compliance with MOHRE regulations for employment agencies in the UAE.</p>
 
         <h2 style="margin-bottom: 20px;">2. Definitions</h2>
         <p style="margin-bottom: 30px;">
@@ -77,9 +77,9 @@ include 'includes/header.php';
 
         <h2 style="margin-bottom: 20px;">Contact Us</h2>
         <p style="margin-bottom: 30px;">
-            <strong>PrimePath HR LLC</strong><br>
-            Business Village, Block B - Office 923, Deira, Dubai, UAE<br>
-            Email: primepathhrservices@gmail.com
+            <strong>PrimePath HR Services</strong><br>
+            P.O. Box 71607, Al Wahda St, Bu Danig - Sharjah - United Arab Emirates<br>
+            Email: info@primepathuae.com
         </p>
 
         <p style="font-size: 14px; color: var(--text-muted); margin-top: 50px; border-top: 1px solid var(--border-color); padding-top: 20px;">Last Updated: July 2026</p>

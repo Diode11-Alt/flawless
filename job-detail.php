@@ -4,7 +4,7 @@ $id = isset($_GET['id']) ? (int)$_GET['id'] : 1;
 $job = get_job_by_id($id);
 $page_title = ($job ? $job['title'] . " | PrimePath HR" : "Job Not Found");
 $job_desc_schema = $job && !empty($job['description']) ? implode(" ", is_array($job['description']) ? $job['description'] : [$job['description']]) : "Details in description.";
-$page_description = $job ? "Apply for " . $job['title'] . " in " . $job['location'] . " with PrimePath HR. Salary: " . ($job['salary'] ?? 'Competitive') . ". Trade-tested placements in Malta." : "Find jobs in Malta with PrimePath HR.";
+$page_description = $job ? "Apply for " . $job['title'] . " in " . $job['location'] . " with PrimePath HR. Salary: " . ($job['salary'] ?? 'Competitive') . ". Trade-tested placements in the UAE." : "Find jobs in the UAE with PrimePath HR.";
 include 'includes/header.php'; 
 
 if(!$job) {
@@ -36,15 +36,15 @@ $share_title = urlencode("Check out this job opening: " . $job['title'] . " at "
   "hiringOrganization" : {
     "@type" : "Organization",
     "name" : "<?= htmlspecialchars($job['company']) ?>",
-    "sameAs" : "https://primepathuae.com",
-    "logo" : "https://primepathuae.com/assets/images/logo.png"
+    "sameAs" : "<?= SITE_URL ?>",
+    "logo" : "<?= SITE_URL ?>/assets/images/logo.png"
   },
   "jobLocation": {
     "@type": "Place",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "<?= htmlspecialchars($job['location']) ?>",
-      "addressCountry": "MT"
+      "addressCountry": "AE"
     }
   },
   "baseSalary": {
@@ -59,19 +59,19 @@ $share_title = urlencode("Check out this job opening: " . $job['title'] . " at "
 }
 </script>
 
-<div style="background-color: var(--primary-navy-dark); padding: 80px 0; color: white; position: relative; overflow: hidden;" class="animate-up">
+<div class="bg-gradient-minimal animate-up" style="padding: 80px 0; position: relative; overflow: hidden; border-bottom: 1px solid var(--border-color);">
     <!-- Decorative background elements -->
-    <div style="position: absolute; top: -50px; left: -50px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(10,132,255,0.2) 0%, transparent 70%);"></div>
+    <div style="position: absolute; top: -50px; left: -50px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(10,132,255,0.05) 0%, transparent 70%);"></div>
     <div class="container" style="position: relative; z-index: 2;">
-        <a href="jobs.php" style="color: rgba(255,255,255,0.7); font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 20px;">
+        <a href="jobs.php" style="color: var(--text-muted); font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 20px;">
             <i class="fas fa-arrow-left"></i> All Positions
         </a>
-        <h1 style="color: white; font-size: 42px; margin-bottom: 15px;" class="animate-up delay-1"><?= htmlspecialchars($job['title']) ?></h1>
-        <div style="display: flex; gap: 20px; font-size: 16px; opacity: 0.9;" class="animate-up delay-2">
+        <h1 style="color: var(--primary-navy); font-size: 42px; margin-bottom: 15px;" class="animate-up delay-1"><?= htmlspecialchars($job['title']) ?></h1>
+        <div style="display: flex; gap: 20px; font-size: 16px; color: var(--text-muted);" class="animate-up delay-2">
             <span>🏢 <?= htmlspecialchars($job['company']) ?></span>
             <span>📍 <?= htmlspecialchars($job['location']) ?></span>
             <span>💰 <?= htmlspecialchars($job['salary']) ?></span>
-            <span style="background: var(--secondary-blue); padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: 600; text-transform: uppercase;"><?= htmlspecialchars($job['type']) ?></span>
+            <span style="background: rgba(10,132,255,0.1); color: var(--secondary-blue); padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: 600; text-transform: uppercase;"><?= htmlspecialchars($job['type']) ?></span>
         </div>
     </div>
 </div>

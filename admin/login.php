@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Login - PrimePath UAE</title>
+    <title>Admin Login - PrimePath HR</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body style="background: var(--bg-light); display: flex; align-items: center; justify-content: center; height: 100vh;">

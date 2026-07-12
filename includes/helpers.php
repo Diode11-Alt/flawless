@@ -1,5 +1,6 @@
 <?php
 // helpers.php - Basic helper functions
+define('SITE_URL', 'https://primepath.mt');
 function sanitize_input($data) {
     return htmlspecialchars(strip_tags(trim($data)));
 }

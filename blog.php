@@ -6,18 +6,19 @@ require_once __DIR__ . '/includes/markdown.php';
 $articles = get_all_articles();
 ?>
 
-<section class="page-header" style="background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%); padding: 120px 0 80px; text-align: center; color: white;">
+<section class="hero-fortune" style="padding: 100px 0 80px; text-align: center;">
     <div class="container">
-        <h1 style="font-size: 42px; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">Insights & News</h1>
-        <p style="font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto;">Expert advice on career growth, UAE job market trends, and HR best practices.</p>
+        <span style="display: inline-block; padding: 4px 12px; background: rgba(0, 86, 179, 0.08); color: var(--secondary-blue); border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Blog</span>
+        <h1 style="font-size: 42px; margin-bottom: 15px; color: var(--primary-navy);">Insights & News</h1>
+        <p style="font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Expert advice on career growth, the UAE job market trends, and HR best practices.</p>
     </div>
 </section>
 
-<section class="section" style="padding: 80px 0; background: var(--bg-light);">
+<section class="section" style="padding: 80px 0; background: white;">
     <div class="container">
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px;">
             <?php foreach ($articles as $article): ?>
-            <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div class="corporate-card" style="border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; padding: 30px;">
                 <div style="padding: 30px; display: flex; flex-direction: column; flex-grow: 1;">
                     <span style="color: var(--secondary-blue); font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 10px; display: block;"><?= $article['date'] ?></span>
                     <h3 style="font-size: 20px; margin-bottom: 15px; line-height: 1.4;">

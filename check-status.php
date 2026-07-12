@@ -43,13 +43,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <!-- Page Header -->
-<section class="page-header"
-    style="background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%); padding: 110px 0 70px; text-align: center; color: white;">
+<section class="page-header bg-gradient-minimal"
+    style="padding: 110px 0 70px; text-align: center;">
     <div class="container">
-        <span style="display: inline-block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 15px;">
+        <span style="display: inline-block; background: rgba(0, 129, 180, 0.1); border: 1px solid rgba(0, 129, 180, 0.25); color: var(--secondary-blue); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 15px;">
             <i class="fas fa-user-check" style="margin-right: 6px;"></i> Candidate Portal
         </span>
-        <h1 style="font-size: 40px; margin-bottom: 12px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">Check Application Status</h1>
+        <h1 style="font-size: 40px; margin-bottom: 12px; color: var(--primary-navy);">Check Application Status</h1>
         <p style="font-size: 17px; opacity: 0.9; max-width: 600px; margin: 0 auto;">Track the real-time progression of your executive application, assessment review, and compliance verification.</p>
     </div>
 </section>

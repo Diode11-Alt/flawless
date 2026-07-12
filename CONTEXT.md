@@ -1,7 +1,7 @@
 # PrimePath HR - Project Context & Memory
 
 ## Project Overview
-PrimePath HR is a web application designed for a premier HR outsourcing and executive search agency based in Dubai, UAE. The project focuses on a high-end, professional UI inspired by FortuneFirst.
+PrimePath HR is a web application designed for a premier HR outsourcing and executive search agency based in Malta. The project focuses on a high-end, professional UI inspired by FortuneFirst.
 
 ## Architectural Decisions
 - **Stack:** PHP, HTML, CSS, JavaScript (Vanilla).
@@ -12,7 +12,7 @@ PrimePath HR is a web application designed for a premier HR outsourcing and exec
 - **Database (Pending):** A `db.php` file exists for future MySQL/database integration.
 
 ## Current State
-- **Homepage (`index.php`):** Fully redesigned with real content (MOHRE compliance, Executive Search, CEO endorsement, stats).
+- **Homepage (`index.php`):** Fully redesigned with real content (Jobsplus compliance, Executive Search, CEO endorsement, stats).
 - **Jobs Portal (`jobs.php`):** Features a 30/70 split layout with a sticky sidebar for filters and a main job listing area.
 - **Job Details (`job-detail.php`):** Dynamic page that reads from JSON and displays specific job responsibilities and requirements.
 - **Authentication:** Registration (`register.php`) and Admin Login (`admin/login.php`) pages are stylized consistently with the main theme.
