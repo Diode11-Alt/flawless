@@ -28,7 +28,7 @@ include 'includes/header.php';
 <h2 class="font-headline-md text-headline-md text-deep-navy">Our Mission</h2>
 </div>
 <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                        "To elevate organizational performance by identifying and cultivating high-impact leadership, ensuring a seamless alignment between human capital and strategic vision."
+                        "To elevate organizational performance by integrating AI-enhanced talent acquisition with our human-centered approach, ensuring a seamless alignment between high-impact leadership and strategic vision."
                     </p>
 </div>
 <div class="bg-white p-12 rounded-lg soft-shadow border-t border-surface-variant/20">

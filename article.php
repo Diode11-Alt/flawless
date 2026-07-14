@@ -4,11 +4,15 @@ require_once 'includes/markdown.php';
 $slug = $_GET['slug'] ?? '';
 $file = __DIR__ . '/content/' . basename($slug) . '.md';
 
-if (empty($slug) || !file_exists($file)) {
+if (empty($slug)) {
+    header("Location: blog.php");
+    exit;
+}
+if (!file_exists($file)) {
     header("HTTP/1.0 404 Not Found");
     $page_title = "Article Not Found | PrimePath HR";
     include 'includes/header.php';
-    echo '<div style="padding:150px 0; text-align:center;"><h2>Article Not Found</h2><p>The requested article does not exist. <a href="blog.php">Return to Blog</a></p></div>';
+    echo '<section class="section" style="padding:150px 0 100px; text-align:center;"><div class="container" style="max-width: 600px;"><div class="glass-card" style="padding: 50px;"><h2 style="color: #fff; font-family: var(--font-heading); margin-bottom: 16px;">Article Not Found</h2><p style="color: rgba(255,255,255,0.7); margin-bottom: 30px;">The requested corporate article or research report does not exist.</p><a href="blog.php" class="btn btn-secondary" style="padding: 12px 28px;">Return to Executive Blog</a></div></div></section>';
     include 'includes/footer.php';
     exit;
 }
@@ -57,42 +61,59 @@ $article_image_url = file_exists(__DIR__ . '/' . $article_image_path) ? SITE_URL
 }
 </script>
 
-<section class="page-header bg-gradient-minimal" style="padding: 120px 0 80px; text-align: center;">
-    <div class="container">
-        <h1 style="font-size: 38px; margin-bottom: 15px; color: var(--primary-navy); max-width: 900px; margin: 0 auto;"><?= htmlspecialchars($title) ?></h1>
-        <p style="font-size: 16px; color: var(--text-muted); margin-top: 15px;">Published: <?= date('F j, Y', filemtime($file)) ?></p>
+<!-- Page Header (Inherited from Homepage DNA) -->
+<section class="page-hero">
+    <div class="container reveal" style="text-align: center; max-width: 850px;">
+        <span style="display: inline-block; padding: 6px 16px; border-radius: 20px; background: rgba(14,165,233,0.15); border: 1px solid rgba(14,165,233,0.3); color: var(--secondary-blue); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px;">Intelligence Briefing</span>
+        <h1 class="page-hero-title"><?= htmlspecialchars($title) ?></h1>
+        <p class="page-hero-subtitle">Published: <?= date('F j, Y', filemtime($file)) ?></p>
     </div>
 </section>
 
-<section class="section section-bg-white" style="padding: 80px 0;">
-    <div class="container" style="max-width: 800px; margin: 0 auto; line-height: 1.8; color: var(--text-dark); font-size: 17px;">
-        <div class="article-content" style="
-            --h2-color: var(--primary-navy);
-            --link-color: var(--secondary-blue);
-        ">
-            <?= $parsed_content ?>
+<!-- Article Briefing Content -->
+<section class="section" style="padding: 100px 0; background: transparent;">
+    <div class="container" style="max-width: 880px; margin: 0 auto;">
+        <div class="glass-card reveal" style="padding: 56px; border-radius: 24px; color: rgba(255, 255, 255, 0.85); font-size: 17px; line-height: 1.8;">
+            <div class="article-content">
+                <?= $parsed_content ?>
+            </div>
+            
+            <div style="margin-top: 60px; padding-top: 32px; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+                <a href="blog.php" style="color: var(--secondary-blue); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-arrow-left"></i> Back to Intelligence Briefings</a>
+                <div style="display: flex; gap: 16px; align-items: center;">
+                    <span style="color: rgba(255,255,255,0.6); font-weight: 500;">Share Briefing:</span>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= urlencode("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]") ?>" target="_blank" style="color: #00B4D8; font-size: 18px;"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://wa.me/?text=<?= urlencode("Check out this intelligence briefing: http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]") ?>" target="_blank" style="color: #25D366; font-size: 18px;"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
         </div>
-        
-        <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
-            <a href="blog.php" style="color: var(--text-muted); text-decoration: none; font-weight: 500;"><i class="fas fa-arrow-left"></i> Back to Articles</a>
-            <div style="display: flex; gap: 15px;">
-                <span style="color: var(--text-muted); font-weight: 500;">Share:</span>
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= urlencode("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]") ?>" target="_blank" style="color: #0077b5;"><i class="fab fa-linkedin fa-lg"></i></a>
-                <a href="https://wa.me/?text=<?= urlencode("Check out this article: http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]") ?>" target="_blank" style="color: #25D366;"><i class="fab fa-whatsapp fa-lg"></i></a>
+    </div>
+</section>
+
+<!-- Global CTA Banner (Inherited from Homepage DNA) -->
+<section class="cta-banner-section reveal">
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="cta-banner-box">
+            <h2 style="font-family: var(--font-heading); font-size: 40px; color: #ffffff; margin-bottom: 20px; font-weight: 800; letter-spacing: -1px;">Request Strategic Consultation</h2>
+            <p style="color: rgba(255,255,255,0.75); font-size: 18px; line-height: 1.6; max-width: 650px; margin: 0 auto 40px;">Speak with PrimePath's executive advisory team to align your workforce deployment strategy.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.php" class="btn btn-secondary" style="padding: 16px 36px; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
+                    Consult Our Team
+                </a>
             </div>
         </div>
     </div>
 </section>
 
 <style>
-.article-content h2 { color: var(--h2-color); margin: 40px 0 20px; font-size: 28px; }
-.article-content h3 { color: var(--h2-color); margin: 30px 0 15px; font-size: 22px; }
-.article-content p { margin-bottom: 25px; }
-.article-content ul { margin-bottom: 25px; padding-left: 20px; }
-.article-content li { margin-bottom: 10px; }
-.article-content a { color: var(--link-color); text-decoration: none; font-weight: 500; }
+.article-content h2 { color: #ffffff; margin: 40px 0 20px; font-size: 28px; font-weight: 800; font-family: var(--font-heading); }
+.article-content h3 { color: #ffffff; margin: 30px 0 15px; font-size: 22px; font-weight: 700; font-family: var(--font-heading); }
+.article-content p { margin-bottom: 24px; color: rgba(255, 255, 255, 0.85); }
+.article-content ul, .article-content ol { margin-bottom: 24px; padding-left: 24px; }
+.article-content li { margin-bottom: 12px; color: rgba(255, 255, 255, 0.85); }
+.article-content a { color: var(--secondary-blue); text-decoration: none; font-weight: 600; }
 .article-content a:hover { text-decoration: underline; }
-.article-content strong { color: var(--primary-navy); }
+.article-content strong { color: #ffffff; font-weight: 700; }
 </style>
 
 <?php include 'includes/footer.php'; ?>

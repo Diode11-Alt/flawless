@@ -1,77 +1,85 @@
 [
-  {
-    "id": 1,
-    "title": "Head of Emiratization Strategy",
-    "location": "Dubai, UAE",
-    "type": "Full Time",
-    "category": "Human Resources",
-    "description": "We are seeking a senior strategist to lead Emiratization initiatives for a top-tier holding company, ensuring full MOHRE compliance and developing career pathways for UAE Nationals.",
-    "requirements": [
-      "Minimum 7 years of HR experience in the GCC.",
-      "In-depth knowledge of MOHRE regulations and NAFIS initiatives.",
-      "Proven track record of successful Emiratization programs.",
-      "Fluency in Arabic and English."
-    ],
-    "posted_date": "2026-07-01"
-  },
-  {
-    "id": 2,
-    "title": "Senior Legal Consultant (Corporate)",
-    "location": "Abu Dhabi, UAE",
-    "type": "Full Time",
-    "category": "Legal & Compliance",
-    "description": "A prestigious legal firm is looking for an experienced corporate lawyer to advise enterprise clients on UAE labor laws, corporate restructuring, and commercial contracts.",
-    "requirements": [
-      "Law degree and qualification in a recognized jurisdiction.",
-      "5+ years of corporate law experience within the UAE.",
-      "Strong understanding of the UAE Commercial Companies Law.",
-      "Excellent negotiation and drafting skills."
-    ],
-    "posted_date": "2026-07-05"
-  },
-  {
-    "id": 3,
-    "title": "Chief Financial Officer (CFO)",
-    "location": "Sharjah, UAE",
-    "type": "Contract",
-    "category": "Finance",
-    "description": "Interim CFO required for a rapidly expanding logistics firm. Will oversee financial planning, risk management, and the implementation of UAE Corporate Tax frameworks.",
-    "requirements": [
-      "CPA, ACCA, or equivalent professional qualification.",
-      "Extensive experience operating at a C-level within the GCC.",
-      "Deep understanding of UAE Corporate Tax laws.",
-      "Strong leadership and change management skills."
-    ],
-    "posted_date": "2026-07-08"
-  },
-  {
-    "id": 4,
-    "title": "Senior Payroll & Benefits Manager",
-    "location": "Dubai, UAE",
-    "type": "Full Time",
-    "category": "Human Resources",
-    "description": "Manage end-to-end payroll operations for an enterprise workforce of 2000+ employees, ensuring WPS compliance and managing complex expat benefit structures.",
-    "requirements": [
-      "Proven experience with UAE Wage Protection System (WPS).",
-      "Familiarity with enterprise ERPs (e.g., Oracle, SAP).",
-      "High degree of accuracy and confidentiality.",
-      "Strong understanding of UAE labor law regarding end-of-service benefits."
-    ],
-    "posted_date": "2026-07-10"
-  },
-  {
-    "id": 5,
-    "title": "Lead Software Engineer (FinTech)",
-    "location": "DIFC, Dubai",
-    "type": "Full Time",
-    "category": "Technology",
-    "description": "An innovative fintech startup in the DIFC is looking for a Lead Engineer to scale their payment processing architecture. You will lead a high-performing engineering squad.",
-    "requirements": [
-      "7+ years of experience with Node.js, Go, or Java.",
-      "Strong proficiency in cloud architecture (AWS/Azure).",
-      "Experience with financial systems and PCI-DSS compliance.",
-      "Previous technical leadership experience."
-    ],
-    "posted_date": "2026-07-11"
-  }
+    {
+        "id": 1,
+        "title": "Senior Frontend Developer",
+        "company": "TechVision UAE",
+        "location": "Dubai",
+        "type": "Full-Time",
+        "salary": "AED 18,000 - 25,000",
+        "industry": "tech",
+        "description": "We are seeking a highly skilled Senior Frontend Developer to lead the development of our customer-facing web applications. You will work closely with our product and backend teams to deliver exceptional digital experiences across the UAE.",
+        "responsibilities": [
+            "Architect and build responsive, high-performance web interfaces using React or Vue.js",
+            "Lead code reviews and establish frontend best practices across the engineering team",
+            "Collaborate with UX/UI designers to implement pixel-perfect designs",
+            "Optimize applications for maximum speed and scalability",
+            "Mentor junior developers and contribute to team knowledge sharing"
+        ],
+        "requirements": [
+            "5+ years of frontend development experience with React or Vue.js",
+            "Strong command of HTML5, CSS3, and modern JavaScript (ES6+)",
+            "Experience with REST APIs and GraphQL integration",
+            "Familiarity with CI/CD pipelines and modern frontend build tools",
+            "Excellent problem-solving skills and attention to detail"
+        ],
+        "posted_date": "2026-07-01"
+    },
+    {
+        "id": 2,
+        "title": "HR Manager",
+        "company": "Global Solutions Group",
+        "location": "Abu Dhabi",
+        "type": "Full-Time",
+        "salary": "AED 15,000 - 22,000",
+        "industry": "finance",
+        "description": "We are looking for an experienced HR Manager to oversee all aspects of human resources practices and processes. You will support business needs and ensure the proper implementation of company strategy and objectives.",
+        "responsibilities": [
+            "Develop and implement HR strategies and initiatives aligned with the overall business strategy",
+            "Bridge management and employee relations by addressing demands, grievances or other issues",
+            "Manage the recruitment and selection process",
+            "Support current and future business needs through the development, engagement, motivation and preservation of human capital",
+            "Oversee and manage a performance appraisal system that drives high performance"
+        ],
+        "requirements": [
+            "Proven working experience as HR Manager or other HR Executive",
+            "People oriented and results driven",
+            "Demonstrable experience with Human Resources metrics",
+            "Knowledge of HR systems and databases",
+            "Ability to architect strategy along with leadership skills",
+            "Excellent active listening, negotiation and presentation skills",
+            "In-depth knowledge of UAE labor law and HR best practices"
+        ],
+        "posted_date": "2026-07-05"
+    },
+    {
+        "id": 3,
+        "title": "Data Scientist",
+        "company": "AI Innovators",
+        "location": "Dubai",
+        "type": "Contract",
+        "salary": "AED 20,000 - 30,000",
+        "industry": "tech",
+        "description": "We are seeking a talented Data Scientist to analyze large amounts of raw information to find patterns that will help improve our company. We will rely on you to build data products to extract valuable business insights.",
+        "responsibilities": [
+            "Identify valuable data sources and automate collection processes",
+            "Undertake preprocessing of structured and unstructured data",
+            "Analyze large amounts of information to discover trends and patterns",
+            "Build predictive models and machine-learning algorithms",
+            "Combine models through ensemble modeling",
+            "Present information using data visualization techniques",
+            "Propose solutions and strategies to business challenges"
+        ],
+        "requirements": [
+            "Proven experience as a Data Scientist or Data Analyst",
+            "Experience in data mining",
+            "Understanding of machine-learning and operations research",
+            "Knowledge of R, SQL and Python; familiarity with Scala, Java or C++ is an asset",
+            "Experience using business intelligence tools (e.g. Tableau) and data frameworks (e.g. Hadoop)",
+            "Analytical mind and business acumen",
+            "Strong math skills (e.g. statistics, algebra)",
+            "Problem-solving aptitude",
+            "Excellent communication and presentation skills"
+        ],
+        "posted_date": "2026-07-08"
+    }
 ]

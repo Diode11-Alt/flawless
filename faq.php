@@ -4,62 +4,72 @@ $page_description = "Answers to common questions about our recruitment process, 
 include 'includes/header.php';
 ?>
 
-<!-- Page Header -->
-<section class="page-header bg-gradient-minimal" style="padding: 120px 0 80px; text-align: center;">
-    <div class="container">
-        <span style="display: inline-block; padding: 4px 12px; background: rgba(0, 86, 179, 0.08); color: var(--secondary-blue); border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">FAQ</span>
-        <h1 style="font-size: 42px; margin-bottom: 15px; color: var(--primary-navy);">Frequently Asked Questions</h1>
-        <p style="font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Everything you need to know about partnering with PrimePath HR for your talent needs in the UAE.</p>
+<!-- Page Header (Inherited from Homepage DNA) -->
+<section class="page-hero">
+    <div class="container reveal" style="text-align: center; max-width: 850px;">
+        <span style="display: inline-block; padding: 6px 16px; border-radius: 20px; background: rgba(14,165,233,0.15); border: 1px solid rgba(14,165,233,0.3); color: var(--secondary-blue); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px;">Knowledge Base</span>
+        <h1 class="page-hero-title">Frequently Asked Questions</h1>
+        <p class="page-hero-subtitle">Everything you need to know about partnering with PrimePath HR Services for international recruitment across the UAE and GCC.</p>
     </div>
 </section>
 
 <!-- FAQ Section -->
-<section class="section section-bg-white" style="padding: 60px 0 100px;">
-    <div class="container" style="max-width: 800px; margin: 0 auto;">
+<section class="section" style="padding: 100px 0; background: transparent;">
+        <div class="grid-2 container-wide" style="gap: 60px;">
         
-        <div style="margin-bottom: 40px;">
-            <h3 style="font-family: var(--font-heading); font-size: 24px; color: var(--primary-navy); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--border-color);">For Employers</h3>
-            
-            <div style="margin-bottom: 25px;">
-                <h4 style="font-size: 18px; color: var(--primary-navy); margin-bottom: 10px;">What industries do you specialize in?</h4>
-                <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">We primarily serve the iGaming, Hospitality, Aviation (MRO), Financial Services, and Maritime sectors. However, our executive search team can source talent for any specialized role across the GCC.</p>
-            </div>
-            
-            <div style="margin-bottom: 25px;">
-                <h4 style="font-size: 18px; color: var(--primary-navy); margin-bottom: 10px;">How does your fee structure work?</h4>
-                <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">We operate on a contingency basis for volume staffing and a retained basis for executive search. You only pay when a candidate successfully joins your team. There are no upfront fees for standard recruitment.</p>
-            </div>
-            
-            <div style="margin-bottom: 25px;">
-                <h4 style="font-size: 18px; color: var(--primary-navy); margin-bottom: 10px;">Do you handle the Work Permit/Visa process?</h4>
-                <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">Yes. We manage the end-to-end MOHRE work permit process, including document translation, apostilling, and coordination with local authorities to ensure a smooth relocation.</p>
-            </div>
-            
-            <div style="margin-bottom: 25px;">
-                <h4 style="font-size: 18px; color: var(--primary-navy); margin-bottom: 10px;">What is your typical time-to-hire?</h4>
-                <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">For candidates already within the the GCC, deployment can be as quick as 14-30 days. For Expatriates requiring a Work Permit, the process typically takes 4-8 weeks once the application is submitted to MOHRE.</p>
+        <!-- Column 1: For Employers -->
+        <div>
+            <h3 style="font-family: var(--font-heading); font-size: 28px; color: #ffffff; margin-bottom: 24px; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 16px;">For Employers</h3>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="bawaal-glass reveal delay-100" style="padding: 32px;">
+                    <h4 style="font-size: 19px; color: #ffffff; margin-bottom: 12px; font-weight: 700; display: flex; align-items: center; gap: 10px;"><i data-lucide="help-circle" style="color: var(--secondary-blue); width: 20px;"></i> What industries do you specialize in?</h4>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; margin: 0; padding-left: 30px;">We recruit across Executive Search, Hospitality, Financial Services, Engineering, Manufacturing, IT, Healthcare, and Corporate Administration throughout the GCC.</p>
+                </div>
+                <div class="bawaal-glass reveal delay-200" style="padding: 32px;">
+                    <h4 style="font-size: 19px; color: #ffffff; margin-bottom: 12px; font-weight: 700; display: flex; align-items: center; gap: 10px;"><i data-lucide="help-circle" style="color: var(--secondary-blue); width: 20px;"></i> How does your recruitment fee structure work?</h4>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; margin: 0; padding-left: 30px;">We operate on transparent success-based terms or structured retained search mandates depending on role complexity. Our terms are designed to align with long-term placement quality.</p>
+                </div>
+                <div class="bawaal-glass reveal delay-300" style="padding: 32px;">
+                    <h4 style="font-size: 19px; color: #ffffff; margin-bottom: 12px; font-weight: 700; display: flex; align-items: center; gap: 10px;"><i data-lucide="help-circle" style="color: var(--secondary-blue); width: 20px;"></i> Do you support Work Permit &amp; MOHRE compliance?</h4>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; margin: 0; padding-left: 30px;">Yes. We advise and coordinate closely with your legal and HR teams to ensure all placements align strictly with UAE MOHRE guidelines and regulatory requirements.</p>
+                </div>
+                <div class="bawaal-glass reveal delay-400" style="padding: 32px;">
+                    <h4 style="font-size: 19px; color: #ffffff; margin-bottom: 12px; font-weight: 700; display: flex; align-items: center; gap: 10px;"><i data-lucide="help-circle" style="color: var(--secondary-blue); width: 20px;"></i> What is your typical time-to-hire?</h4>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; margin: 0; padding-left: 30px;">For candidates residing within the GCC, shortlists are typically delivered within 7 to 14 days, with deployment scheduled promptly upon offer acceptance.</p>
+                </div>
             </div>
         </div>
 
-        <div style="margin-bottom: 40px;">
-            <h3 style="font-family: var(--font-heading); font-size: 24px; color: var(--primary-navy); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--border-color);">For Candidates</h3>
-            
-            <div style="margin-bottom: 25px;">
-                <h4 style="font-size: 18px; color: var(--primary-navy); margin-bottom: 10px;">Do you charge candidates for job placement?</h4>
-                <p style="color: var(--text-muted); line-height: 1.6; margin: 0;"><strong>Absolutely not.</strong> In strict compliance with MOHRE regulations and international labor laws, we never charge candidates any fees for our core recruitment and placement services.</p>
-            </div>
-            
-            <div style="margin-bottom: 25px;">
-                <h4 style="font-size: 18px; color: var(--primary-navy); margin-bottom: 10px;">Will you assist with my relocation to the UAE?</h4>
-                <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">Yes. Once you accept an offer, our mobility team will assist you with the visa application process, advise on housing, and provide a comprehensive onboarding guide to help you settle in the UAE.</p>
+        <!-- Column 2: For Candidates -->
+        <div>
+            <h3 style="font-family: var(--font-heading); font-size: 28px; color: #ffffff; margin-bottom: 24px; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 16px;">For Candidates</h3>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="bawaal-glass reveal delay-100" style="padding: 32px;">
+                    <h4 style="font-size: 19px; color: #ffffff; margin-bottom: 12px; font-weight: 700; display: flex; align-items: center; gap: 10px;"><i data-lucide="help-circle" style="color: var(--secondary-blue); width: 20px;"></i> Do you charge candidates for placement?</h4>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; margin: 0; padding-left: 30px;"><strong style="color: #ffffff;">Absolutely not.</strong> In strict compliance with UAE MOHRE regulations and international labor ethics, PrimePath HR never charges candidates any fee for recruitment services.</p>
+                </div>
+                <div class="bawaal-glass reveal delay-200" style="padding: 32px;">
+                    <h4 style="font-size: 19px; color: #ffffff; margin-bottom: 12px; font-weight: 700; display: flex; align-items: center; gap: 10px;"><i data-lucide="help-circle" style="color: var(--secondary-blue); width: 20px;"></i> How will I be informed about my application?</h4>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; margin: 0; padding-left: 30px;">Shortlisted candidates are contacted directly by our dedicated recruitment consultants for structured screening and client interview scheduling.</p>
+                </div>
             </div>
         </div>
         
-        <div style="background: rgba(14, 165, 233, 0.05); padding: 30px; border-radius: 8px; text-align: center; margin-top: 40px;">
-            <h4 style="font-size: 20px; color: var(--primary-navy); margin-bottom: 15px;">Have more questions?</h4>
-            <a href="contact.php" class="btn btn-outline" style="border: 1px solid var(--secondary-blue); color: var(--secondary-blue); padding: 10px 24px; border-radius: 4px; font-weight: 600; text-decoration: none; display: inline-block;">Contact Our Team</a>
+    </div>
+</section>
+
+<!-- Global CTA Banner (Inherited from Homepage DNA) -->
+<section class="cta-banner-section reveal">
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="cta-banner-box">
+            <h2 style="font-family: var(--font-heading); font-size: 40px; color: #ffffff; margin-bottom: 20px; font-weight: 800; letter-spacing: -1px;">Have more questions?</h2>
+            <p style="color: rgba(255,255,255,0.75); font-size: 18px; line-height: 1.6; max-width: 650px; margin: 0 auto 40px;">Speak directly with our consultancy team to discuss your specific recruitment objectives.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.php" class="btn btn-secondary" style="padding: 16px 36px; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
+                    Contact Our Team
+                </a>
+            </div>
         </div>
-        
     </div>
 </section>
 

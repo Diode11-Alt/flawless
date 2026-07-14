@@ -6,35 +6,24 @@ $job_id = $_GET['job_id'] ?? ($_POST['job_id'] ?? '');
 $job_title = $_GET['job_title'] ?? ($_POST['job_title'] ?? '');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    verify_csrf_token();
+    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+        die('Invalid CSRF token');
+    }
 
     $cv_path = '';
     if (isset($_FILES['cv']) && $_FILES['cv']['error'] == UPLOAD_ERR_OK) {
-        $allowed_exts = ['pdf', 'doc', 'docx'];
-        $max_size = 5 * 1024 * 1024; // 5 MB
-        $file_size = $_FILES['cv']['size'];
-        $file_name = $_FILES['cv']['name'];
-        $ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
-        
-        if ($file_size > $max_size) {
-            die('Error: File size exceeds the maximum allowed limit of 5MB.');
-        }
-        if (!in_array($ext, $allowed_exts)) {
-            die('Error: Invalid file type. Only PDF, DOC, and DOCX files are allowed.');
-        }
-        
-        $upload_dir = get_upload_dir_path();
+        $upload_dir = 'uploads/';
         if (!is_dir($upload_dir)) {
-            @mkdir($upload_dir, 0755, true);
+            mkdir($upload_dir, 0755, true);
         }
-        $filename = time() . '_' . bin2hex(random_bytes(4)) . '.' . $ext;
+        $filename = time() . '_' . basename($_FILES['cv']['name']);
         $target_file = $upload_dir . $filename;
         if (move_uploaded_file($_FILES['cv']['tmp_name'], $target_file)) {
-            $cv_path = $filename;
+            $cv_path = $target_file;
         }
     }
 
-    $file = get_data_file_path('registrations.json');
+    $file = 'data/leads.json';
     $current = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
     $registration_data = [
         'name' => htmlspecialchars(strip_tags(trim($_POST['name'] ?? ''))),
@@ -43,23 +32,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'job_id' => htmlspecialchars(strip_tags(trim($_POST['job_id'] ?? ''))),
         'job_title' => htmlspecialchars(strip_tags(trim($_POST['job_title'] ?? ''))),
         'cv' => $cv_path,
-        'date' => date('Y-m-d H:i:s')
+        'date' => date('Y-m-d H:i:s'),
+        'source' => 'inquiry_form'
     ];
     $current[] = $registration_data;
     file_put_contents($file, json_encode($current, JSON_PRETTY_PRINT));
     
     // Format data for Zoho CRM
+    /*
     $zoho_data = [
         'name' => $registration_data['name'],
         'email' => $registration_data['email'],
         'phone' => $registration_data['phone'],
-        'job_title' => $registration_data['job_title'] ?: 'General Application',
-        'job_id' => $registration_data['job_id'] ?: 'N/A',
-        'message' => "Career Application submitted via PrimePath Careers portal.",
-        'cv' => $registration_data['cv'],
+        'message' => "Career Application for Job: " . ($registration_data['job_title'] ?: 'General Application'),
         'cv_path' => $registration_data['cv']
     ];
     send_to_zoho_crm($zoho_data);
+    */
     header("Location: thankyou.php");
     exit;
 }
@@ -69,9 +58,9 @@ require_once 'includes/header.php';
 ?>
 
 <div class="auth-wrapper">
-    <div class="auth-sidebar bg-gradient-minimal">
-        <h1 style="color: var(--primary-navy); font-size: 40px; margin-bottom: 20px;">Start Your Journey</h1>
-        <p style="font-size: 18px; color: var(--text-muted); line-height: 1.6;">Submit your details and a PrimePath consultant will be in touch within 24 hours to discuss your needs.</p>
+    <div class="auth-sidebar" style="background: linear-gradient(135deg, var(--primary-navy-dark), var(--primary-navy));">
+        <h1 style="color: white; font-size: 40px; margin-bottom: 20px;">Start Your Journey</h1>
+        <p style="font-size: 18px; opacity: 0.9; line-height: 1.6;">Submit your details and a PrimePath consultant will be in touch within 24 hours to discuss your needs.</p>
     </div>
     
     <div class="auth-form-container">
@@ -120,12 +109,12 @@ require_once 'includes/header.php';
                 
                 <div style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 10px;">
                     <input type="checkbox" id="accept_terms_reg" name="accept_terms" required style="margin-top: 5px;">
-                    <label for="accept_terms_reg" style="font-size: 13px; color: var(--text-muted); cursor: pointer; position: static; transform: none; color: var(--text-muted); pointer-events: auto; line-height: 1.4;">
-                        I agree to the <a href="terms.php" target="_blank" style="color: var(--secondary-blue); text-decoration: underline;">Terms & Conditions</a> and <a href="privacy.php" target="_blank" style="color: var(--secondary-blue); text-decoration: underline;">Privacy Policy</a>, and acknowledge that PrimePath HR does not charge candidates any recruitment fees (MOHRE compliant).
+                    <label for="accept_terms_reg" style="font-size: 13px; color: var(--text-muted); cursor: pointer; position: static; transform: none; color: var(--text-muted); pointer-events: auto;">
+                        I agree to the <a href="terms.php" target="_blank" style="color: var(--secondary-blue); text-decoration: underline;">Terms & Conditions</a> and <a href="privacy.php" target="_blank" style="color: var(--secondary-blue); text-decoration: underline;">Privacy Policy</a>.
                     </label>
                 </div>
                 
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Submit Application</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Submit Inquiry</button>
             </form>
             
             <script>

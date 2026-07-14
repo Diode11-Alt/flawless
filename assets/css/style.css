@@ -87,13 +87,33 @@
 }
 
 /* Fortune First Aesthetic Layouts */
+/* Fortune First Aesthetic Layouts with Modern Mesh */
 .hero-fortune {
   position: relative;
   background: 
-    linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)),
+    radial-gradient(at 40% 20%, hsla(228,100%,74%,0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(189,100%,56%,0.15) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(210,100%,93%,0.3) 0px, transparent 50%),
+    linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95)),
     url('../images/hero_uae_europe.png') no-repeat center center;
   background-size: cover;
   padding: 140px 0 180px;
+}
+
+/* Premium Glassmorphism for all bawaal-glass elements */
+.bawaal-glass {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05) !important;
+  border-radius: 16px !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+.bawaal-glass:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px -8px rgba(37, 99, 235, 0.15) !important;
+  border-color: rgba(37, 99, 235, 0.3) !important;
 }
 .hero-fortune .container {
   position: relative;

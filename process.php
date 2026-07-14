@@ -4,79 +4,142 @@ $page_description = "Learn about PrimePath HR's rigorous sourcing and deployment
 include 'includes/header.php'; 
 ?>
 
-<!-- Page Header -->
-<section class="page-header bg-gradient-minimal" style="padding: 120px 0 80px; text-align: center; border-bottom: 1px solid var(--border-color);">
-    <div class="container">
-        <h1 style="font-family: var(--font-heading); font-size: 42px; margin-bottom: 15px; color: var(--primary-navy);">Our Process</h1>
-        <p style="font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto;">How we deploy skilled talent from global markets to the UAE.</p>
+<!-- Page Header (Inherited from Homepage DNA) -->
+<section class="page-hero">
+    <div class="container reveal" style="text-align: center; max-width: 850px;">
+        <span style="display: inline-block; padding: 6px 16px; border-radius: 20px; background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.3); color: var(--secondary-blue); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px;">Deployment Protocol</span>
+        <h1 class="page-hero-title">Our 5-Step Executive Process</h1>
+        <p class="page-hero-subtitle">How PrimePath executes turnkey talent identification, verification, visa compliance, and European onboarding for GCC expats.</p>
     </div>
 </section>
 
 <!-- Process Steps Section -->
-<section class="section" style="background-color: var(--bg-white); padding: 100px 0;">
-    <div class="container">
-        <div style="max-width: 800px; margin: 0 auto;">
-            
-            <div style="position: relative; padding-left: 50px; margin-bottom: 60px;">
-                <div style="position: absolute; left: 0; top: 0; width: 3px; height: 100%; background: var(--secondary-blue); opacity: 0.2; border-radius: 3px;"></div>
-                
-                <!-- Step 1 -->
-                <div class="animate-up delay-1" style="position: relative; margin-bottom: 50px;">
-                    <div style="position: absolute; left: -74px; top: -5px; width: 48px; height: 48px; background: white; border: 2px solid var(--secondary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--secondary-blue); box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                    </div>
-                    <h3 style="font-family: var(--font-heading); font-size: 24px; color: var(--primary-navy); margin-bottom: 15px;">Requirement Analysis</h3>
-                    <p style="color: var(--text-muted); line-height: 1.7;">
-                        You submit your staffing requirements via our portal. We review the job descriptions, required skill levels, and deployment timelines. We then consult with you to ensure full alignment on the candidate profile.
-                    </p>
+<section class="section" style="padding: 100px 0; background: #f8fafc; border-bottom: 1px solid rgba(0,0,0,0.05);">
+    <div class="container-wide" style="max-width: 1200px; margin: 0 auto;">
+        
+        <!-- Timeline Visual -->
+        <div class="reveal" style="margin-bottom: 80px; position: relative;">
+            <div style="position: absolute; top: 20px; left: 0; width: 100%; height: 4px; background: rgba(37,99,235,0.1); border-radius: 2px; z-index: 1;"></div>
+            <div style="position: absolute; top: 20px; left: 0; width: 60%; height: 4px; background: var(--secondary-blue); border-radius: 2px; z-index: 2;"></div>
+            <div style="display: flex; justify-content: space-between; position: relative; z-index: 3;">
+                <!-- Node 1 -->
+                <div style="display: flex; flex-direction: column; align-items: center; width: 120px;">
+                    <div style="width: 44px; height: 44px; background: var(--primary-navy-dark); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 15px; border: 4px solid #f8fafc;"><i data-lucide="file-search" style="width: 20px;"></i></div>
+                    <div style="text-align: center; font-size: 13px; font-weight: 700; color: var(--primary-navy);">Mandate</div>
                 </div>
-                
-                <!-- Step 2 -->
-                <div class="animate-up delay-2" style="position: relative; margin-bottom: 50px;">
-                    <div style="position: absolute; left: -74px; top: -5px; width: 48px; height: 48px; background: white; border: 2px solid var(--secondary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--secondary-blue); box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg>
-                    </div>
-                    <h3 style="font-family: var(--font-heading); font-size: 24px; color: var(--primary-navy); margin-bottom: 15px;">Sourcing & Trade Testing in UAE</h3>
-                    <p style="color: var(--text-muted); line-height: 1.7;">
-                        We tap into the massive skilled talent pool residing in the UAE. We conduct initial interviews, background checks, and rigorous practical trade tests to ensure the candidates meet UAE employer standards.
-                    </p>
+                <!-- Node 2 -->
+                <div style="display: flex; flex-direction: column; align-items: center; width: 120px;">
+                    <div style="width: 44px; height: 44px; background: var(--primary-navy-dark); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 15px; border: 4px solid #f8fafc;"><i data-lucide="users" style="width: 20px;"></i></div>
+                    <div style="text-align: center; font-size: 13px; font-weight: 700; color: var(--primary-navy);">Sourcing</div>
                 </div>
-                
-                <!-- Step 3 -->
-                <div class="animate-up delay-3" style="position: relative; margin-bottom: 50px;">
-                    <div style="position: absolute; left: -74px; top: -5px; width: 48px; height: 48px; background: white; border: 2px solid var(--secondary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--secondary-blue); box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                <!-- Node 3 -->
+                <div style="display: flex; flex-direction: column; align-items: center; width: 120px;">
+                    <div style="width: 44px; height: 44px; background: var(--secondary-blue); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; box-shadow: 0 4px 10px rgba(37,99,235,0.3); margin-bottom: 15px; border: 4px solid #f8fafc; position: relative;">
+                        <span style="position: absolute; top: -10px; right: -10px; width: 16px; height: 16px; background: #22c55e; border-radius: 50%; border: 2px solid #fff;"></span>
+                        <i data-lucide="check-circle" style="width: 20px;"></i>
                     </div>
-                    <h3 style="font-family: var(--font-heading); font-size: 24px; color: var(--primary-navy); margin-bottom: 15px;">Client Selection & Offers</h3>
-                    <p style="color: var(--text-muted); line-height: 1.7;">
-                        We present a curated shortlist of pre-vetted candidates. You conduct final video interviews (or fly to Dubai for in-person drives). Once selected, we manage the offer letters and employment contracts.
-                    </p>
+                    <div style="text-align: center; font-size: 13px; font-weight: 700; color: var(--secondary-blue);">Selection</div>
                 </div>
-                
-                <!-- Step 4 -->
-                <div class="animate-up delay-1" style="position: relative; margin-bottom: 50px;">
-                    <div style="position: absolute; left: -74px; top: -5px; width: 48px; height: 48px; background: white; border: 2px solid var(--secondary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--secondary-blue); box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><circle cx="12" cy="14" r="4"></circle><path d="M12 10v2"></path></svg>
-                    </div>
-                    <h3 style="font-family: var(--font-heading); font-size: 24px; color: var(--primary-navy); margin-bottom: 15px;">MOHRE Visa Processing</h3>
-                    <p style="color: var(--text-muted); line-height: 1.7;">
-                        Our compliance team begins the MOHRE Work Permit process immediately. We gather police clearances, medical certificates, and attestations in the UAE, tracking the application until the work permit is approved.
-                    </p>
+                <!-- Node 4 -->
+                <div style="display: flex; flex-direction: column; align-items: center; width: 120px;">
+                    <div style="width: 44px; height: 44px; background: #fff; color: var(--text-muted); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; border: 2px solid rgba(37,99,235,0.2); margin-bottom: 15px;"><i data-lucide="plane" style="width: 20px;"></i></div>
+                    <div style="text-align: center; font-size: 13px; font-weight: 700; color: var(--text-muted);">Visa/Travel</div>
                 </div>
-                
-                <!-- Step 5 -->
-                <div class="animate-up delay-2" style="position: relative;">
-                    <div style="position: absolute; left: -74px; top: -5px; width: 48px; height: 48px; background: var(--secondary-blue); border: 2px solid var(--secondary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 10px rgba(0,129,180,0.3);">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12A10 10 0 0 0 12 2v10l7.07 7.07A10 10 0 0 0 22 12z"></path></svg>
-                    </div>
-                    <h3 style="font-family: var(--font-heading); font-size: 24px; color: var(--primary-navy); margin-bottom: 15px;">Deployment & Onboarding</h3>
-                    <p style="color: var(--text-muted); line-height: 1.7;">
-                        We coordinate flights from Dubai/Abu Dhabi to the UAE and provide pre-departure orientations. We ensure candidates arrive smoothly and report to your office ready to work.
-                    </p>
+                <!-- Node 5 -->
+                <div style="display: flex; flex-direction: column; align-items: center; width: 120px;">
+                    <div style="width: 44px; height: 44px; background: #fff; color: var(--text-muted); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; border: 2px solid rgba(37,99,235,0.2); margin-bottom: 15px;"><i data-lucide="briefcase" style="width: 20px;"></i></div>
+                    <div style="text-align: center; font-size: 13px; font-weight: 700; color: var(--text-muted);">Deployment</div>
                 </div>
-                
             </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 32px;">
             
+            <!-- Step 1 -->
+            <div class="bawaal-glass reveal delay-100" style="padding: 44px; display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap;">
+                <div style="width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.2); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--secondary-blue); flex-shrink: 0;">
+                    <i data-lucide="file-search" style="width: 28px; height: 28px;"></i>
+                </div>
+                <div style="flex: 1; min-width: 260px;">
+                    <span style="color: var(--secondary-blue); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; display: block;">Phase One</span>
+                    <h3 style="font-family: var(--font-heading); font-size: 26px; color: var(--primary-navy-dark); margin-bottom: 12px; font-weight: 800;">Requirement Analysis &amp; Mandate Alignment</h3>
+                    <p style="color: var(--text-dark); font-size: 16px; line-height: 1.7; margin: 0;">
+                        You submit your staffing specifications via our corporate portal. We analyze your technical job descriptions, experience levels, regulatory quotas for European hiring, and target deployment timeline to formulate a precise talent sourcing charter.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bawaal-glass reveal delay-200" style="padding: 44px; display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap;">
+                <div style="width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.2); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--secondary-blue); flex-shrink: 0;">
+                    <i data-lucide="users" style="width: 28px; height: 28px;"></i>
+                </div>
+                <div style="flex: 1; min-width: 260px;">
+                    <span style="color: var(--secondary-blue); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; display: block;">Phase Two</span>
+                    <h3 style="font-family: var(--font-heading); font-size: 26px; color: var(--primary-navy-dark); margin-bottom: 12px; font-weight: 800;">Targeted Sourcing &amp; Trade Testing</h3>
+                    <p style="color: var(--text-dark); font-size: 16px; line-height: 1.7; margin: 0;">
+                        We tap into our vetted talent reservoirs across GCC hubs. Every candidate undergoes rigorous background checks, credential authentication, and supervised practical trade evaluations to verify job readiness for European standards.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bawaal-glass reveal delay-300" style="padding: 44px; display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap;">
+                <div style="width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.2); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--secondary-blue); flex-shrink: 0;">
+                    <i data-lucide="check-circle" style="width: 28px; height: 28px;"></i>
+                </div>
+                <div style="flex: 1; min-width: 260px;">
+                    <span style="color: var(--secondary-blue); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; display: block;">Phase Three</span>
+                    <h3 style="font-family: var(--font-heading); font-size: 26px; color: var(--primary-navy-dark); margin-bottom: 12px; font-weight: 800;">Executive Selection &amp; Contracting</h3>
+                    <p style="color: var(--text-dark); font-size: 16px; line-height: 1.7; margin: 0;">
+                        We present a curated shortlist of pre-screened professionals. You conduct structured interviews in person or via video conference. Once chosen, we oversee offer acceptance, salary structure clarity, and contract execution.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bawaal-glass reveal delay-100" style="padding: 44px; display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap;">
+                <div style="width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.2); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--secondary-blue); flex-shrink: 0;">
+                    <i data-lucide="plane-takeoff" style="width: 28px; height: 28px;"></i>
+                </div>
+                <div style="flex: 1; min-width: 260px;">
+                    <span style="color: var(--secondary-blue); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; display: block;">Phase Four</span>
+                    <h3 style="font-family: var(--font-heading); font-size: 26px; color: var(--primary-navy-dark); margin-bottom: 12px; font-weight: 800;">Work Permit &amp; Visa Logistics</h3>
+                    <p style="color: var(--text-dark); font-size: 16px; line-height: 1.7; margin: 0;">
+                        Our compliance team manages end-to-end procedures for European work visas—from medical clearances and degree attestations to official work permit issuance—ensuring 100% regulatory compliance.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="bawaal-glass reveal delay-200" style="padding: 44px; display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap;">
+                <div style="width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.2); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; color: var(--secondary-blue); flex-shrink: 0; font-family: var(--font-heading);">
+                    05
+                </div>
+                <div style="flex: 1; min-width: 260px;">
+                    <span style="color: var(--secondary-blue); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; display: block;">Phase 05</span>
+                    <h3 style="font-family: var(--font-heading); font-size: 26px; color: var(--primary-navy-dark); margin-bottom: 12px; font-weight: 800;">Onboarding &amp; Seamless Deployment</h3>
+                    <p style="color: var(--text-dark); font-size: 16px; line-height: 1.7; margin: 0;">
+                        We coordinate travel schedules, pre-departure orientations, and day-one onboarding so your new hires integrate smoothly into your European corporate operations without friction.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Global CTA Banner (Inherited from Homepage DNA) -->
+<section class="cta-banner-section reveal" style="background: transparent;">
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="cta-banner-box bawaal-glass" style="border-left: 4px solid var(--secondary-blue);">
+            <h2 style="font-family: var(--font-heading); font-size: 40px; color: var(--primary-navy-dark); margin-bottom: 20px; font-weight: 700; letter-spacing: -1px;">Ready to Initiate Deployment?</h2>
+            <p style="color: var(--text-dark); font-size: 18px; line-height: 1.6; max-width: 650px; margin: 0 auto 40px;">Submit your enterprise talent requirements today and receive vetted shortlists within our standard SLA window.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="requirement.php" class="btn btn-secondary" style="padding: 16px 36px; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
+                    Submit Staffing Mandate
+                </a>
+            </div>
         </div>
     </div>
 </section>

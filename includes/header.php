@@ -25,6 +25,10 @@ init_csrf_token();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Material Symbols -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css?v=<?= filemtime(__DIR__ . '/../assets/css/style.css') ?>">
     <?php if (basename($_SERVER['PHP_SELF']) === 'index.php' || $_SERVER['PHP_SELF'] === '/'): ?>
     <link rel="preload" as="image" href="/assets/images/hero-bg.jpg">
@@ -46,7 +50,7 @@ init_csrf_token();
       "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Sharjah and Dubai",
+        "streetAddress": "Business Village, Block B - Office 923, Deira",
         "addressLocality": "Dubai",
         "addressCountry": "AE"
       },
@@ -149,10 +153,15 @@ init_csrf_token();
                     "on-primary": "#ffffff",
                     "error": "#ba1a1a",
                     "surface-tint": "#006591",
-                    "background": "#f6fafe",
+                    "background": "var(--bg-light)",
                     "primary-fixed": "#c9e6ff",
                     "surface-container-high": "#e4e9ed",
-                    "on-secondary-fixed": "#00174b"
+                    "on-secondary-fixed": "#00174b",
+                    "navy": "var(--navy)",
+                    "teal": "var(--teal)",
+                    "navy-deep": "var(--primary-navy-dark)",
+                    "primary": "var(--navy)",
+                    "surface": "var(--bg-white)"
             },
             "borderRadius": {
                     "DEFAULT": "0.125rem",
@@ -234,25 +243,59 @@ init_csrf_token();
         }
     </style>
 </head>
-<body class="bg-surface-bright text-on-surface font-body-md">
+<body class="font-body-md">
     <?php $current_page = basename($_SERVER['PHP_SELF']); ?>
     <!-- TopNavBar -->
-    <header class="sticky top-0 z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full bg-white/90 backdrop-blur-md border-b border-border-slate">
-        <a href="index.php" class="font-headline-sm text-headline-sm font-bold text-deep-navy" style="text-decoration:none;">PrimePath HR</a>
-        
-        <nav class="hidden md:flex items-center gap-10">
-            <a class="<?= $current_page === 'index.php' ? 'text-primary font-bold border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary transition-colors' ?> font-body-md text-sm font-medium" href="index.php">Home</a>
-            <a class="<?= $current_page === 'about.php' ? 'text-primary font-bold border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary transition-colors' ?> font-body-md text-sm font-medium" href="about.php">About</a>
-            <a class="<?= $current_page === 'solutions.php' ? 'text-primary font-bold border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary transition-colors' ?> font-body-md text-sm font-medium" href="solutions.php">Solutions</a>
-            <a class="<?= $current_page === 'jobs.php' ? 'text-primary font-bold border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary transition-colors' ?> font-body-md text-sm font-medium" href="jobs.php">Jobs</a>
-            <a class="<?= $current_page === 'contact.php' ? 'text-primary font-bold border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary transition-colors' ?> font-body-md text-sm font-medium" href="contact.php">Contact</a>
-        </nav>
-        
-        <a href="contact.php" class="btn-gradient text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-transform active:scale-95 shadow-sm hidden md:inline-block" style="text-decoration:none;">
-            Get in Touch
+    <header class="header sticky top-0 z-50 flex justify-between items-center px-6 md:px-12 py-3 w-full bg-white/95 backdrop-blur-md border-b transition-all duration-300" style="border-color: var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+        <a href="index.php" style="text-decoration:none; display: flex; align-items: center;">
+            <img src="/assets/images/prime-path-logo.png" alt="PrimePath HR Logo" style="height: 48px; width: auto; object-fit: contain;">
         </a>
         
-        <button class="md:hidden text-on-surface">
+        <nav class="hidden md:flex items-center gap-10">
+            <a class="<?= $current_page === 'index.php' ? 'text-primary font-semibold border-b-2 border-primary pb-1' : 'text-gray-600 hover:text-primary transition-colors' ?> font-body-md text-sm font-medium" href="index.php">Home</a>
+            <a class="<?= $current_page === 'about.php' ? 'text-primary font-semibold border-b-2 border-primary pb-1' : 'text-gray-600 hover:text-primary transition-colors' ?> font-body-md text-sm font-medium" href="about.php">About</a>
+            <a class="<?= $current_page === 'solutions.php' ? 'text-primary font-semibold border-b-2 border-primary pb-1' : 'text-gray-600 hover:text-primary transition-colors' ?> font-body-md text-sm font-medium" href="solutions.php">Solutions</a>
+            <a class="text-gray-600 hover:text-primary transition-colors font-body-md text-sm font-medium" href="index.php#process">How We Work</a>
+            <a class="<?= $current_page === 'jobs.php' ? 'text-primary font-semibold border-b-2 border-primary pb-1' : 'text-gray-600 hover:text-primary transition-colors' ?> font-body-md text-sm font-medium" href="jobs.php">Careers</a>
+            <a class="<?= $current_page === 'contact.php' ? 'text-primary font-semibold border-b-2 border-primary pb-1' : 'text-gray-600 hover:text-primary transition-colors' ?> font-body-md text-sm font-medium" href="contact.php">Contact</a>
+        </nav>
+        
+        <div class="hidden md:flex items-center gap-6">
+            <a href="requirement.php" class="text-sm font-medium transition-colors" style="color: var(--text-dark);">Hire Talent</a>
+            <a href="contact.php" class="px-5 py-2.5 rounded text-white text-sm font-medium transition-all" style="background: var(--teal); box-shadow: 0 4px 10px rgba(0,180,216,0.2);">
+                GET IN TOUCH
+            </a>
+        </div>
+        
+        <button class="md:hidden text-on-surface mobile-menu-toggle">
             <i class="fas fa-bars text-2xl"></i>
         </button>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 bg-white z-40 flex flex-col pt-24 px-6 gap-6 transform translate-x-full transition-transform duration-300 md:hidden">
+        <a class="text-xl font-semibold border-b pb-2" href="index.php">Home</a>
+        <a class="text-xl font-semibold border-b pb-2" href="about.php">About</a>
+        <a class="text-xl font-semibold border-b pb-2" href="solutions.php">Solutions</a>
+        <a class="text-xl font-semibold border-b pb-2" href="index.php#process">How We Work</a>
+        <a class="text-xl font-semibold border-b pb-2" href="jobs.php">Careers</a>
+        <a class="text-xl font-semibold border-b pb-2" href="contact.php">Contact</a>
+        <div class="mt-4 flex flex-col gap-4">
+            <a href="requirement.php" class="text-center font-semibold text-primary py-3 rounded-lg border border-primary">Hire Talent</a>
+            <a href="jobs.php" class="text-center font-semibold text-white bg-primary py-3 rounded-lg">Find Jobs</a>
+        </div>
+    </div>
+
+    <!-- Global Animated Background Canvas is removed to respect light theme -->
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.querySelector('.header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+    <style>
+        .header.scrolled {
+            background: var(--bg-white) !important;
+            box-shadow: 0 2px 12px rgba(27,43,107,0.10) !important;
+        }
+    </style>
